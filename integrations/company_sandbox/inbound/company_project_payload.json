@@ -1,0 +1,42 @@
+{
+  "company_project_id": "NFS-SANDBOX-001",
+  "requester": "Northstar Fabrication Systems Sandbox Queue",
+  "project_name": "Industrial Steel Utility Hook Sandbox",
+  "project_description": "Sandbox-only Northstar submission showing how a fabrication company could map a hook project payload into Aether-native artifacts without any external action.",
+  "part_family": "industrial_steel_utility_hook",
+  "drawing_manifest_reference": "integrations/company_sandbox/inbound/company_drawing_manifest.json",
+  "bom_reference": "integrations/company_sandbox/inbound/company_bom_export.csv",
+  "desired_quote_type": "budgetary_internal_review",
+  "required_capabilities": [
+    "CNC_LASER_CUTTING",
+    "PRESS_BRAKE_FORMING",
+    "DEBURRING",
+    "POWDER_COATING",
+    "SMALL_BATCH_FABRICATION"
+  ],
+  "target_material": "A36 steel",
+  "target_finish": "powder coat black matte optional",
+  "dimensions_summary": {
+    "height_inches": 8.5,
+    "width_inches": 3.0,
+    "thickness_inches": 0.375,
+    "hole_count": 4,
+    "hole_diameter_inches": 0.375
+  },
+  "tolerance_summary": "+/- 0.030 inches",
+  "unknowns": [
+    "real CAD file not provided",
+    "drawing is manifest-only",
+    "load requirement unknown",
+    "mounting substrate unknown",
+    "fastener specification requires review",
+    "engineering certification not provided",
+    "load rating not validated"
+  ],
+  "assumptions": [
+    "Sandbox payload is for internal review only.",
+    "A36 steel flat stock is acceptable for budgetary review.",
+    "Human approval remains required before any external release."
+  ],
+  "human_approval_required": true
+}

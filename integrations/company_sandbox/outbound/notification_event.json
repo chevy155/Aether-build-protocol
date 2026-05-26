@@ -1,0 +1,21 @@
+{
+  "notification_event_id": "notification_nfs_001",
+  "event_type": "aether.email.preview.created",
+  "project_id": "nfs-hook-001",
+  "artifact_id": "approval_nfs_001",
+  "status": "preview_only",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "email_sent": false,
+  "notes": [
+    "sandbox only",
+    "no real email sent",
+    "no supplier was contacted",
+    "no quote was routed",
+    "no build was approved",
+    "no fabrication was approved",
+    "no engineering approval was granted",
+    "no webhook called",
+    "not production integration",
+    "human approval is required before any external release"
+  ]
+}

@@ -1,4 +1,4 @@
-# Aether Build Protocol v0.2.3 End-to-End Fabrication Simulation Harness
+# Aether Build Protocol v0.2.4 Fake Company Integration Sandbox
 
 Aether Build Protocol is the machine-readable coordination layer between digital design intent and downstream fabrication review systems.
 
@@ -93,6 +93,7 @@ A second small reference packet lives in `examples/micro_shelter_node/` to prove
 From the repository root:
 
 ```powershell
+python scripts/simulate_company_integration.py
 python scripts/simulate_industrial_hook_pipeline.py
 python scripts/validate_build_packet.py examples/sauna_node/build_packet.yaml
 python scripts/generate_quote_request.py examples/sauna_node/build_packet.yaml
@@ -126,6 +127,35 @@ It is a protocol handoff demo that simulates a builder-to-fabricator review flow
 - human review required
 
 The harness writes a full artifact chain under `simulations/industrial_hook/`, including builder workspace inputs, Aether protocol artifacts, deterministic fabricator outputs, monitoring logs, and a final simulation report.
+
+## Company Integration Sandbox
+
+Run the fake company integration sandbox with:
+
+```powershell
+python scripts/simulate_company_integration.py
+```
+
+It demonstrates how a fake company, Northstar Fabrication Systems, could map a local industrial-hook project payload into Aether-native artifacts.
+
+- fake company only
+- local-only sandbox
+- email preview only
+- webhook preview only
+- no external action
+- no real API server
+- no real email provider
+- no supplier contact
+- no quote routing
+- no build approval
+- no fabrication approval
+- no engineering approval
+- no payment approval
+- no load certification
+- human approval event required
+- provenance hashes generated
+
+The sandbox writes a full artifact chain under `integrations/company_sandbox/`, including inbound company payloads, mapped Aether artifacts, preview-only outbound notifications, and ledger-grade provenance/event tracking.
 
 ## Closed Loop
 
@@ -204,10 +234,12 @@ Fractal_Infinity_Aether/
   README.md
   MASTER_DOCTRINE.md
   docs/
+  integrations/
   protocols/build_intent/schemas/
   examples/micro_shelter_node/
   examples/sauna_node/
   scripts/
+  simulations/
   tests/
   outputs/
 ```

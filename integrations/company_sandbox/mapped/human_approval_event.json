@@ -1,0 +1,20 @@
+{
+  "approval_event_id": "approval_nfs_001",
+  "project_id": "nfs-hook-001",
+  "artifact_id": "rfq-nfs-hook-001",
+  "approval_type": "quote_request_review",
+  "actor_name": "Simulated Human Reviewer",
+  "actor_role": "Operations Manager",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "decision": "approved_for_internal_review_only",
+  "scope_limitations": [
+    "not approved for fabrication",
+    "not approved for supplier outreach",
+    "not approved for payment",
+    "not approved for hiring",
+    "not engineering approved",
+    "not load certified"
+  ],
+  "notes": "Approved for internal sandbox review only. No external action authorized.",
+  "human_approval_required_for_next_stage": true
+}

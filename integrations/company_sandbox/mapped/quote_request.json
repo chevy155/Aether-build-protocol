@@ -1,0 +1,78 @@
+{
+  "quote_request_id": "rfq-nfs-hook-001",
+  "project_id": "nfs-hook-001",
+  "scope_summary": "Sandbox-only Northstar submission showing how a fabrication company could map a hook project payload into Aether-native artifacts without any external action.",
+  "requested_quote_categories": [
+    "fabrication",
+    "finishing",
+    "internal_review"
+  ],
+  "required_capabilities": [
+    "CNC_LASER_CUTTING",
+    "PRESS_BRAKE_FORMING",
+    "DEBURRING",
+    "POWDER_COATING",
+    "SMALL_BATCH_FABRICATION"
+  ],
+  "deliverables": [
+    "Budgetary price range",
+    "Lead time range",
+    "Assumptions list",
+    "Exclusions list",
+    "Clarification questions",
+    "Risk notes"
+  ],
+  "location_context": {
+    "site_type": "company_integration_sandbox",
+    "company_name": "Northstar Fabrication Systems",
+    "integration_mode": "sandbox_only",
+    "external_action_authorized": false
+  },
+  "desired_timeline": {
+    "target_start_window": "2026-Q3",
+    "pricing_stage": "budgetary_review"
+  },
+  "required_response_fields": [
+    "price_min",
+    "price_max",
+    "lead_time_min_days",
+    "lead_time_max_days",
+    "assumptions",
+    "exclusions",
+    "substitutions",
+    "confidence_score",
+    "risk_notes",
+    "clarification_questions"
+  ],
+  "assumptions_to_confirm": [
+    "Sandbox payload is for internal review only.",
+    "A36 steel flat stock is acceptable for budgetary review.",
+    "Human approval remains required before any external release.",
+    "Sandbox-only manifest.",
+    "No real SolidWorks parser is used.",
+    "No fabrication approval is implied.",
+    "real CAD file not provided",
+    "drawing is manifest-only",
+    "load requirement unknown",
+    "mounting substrate unknown",
+    "fastener specification requires review",
+    "engineering certification not provided",
+    "load rating not validated"
+  ],
+  "exclusions_to_state": [
+    "Engineering approval",
+    "Permit issuance",
+    "Construction approval",
+    "Autonomous procurement",
+    "Fabrication approval",
+    "Supplier outreach",
+    "Payment processing",
+    "Quote routing"
+  ],
+  "risk_questions": [
+    "What site conditions could materially change price or lead time?",
+    "Which assumptions would you need confirmed before firm pricing?",
+    "What must remain internal-only before any external quote review?"
+  ],
+  "human_approval_required": true
+}

@@ -1,0 +1,27 @@
+{
+  "event_id": "webhook_nfs_001",
+  "event_type": "aether.human_approval.required",
+  "project_id": "nfs-hook-001",
+  "artifact_id": "approval_nfs_001",
+  "status": "preview_only",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "requires_human_review": true,
+  "webhook_called": false,
+  "forbidden_actions_confirmed": [
+    "no supplier contacted",
+    "no quote routed",
+    "no contractor selected",
+    "no hiring approval",
+    "no build approval",
+    "no fabrication approval",
+    "no engineering approval",
+    "no payment approval",
+    "no load certification"
+  ],
+  "artifact_paths": [
+    "integrations/company_sandbox/mapped/build_packet.yaml",
+    "integrations/company_sandbox/mapped/quote_request.json",
+    "integrations/company_sandbox/mapped/human_approval_event.json",
+    "integrations/company_sandbox/outbound/email_preview.md"
+  ]
+}

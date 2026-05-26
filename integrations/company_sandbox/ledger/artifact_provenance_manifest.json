@@ -1,0 +1,170 @@
+{
+  "manifest_id": "provenance_nfs_001",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "record_count": 12,
+  "records": [
+    {
+      "artifact_id": "company_profile_nfs_001",
+      "artifact_type": "company_profile",
+      "path": "integrations/company_sandbox/company_profile.json",
+      "sha256": "fecabc383e9d5e9ff05cac53e042f324edace323e3ee3fd0228335a48df18815",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "integrations/company_sandbox/company_profile.json",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "company_project_payload_nfs_001",
+      "artifact_type": "company_project_payload",
+      "path": "integrations/company_sandbox/inbound/company_project_payload.json",
+      "sha256": "3a5f2de45cfde7664e3f24408fcce126823cad830d865eab0b511c9627cf567c",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/company_profile.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "integrations/company_sandbox/api_contract.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "company_bom_export_nfs_001",
+      "artifact_type": "company_bom_export",
+      "path": "integrations/company_sandbox/inbound/company_bom_export.csv",
+      "sha256": "c95a8bffec5c2fb67f91bda78245d40a2c7e07e25f8683ca3c8cc4cbedfa7bae",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/inbound/company_project_payload.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "integrations/company_sandbox/api_contract.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "company_drawing_manifest_nfs_001",
+      "artifact_type": "company_drawing_manifest",
+      "path": "integrations/company_sandbox/inbound/company_drawing_manifest.json",
+      "sha256": "7ac12093f2e47f9da5922e59b11bf1f017f5d4bbd35b01a5fcd874797bc43995",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/inbound/company_project_payload.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "integrations/company_sandbox/webhook_contract.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "build_packet_nfs_001",
+      "artifact_type": "build_packet",
+      "path": "integrations/company_sandbox/mapped/build_packet.yaml",
+      "sha256": "5d912ace356c74013cd5c397d71bec389914f66daecad03641487e5bfa84ed92",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/inbound/company_project_payload.json",
+        "integrations/company_sandbox/inbound/company_bom_export.csv",
+        "integrations/company_sandbox/inbound/company_drawing_manifest.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "protocols/build_intent/schemas/build_packet.schema.json",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "quote_request_nfs_001",
+      "artifact_type": "quote_request",
+      "path": "integrations/company_sandbox/mapped/quote_request.json",
+      "sha256": "11018787cfcccaaa9c7203c4839e7e05165bb56a8444206c2fe4fd3dd1249341",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/mapped/build_packet.yaml"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "protocols/build_intent/schemas/quote_request.schema.json",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "approval_nfs_001",
+      "artifact_type": "human_approval_event",
+      "path": "integrations/company_sandbox/mapped/human_approval_event.json",
+      "sha256": "b85f9ffa4ff4b535b819ebabbe33bd5b816e98fd0481e878999bc369f8a78b2a",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/mapped/quote_request.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "docs/HUMAN_APPROVAL_EVENT_SPEC.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "notification_nfs_001",
+      "artifact_type": "notification_event",
+      "path": "integrations/company_sandbox/outbound/notification_event.json",
+      "sha256": "52b0d896414e302d6fab15a744c6de4b3ccc31356bd7e229d17364ee213722a9",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/mapped/human_approval_event.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "docs/EMAIL_NOTIFICATION_SPEC.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "webhook_nfs_001",
+      "artifact_type": "webhook_payload",
+      "path": "integrations/company_sandbox/outbound/webhook_payload.json",
+      "sha256": "d7ebcc5e7d36af8c9dd602b044b31b1df8e5828005780ae4d0ff24a9c5a0c9ea",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/mapped/human_approval_event.json",
+        "integrations/company_sandbox/mapped/build_packet.yaml"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "docs/WEBHOOK_EVENT_SPEC.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "email_preview_nfs_001",
+      "artifact_type": "email_preview",
+      "path": "integrations/company_sandbox/outbound/email_preview.md",
+      "sha256": "a4d609b584befef223dc8b4deff94ee017bf4c6323a39f2073a9377ec86e8173",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/mapped/human_approval_event.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "docs/EMAIL_NOTIFICATION_SPEC.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "integration_event_log_nfs_001",
+      "artifact_type": "integration_event_log",
+      "path": "integrations/company_sandbox/ledger/integration_event_log.jsonl",
+      "sha256": "5328611c951591d52598656ffeb1657adeaad8ac1c81c023adeedbd9ca95a866",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/company_profile.json",
+        "integrations/company_sandbox/inbound/company_project_payload.json",
+        "integrations/company_sandbox/mapped/build_packet.yaml",
+        "integrations/company_sandbox/mapped/quote_request.json",
+        "integrations/company_sandbox/mapped/human_approval_event.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "docs/COMPANY_INTEGRATION_ARCHITECTURE.md",
+      "human_review_required": true
+    },
+    {
+      "artifact_id": "company_integration_summary_nfs_001",
+      "artifact_type": "company_integration_summary",
+      "path": "integrations/company_sandbox/ledger/company_integration_summary.json",
+      "sha256": "1ce3ade16e854a72edc4e3ab4c1d066341063a26d204350e3338ce41cb0f1a72",
+      "generated_by": "scripts/simulate_company_integration.py",
+      "source_artifacts": [
+        "integrations/company_sandbox/ledger/integration_event_log.jsonl",
+        "integrations/company_sandbox/mapped/build_packet.yaml",
+        "integrations/company_sandbox/mapped/human_approval_event.json"
+      ],
+      "timestamp": "2026-05-26T00:00:00Z",
+      "schema_or_contract": "docs/COMPANY_CONNECTION_REQUIREMENTS.md",
+      "human_review_required": true
+    }
+  ]
+}

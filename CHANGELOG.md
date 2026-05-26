@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.4 - Fake Company Integration Sandbox
+
+- added a deterministic fake company integration sandbox for Northstar Fabrication Systems under `integrations/company_sandbox/`
+- added a local company payload to Aether mapping flow that generates `build_packet`, `quote_request`, and a required human approval event
+- added preview-only email and webhook artifacts plus an integration event log with `external_action_taken: false`
+- added artifact provenance hashing, sandbox architecture/spec docs, and regression coverage while preserving the existing industrial-hook and sauna proof loops
+
 ## v0.2.3 - End-to-End Fabrication Simulation Harness
 
 - added a deterministic local-only builder-to-fabricator simulation harness for an industrial-style steel utility hook

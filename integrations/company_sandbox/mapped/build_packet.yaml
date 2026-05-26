@@ -1,0 +1,159 @@
+protocol_version: 0.2.4
+project_id: nfs-hook-001
+project_name: Industrial Steel Utility Hook Sandbox
+project_type: company_integration_sandbox_submission
+project_description: Sandbox-only Northstar submission showing how a fabrication company
+  could map a hook project payload into Aether-native artifacts without any external
+  action.
+design_files:
+- file_name: company_drawing_manifest.json
+  file_type: company_drawing_manifest
+  path: integrations/company_sandbox/inbound/company_drawing_manifest.json
+  notes: Manifest-only company drawing reference. Real CAD file not provided.
+geometry_summary: Company-sandbox industrial steel utility hook represented by manifest-only
+  drawing references and BOM export metadata.
+bom_items:
+- item_id: NFS-001
+  name: Hook blank
+  category: plate_cut_part
+  quantity: 25
+  unit: ea
+  material: A36 steel
+  dimensions:
+    length_inches: 8.5
+    width_inches: 3.0
+    thickness_inches: 0.375
+  finish: powder coat black matte optional
+  supplier_preference: Sandbox internal review only
+  substitution_allowed: true
+  notes: Primary hook blank for sandbox review
+- item_id: NFS-002
+  name: Deburring
+  category: secondary_process
+  quantity: 25
+  unit: ea
+  material: n/a
+  dimensions:
+    process_reference: secondary_process
+  finish: none
+  supplier_preference: Sandbox internal review only
+  substitution_allowed: false
+  notes: Deburr and edge-safe handling requirement
+- item_id: NFS-003
+  name: Protective finish
+  category: finish
+  quantity: 25
+  unit: ea
+  material: powder coat or zinc primer
+  dimensions:
+    process_reference: finish
+  finish: powder coat black matte optional
+  supplier_preference: Sandbox internal review only
+  substitution_allowed: true
+  notes: Final finish depends on environment review
+material_specs:
+- A36 steel
+- Engineering review required before any load-bearing interpretation.
+- 'Company project ID preserved: NFS-SANDBOX-001'
+finish_requirements:
+- powder coat black matte optional
+- Final finish selection requires environment review.
+- No external action authorized.
+dimensions:
+  company_project_id: NFS-SANDBOX-001
+  height_inches: 8.5
+  width_inches: 3.0
+  thickness_inches: 0.375
+  hole_count: 4
+  hole_diameter_inches: 0.375
+tolerances:
+- 'Target tolerance: +/- 0.030 inches'
+- Drawing is manifest-only; no real print package has been validated.
+- Load certification not provided.
+site_conditions:
+- Sandbox submission only.
+- No supplier outreach.
+- No quote routing.
+- No external action authorized.
+location_context:
+  site_type: company_integration_sandbox
+  company_name: Northstar Fabrication Systems
+  integration_mode: sandbox_only
+  external_action_authorized: false
+quote_categories:
+- fabrication
+- finishing
+- internal_review
+capability_requirements:
+- capability_id: CNC_LASER_CUTTING
+  capability_type: fabrication
+  required_for: Northstar sandbox company submission
+  description: Company-sandbox capability requirement for CNC_LASER_CUTTING.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: high
+  notes: Sandbox only. No fabrication approval or external action is implied.
+- capability_id: PRESS_BRAKE_FORMING
+  capability_type: fabrication
+  required_for: Northstar sandbox company submission
+  description: Company-sandbox capability requirement for PRESS_BRAKE_FORMING.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: high
+  notes: Sandbox only. No fabrication approval or external action is implied.
+- capability_id: DEBURRING
+  capability_type: fabrication
+  required_for: Northstar sandbox company submission
+  description: Company-sandbox capability requirement for DEBURRING.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: medium
+  notes: Sandbox only. No fabrication approval or external action is implied.
+- capability_id: POWDER_COATING
+  capability_type: fabrication
+  required_for: Northstar sandbox company submission
+  description: Company-sandbox capability requirement for POWDER_COATING.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: medium
+  notes: Sandbox only. No fabrication approval or external action is implied.
+- capability_id: SMALL_BATCH_FABRICATION
+  capability_type: fabrication
+  required_for: Northstar sandbox company submission
+  description: Company-sandbox capability requirement for SMALL_BATCH_FABRICATION.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: medium
+  notes: Sandbox only. No fabrication approval or external action is implied.
+install_scope: Company sandbox mapping for internal quote review only. Not approved
+  for fabrication, supplier outreach, payment, engineering approval, or load certification.
+licensed_trade_required: false
+code_review_required: false
+permit_review_required: false
+safety_notes:
+- Fake company only. Sandbox-only integration flow.
+- Human approval required before any external release.
+- Engineering review required before real-world use.
+- Load certification not provided.
+- No external action authorized.
+unknowns:
+- real CAD file not provided
+- drawing is manifest-only
+- load requirement unknown
+- mounting substrate unknown
+- fastener specification requires review
+- engineering certification not provided
+- load rating not validated
+assumptions:
+- Sandbox payload is for internal review only.
+- A36 steel flat stock is acceptable for budgetary review.
+- Human approval remains required before any external release.
+- Sandbox-only manifest.
+- No real SolidWorks parser is used.
+- No fabrication approval is implied.
+human_approval_required: true

@@ -1,0 +1,25 @@
+{
+  "company_name": "Northstar Fabrication Systems",
+  "project_id": "nfs-hook-001",
+  "integration_mode": "sandbox_only",
+  "status": "PASS",
+  "sandbox_claim": "fake company local-only sandbox mapping into Aether-native artifacts",
+  "non_claims": [
+    "no real company connected",
+    "no real API server",
+    "no real email provider",
+    "no real webhook delivery",
+    "no supplier contact",
+    "no quote routing",
+    "no build approval",
+    "no fabrication approval",
+    "no engineering approval",
+    "no payment approval",
+    "no load certification",
+    "not production integration"
+  ],
+  "human_approval_required": true,
+  "engineering_review_required": true,
+  "provenance_hashes_generated": true,
+  "external_action_taken": false
+}

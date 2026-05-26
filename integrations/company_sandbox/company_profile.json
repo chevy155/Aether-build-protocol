@@ -1,0 +1,29 @@
+{
+  "company_name": "Northstar Fabrication Systems",
+  "company_type": "fabrication_shop",
+  "integration_mode": "sandbox_only",
+  "capabilities": [
+    "CNC_LASER_CUTTING",
+    "CNC_PLASMA_CUTTING",
+    "PRESS_BRAKE_FORMING",
+    "DEBURRING",
+    "WELDING",
+    "POWDER_COATING",
+    "SMALL_BATCH_FABRICATION"
+  ],
+  "allowed_channels": [
+    "local_file_exchange",
+    "email_preview",
+    "webhook_preview"
+  ],
+  "forbidden_channels": [
+    "real_email_send",
+    "real_webhook_call",
+    "supplier_routing",
+    "payment_processing",
+    "build_approval",
+    "fabrication_approval",
+    "engineering_approval",
+    "load_certification"
+  ]
+}

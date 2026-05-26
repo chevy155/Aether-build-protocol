@@ -1,0 +1,26 @@
+{
+  "manifest_id": "nfs-drawing-manifest-001",
+  "company_project_id": "NFS-SANDBOX-001",
+  "manifest_type": "drawing_manifest_only",
+  "files": [
+    {
+      "file_name": "utility_hook_print_manifest_only.pdf",
+      "file_type": "drawing_manifest_entry",
+      "revision": "sandbox-rev0",
+      "provided": false,
+      "notes": "Manifest-only entry. No real drawing package is included in the sandbox."
+    },
+    {
+      "file_name": "utility_hook_model_manifest_only.sldprt",
+      "file_type": "cad_manifest_entry",
+      "revision": "sandbox-rev0",
+      "provided": false,
+      "notes": "Real CAD file not provided. Sandbox uses manifest metadata only."
+    }
+  ],
+  "notes": [
+    "Sandbox-only manifest.",
+    "No real SolidWorks parser is used.",
+    "No fabrication approval is implied."
+  ]
+}
