@@ -1,0 +1,19 @@
+# v0.2.3 Gap Register
+
+| Gap ID | Gap | Severity | Release blocker? | Why it matters | Recommended action | Phase |
+| --- | --- | --- | --- | --- | --- | --- |
+| GAP-001 | No real CAD parser | HIGH | No | The harness proves metadata handoff, not geometry extraction or manufacturability interpretation. | Keep explicit mock-CAD language and collect reviewer feedback on what real CAD ingestion must preserve. | alpha feedback |
+| GAP-002 | Mock drawing/print only | HIGH | No | A metadata-only print package cannot prove drawing completeness for fabrication. | Add a bad/missing print scenario and define minimum drawing-completeness expectations. | v0.2.4 |
+| GAP-003 | No actual fabricator feedback | HIGH | No | Real shops may challenge clarity, quoting sufficiency, or risk framing. | Get controlled feedback from real fabricators before making stronger commercial claims. | alpha feedback |
+| GAP-004 | No real engineering certification | CRITICAL | No | The part cannot be treated as engineered or safe for real-world load use. | Preserve the current warnings and defer any engineering-validation claim to real-world integration. | future real-world integration |
+| GAP-005 | No load-rating validation | CRITICAL | No | Hook-shaped artifacts create liability risk if anyone infers lifting or load-bearing approval. | Keep non-lifting language everywhere and avoid any certification framing. | future real-world integration |
+| GAP-006 | No bad-input simulation | MEDIUM | No | The harness only demonstrates the happy path and does not show how the protocol fails safely. | Add malformed packet and missing-artifact scenarios. | v0.2.4 |
+| GAP-007 | No fabricator rejection scenario | MEDIUM | No | Reviewers cannot yet see how the pipeline handles an explicit no-bid or cannot-manufacture result. | Add one rejection path with clear reasons and preserved guardrails. | v0.2.4 |
+| GAP-008 | No multiple fabricator profiles | MEDIUM | No | One deterministic profile limits comparison realism and ecosystem credibility. | Add multiple simulator profiles after initial reviewer feedback clarifies what differences matter. | v0.3 |
+| GAP-009 | No artifact hashing/provenance manifest | MEDIUM | No | Lineage exists, but there is no tamper-evident chain or reproducibility fingerprint. | Add a provenance manifest with hashes for generated artifacts. | v0.3 |
+| GAP-010 | No explicit human approval event object | MEDIUM | No | The system preserves `human_review_required`, but it does not yet record an approval or rejection event as a first-class artifact. | Define a narrow local approval-event object after reviewer feedback confirms need. | v0.3 |
+| GAP-011 | Feasibility scoring is deterministic and simplified | MEDIUM | No | Capability, thickness, tolerance, and finish checks are not enough for real quoting decisions. | Keep the current logic for demo purposes and label it as simplified review logic. | alpha feedback |
+| GAP-012 | Outcome event is synthetic and could be misread | HIGH | No | Cost and timeline fields can look more real than they are, even with seed-only language. | Preserve seed-only wording and add reviewer-facing explanation about what the outcome event means. | v0.2.3 patch |
+| GAP-013 | No cost realism validation | MEDIUM | No | The deterministic quote numbers are not anchored to real market behavior. | Treat price and lead time as placeholders until real shop feedback exists. | alpha feedback |
+| GAP-014 | No manufacturing drawing completeness check | HIGH | No | Missing dimensions, tolerances, notes, finish callouts, or inspection requirements could block real quoting. | Define a drawing-completeness rubric and negative-path checks. | v0.2.4 |
+| GAP-015 | No tolerancing depth beyond simplified checks | MEDIUM | No | Matching a single tolerance target is not equivalent to validating true tolerancing adequacy. | Expand tolerancing review only after reviewer feedback shows which fields matter most. | v0.3 |

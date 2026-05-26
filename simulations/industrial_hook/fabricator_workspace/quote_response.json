@@ -1,0 +1,44 @@
+{
+  "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001",
+  "quote_request_id": "rfq-industrial-hook-sim-001",
+  "responder_name": "Deterministic Fabrication Simulator",
+  "responder_type": "fabricator_simulator",
+  "quoted_scope": "Budgetary review for cutting, deburring, optional forming, and optional finish on an industrial-style steel utility hook simulation artifact.",
+  "price_min": 850.0,
+  "price_max": 1275.0,
+  "currency": "USD",
+  "lead_time_min_days": 7,
+  "lead_time_max_days": 14,
+  "assumptions": [
+    "A36 steel plate is commercially available in the requested thickness.",
+    "Quoted geometry is based on mock CAD metadata only.",
+    "Human review remains required before any real fabrication decision."
+  ],
+  "exclusions": [
+    "Informational quote only.",
+    "Engineering review required before real-world load-bearing use.",
+    "No fabrication authorized.",
+    "No supplier contacted.",
+    "No external action taken."
+  ],
+  "substitutions": [
+    "Zinc primer may substitute for powder coat if environment review supports it.",
+    "CNC plasma cutting may substitute for laser cutting if edge quality is acceptable after review."
+  ],
+  "confidence_score": 0.81,
+  "risk_notes": [
+    "engineering review required before real-world load-bearing use",
+    "human approval required before real fabrication",
+    "mounting substrate unknown",
+    "fastener specification requires review",
+    "no lifting approval or certification is implied",
+    "Budget may change if thickness or finish requirements change after human review."
+  ],
+  "clarification_questions": [
+    "What is the intended non-lifting use case for the hook?",
+    "What substrate will receive the mounting holes?",
+    "What fastener specification should be reviewed?",
+    "Does the environment require powder coat or zinc primer?"
+  ],
+  "human_review_required": true
+}

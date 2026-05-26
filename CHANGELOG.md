@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.3 - End-to-End Fabrication Simulation Harness
+
+- added a deterministic local-only builder-to-fabricator simulation harness for an industrial-style steel utility hook
+- added builder, Aether, fabricator, monitor, and report artifact generation under `simulations/industrial_hook/`
+- added monitoring telemetry, guardrail audit, protocol trace, ledger summary, and final simulation reporting
+- added simulation documentation and regression coverage while preserving the existing sauna proof loop and local guardrails
+
 ## v0.2.2 - Public Release Candidate
 
 - added public release notes, checklist, demo walkthrough, reviewer packet, feedback form, and positioning docs

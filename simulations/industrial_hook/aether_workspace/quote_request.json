@@ -1,0 +1,70 @@
+{
+  "quote_request_id": "rfq-industrial-hook-sim-001",
+  "project_id": "industrial-hook-sim-001",
+  "scope_summary": "Industrial-style steel utility hook simulation showing builder-to-fabricator protocol handoff.",
+  "requested_quote_categories": [
+    "fabrication",
+    "forming_review",
+    "finishing"
+  ],
+  "required_capabilities": [
+    "CNC_LASER_CUTTING",
+    "DEBURRING",
+    "PRESS_BRAKE_FORMING",
+    "POWDER_COATING",
+    "SMALL_BATCH_FABRICATION"
+  ],
+  "deliverables": [
+    "Budgetary price range",
+    "Lead time range",
+    "Assumptions list",
+    "Exclusions list",
+    "Clarification questions",
+    "Risk notes"
+  ],
+  "location_context": {
+    "site_type": "simulation_only",
+    "country": "USA",
+    "network_required": false,
+    "external_action_authorized": false
+  },
+  "desired_timeline": {
+    "target_start_window": "2026-Q3",
+    "pricing_stage": "budgetary_review"
+  },
+  "required_response_fields": [
+    "price_min",
+    "price_max",
+    "lead_time_min_days",
+    "lead_time_max_days",
+    "assumptions",
+    "exclusions",
+    "substitutions",
+    "confidence_score",
+    "risk_notes",
+    "clarification_questions"
+  ],
+  "assumptions_to_confirm": [
+    "A36 steel flat stock is acceptable for budgetary quoting.",
+    "Part size fits standard small-batch fabrication equipment.",
+    "Human review remains required before any real fabrication decision.",
+    "Actual load requirement unknown",
+    "Mounting substrate unknown",
+    "Fastener specification requires review",
+    "Coating environment unknown",
+    "Engineering certification not provided",
+    "Real CAD file not included",
+    "Drawing is mock metadata only"
+  ],
+  "exclusions_to_state": [
+    "Engineering approval",
+    "Permit issuance",
+    "Construction approval",
+    "Autonomous procurement"
+  ],
+  "risk_questions": [
+    "What site conditions could materially change price or lead time?",
+    "Which assumptions would you need confirmed before firm pricing?"
+  ],
+  "human_approval_required": true
+}

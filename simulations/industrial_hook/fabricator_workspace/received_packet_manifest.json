@@ -1,0 +1,18 @@
+{
+  "manifest_id": "recv-industrial-hook-sim-001",
+  "project_id": "industrial-hook-sim-001",
+  "received_artifacts": [
+    "aether_workspace/build_packet.yaml",
+    "aether_workspace/quote_request.json",
+    "aether_workspace/RFQ.md",
+    "aether_workspace/agent_manifest.json",
+    "aether_workspace/quote_readiness_score.json"
+  ],
+  "parsed_fields": {
+    "project_name": "Industrial Steel Utility Hook Simulation",
+    "quote_request_id": "rfq-industrial-hook-sim-001",
+    "quote_readiness_status": "READY_FOR_HUMAN_QUOTE_REVIEW"
+  },
+  "human_review_required": true,
+  "external_action_authorized": false
+}

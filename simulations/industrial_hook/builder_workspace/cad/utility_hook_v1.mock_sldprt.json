@@ -1,0 +1,22 @@
+{
+  "file_name": "utility_hook_v1.mock_sldprt.json",
+  "file_type": "mock_solidworks_part_metadata",
+  "part_name": "Industrial Steel Utility Hook Simulation",
+  "geometry_class": "industrial_style_utility_hook",
+  "units": "inches",
+  "bounding_box": {
+    "height": 8.5,
+    "width": 3.0,
+    "thickness": 0.375
+  },
+  "bend_radius_inches": 0.5,
+  "mounting_holes": 4,
+  "hole_diameter_inches": 0.375,
+  "material": "A36 steel",
+  "finish": "powder coat black matte optional",
+  "notes": [
+    "Mock CAD metadata only.",
+    "No real CAD geometry is included.",
+    "Engineering review required before real fabrication."
+  ]
+}

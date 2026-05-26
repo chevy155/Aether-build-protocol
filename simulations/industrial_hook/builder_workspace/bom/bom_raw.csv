@@ -1,0 +1,4 @@
+item_id,name,category,quantity,unit,material,length_inches,width_inches,thickness_inches,finish,supplier_preference,substitution_allowed,notes
+IH-001,Hook blank,plate_cut_part,25,ea,A36 steel,8.5,3.0,0.375,powder coat black matte optional,Local metal service center,true,Main hook profile cut from plate
+IH-002,Deburring and edge prep,secondary_process,25,ea,n/a,0,0,0,none,In-house process,false,Remove sharp edges before handling
+IH-003,Protective finish,finish,25,ea,powder coat or zinc primer,0,0,0,powder coat black matte optional,Regional finisher,true,Final finish depends on environment review

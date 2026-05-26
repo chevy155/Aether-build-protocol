@@ -1,0 +1,160 @@
+protocol_version: 0.2.3
+project_id: industrial-hook-sim-001
+project_name: Industrial Steel Utility Hook Simulation
+project_type: industrial_hook_protocol_simulation
+project_description: Industrial-style steel utility hook simulation showing builder-to-fabricator
+  protocol handoff.
+design_files:
+- file_name: utility_hook_v1.mock_sldprt.json
+  file_type: mock_cad_metadata
+  path: builder_workspace/cad/utility_hook_v1.mock_sldprt.json
+  notes: Mock CAD metadata only. No real CAD geometry included.
+- file_name: utility_hook_print_rev0.mock_pdf.json
+  file_type: mock_drawing_metadata
+  path: builder_workspace/cad/utility_hook_print_rev0.mock_pdf.json
+  notes: Mock drawing metadata only. Not certified for real fabrication or lifting.
+geometry_summary: Industrial-style steel utility hook plate profile with four mounting
+  holes and optional formed geometry represented by mock metadata only.
+bom_items:
+- item_id: IH-001
+  name: Hook blank
+  category: plate_cut_part
+  quantity: 25
+  unit: ea
+  material: A36 steel
+  dimensions:
+    length_inches: 8.5
+    width_inches: 3.0
+    thickness_inches: 0.375
+  finish: powder coat black matte optional
+  supplier_preference: Local metal service center
+  substitution_allowed: true
+  notes: Main hook profile cut from plate
+- item_id: IH-002
+  name: Deburring and edge prep
+  category: secondary_process
+  quantity: 25
+  unit: ea
+  material: n/a
+  dimensions:
+    process_reference: secondary_process
+  finish: none
+  supplier_preference: In-house process
+  substitution_allowed: false
+  notes: Remove sharp edges before handling
+- item_id: IH-003
+  name: Protective finish
+  category: finish
+  quantity: 25
+  unit: ea
+  material: powder coat or zinc primer
+  dimensions:
+    process_reference: finish
+  finish: powder coat black matte optional
+  supplier_preference: Regional finisher
+  substitution_allowed: true
+  notes: Final finish depends on environment review
+material_specs:
+- A36 steel
+- Optional powder coat or zinc-primer finish after human review.
+- Fastener specification deferred pending substrate review.
+finish_requirements:
+- powder coat black matte optional
+- Deburr all exposed edges.
+- Final finish depends on coating environment review.
+dimensions:
+  height_inches: 8.5
+  width_inches: 3.0
+  thickness_inches: 0.375
+  mounting_holes: 4
+  hole_diameter_inches: 0.375
+  bend_radius_inches: 0.5
+tolerances:
+- 'Target tolerance: +/- 0.030 inches'
+- Mock print only; no certified fabrication tolerance is implied.
+- Engineering review required before any real-world load-bearing use.
+site_conditions:
+- Mounting substrate unknown and requires human review.
+- Coating environment unknown.
+- No site survey has been performed.
+location_context:
+  site_type: simulation_only
+  country: USA
+  network_required: false
+  external_action_authorized: false
+quote_categories:
+- fabrication
+- forming_review
+- finishing
+capability_requirements:
+- capability_id: CNC_LASER_CUTTING
+  capability_type: fabrication
+  required_for: Primary hook profile cutting
+  description: Cut the hook blank from A36 plate stock.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: high
+  notes: No fabrication authorized by this simulation.
+- capability_id: DEBURRING
+  capability_type: fabrication
+  required_for: Edge cleanup and handling safety
+  description: Remove burrs and sharp edges from cut part.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: medium
+  notes: Human review required before real-world execution.
+- capability_id: PRESS_BRAKE_FORMING
+  capability_type: fabrication
+  required_for: Optional formed geometry
+  description: Form the hook if the final geometry requires a bend.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: medium
+  notes: Geometry remains mock metadata only.
+- capability_id: POWDER_COATING
+  capability_type: finish
+  required_for: Optional corrosion-protection finish
+  description: Apply powder coat only after environment review.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: medium
+  notes: Finish choice depends on environment review.
+- capability_id: SMALL_BATCH_FABRICATION
+  capability_type: fabrication
+  required_for: Quoted lot size
+  description: Support a small batch run of 25 parts.
+  licensed_trade: false
+  certification_required: false
+  local_required: false
+  risk_level: medium
+  notes: Simulation only. No purchase order is implied.
+install_scope: Budgetary review of an industrial-style steel utility hook simulation
+  only. No fabrication, lifting approval, installation approval, or supplier routing
+  is authorized.
+licensed_trade_required: false
+code_review_required: false
+permit_review_required: false
+safety_notes:
+- This is a simulated industrial-style hook for protocol testing only. It is not certified,
+  not engineered, not approved for lifting, and not approved for real fabrication
+  without qualified human review.
+- Engineering review required before any real-world load-bearing use.
+- Human approval required before real fabrication.
+- No external action authorized.
+unknowns:
+- Actual load requirement unknown
+- Mounting substrate unknown
+- Fastener specification requires review
+- Coating environment unknown
+- Engineering certification not provided
+- Real CAD file not included
+- Drawing is mock metadata only
+assumptions:
+- A36 steel flat stock is acceptable for budgetary quoting.
+- Part size fits standard small-batch fabrication equipment.
+- Human review remains required before any real fabrication decision.
+human_approval_required: true

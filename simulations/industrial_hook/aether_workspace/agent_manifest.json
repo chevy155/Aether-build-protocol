@@ -1,0 +1,33 @@
+{
+  "project_id": "industrial-hook-sim-001",
+  "project_name": "Industrial Steel Utility Hook Simulation",
+  "protocol_version": "0.2.3",
+  "project_summary": "Industrial-style steel utility hook simulation showing builder-to-fabricator protocol handoff.",
+  "quote_ready_status": "ready_for_human_quote_review",
+  "required_capabilities": [
+    "CNC_LASER_CUTTING",
+    "DEBURRING",
+    "PRESS_BRAKE_FORMING",
+    "POWDER_COATING",
+    "SMALL_BATCH_FABRICATION"
+  ],
+  "risk_flags": [
+    "safety_notes_present"
+  ],
+  "unknowns": [
+    "Actual load requirement unknown",
+    "Mounting substrate unknown",
+    "Fastener specification requires review",
+    "Coating environment unknown",
+    "Engineering certification not provided",
+    "Real CAD file not included",
+    "Drawing is mock metadata only"
+  ],
+  "human_approval_required": true,
+  "next_recommended_human_review_steps": [
+    "Review unknowns before external quoting.",
+    "Confirm licensed electrician scope and heater power assumptions.",
+    "Confirm permit and code review path with local reviewer.",
+    "Approve outbound quote request before supplier routing."
+  ]
+}

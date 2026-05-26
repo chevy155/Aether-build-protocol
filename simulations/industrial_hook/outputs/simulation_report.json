@@ -1,0 +1,79 @@
+{
+  "simulation_name": "Industrial Steel Utility Hook Simulation",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "builder_input_summary": {
+    "project_name": "Industrial Steel Utility Hook Simulation",
+    "material": "A36 steel",
+    "quantity": 25,
+    "safety_statement": "This is a simulated industrial-style hook for protocol testing only. It is not certified, not engineered, not approved for lifting, and not approved for real fabrication without qualified human review."
+  },
+  "generated_protocol_artifacts": [
+    "aether_workspace/build_packet.yaml",
+    "aether_workspace/validation_report.md",
+    "aether_workspace/quote_request.json",
+    "aether_workspace/RFQ.md",
+    "aether_workspace/agent_manifest.json",
+    "aether_workspace/quote_readiness_score.json",
+    "aether_workspace/quote_readiness_score.md",
+    "fabricator_workspace/fabricator_profile.json",
+    "fabricator_workspace/received_packet_manifest.json",
+    "fabricator_workspace/feasibility_review.json",
+    "fabricator_workspace/quote_response.json",
+    "fabricator_workspace/quote_response_validation_report.md",
+    "aether_workspace/quote_comparison_summary.json",
+    "aether_workspace/quote_comparison_summary.md",
+    "aether_workspace/negotiation_event.json",
+    "monitor_workspace/telemetry_log.jsonl",
+    "monitor_workspace/guardrail_audit.json",
+    "monitor_workspace/simulation_trace.json",
+    "monitor_workspace/ledger_summary.json",
+    "monitor_workspace/outcome_event.json"
+  ],
+  "fabricator_capability_match_result": "PASS",
+  "feasibility_result": "REVIEWABLE_WITH_HUMAN_GATES",
+  "quote_response_summary": {
+    "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001",
+    "price_min": 850.0,
+    "price_max": 1275.0,
+    "lead_time_min_days": 7,
+    "lead_time_max_days": 14,
+    "validation_result": "PASS",
+    "comparison_status": "MOST_COMPLETE_FOR_HUMAN_REVIEW",
+    "informational_only": true
+  },
+  "missing_information": [
+    "engineering certification not provided",
+    "load rating not provided",
+    "mounting substrate unknown",
+    "fastener specification requires review"
+  ],
+  "risk_flags": [
+    "engineering review required before real-world load-bearing use",
+    "human approval required before real fabrication",
+    "mounting substrate unknown",
+    "fastener specification requires review",
+    "no lifting approval or certification is implied"
+  ],
+  "guardrail_results": {
+    "status": "PASS",
+    "local_only_simulation": true,
+    "no_external_action_authorized": true
+  },
+  "telemetry_summary": {
+    "stage_count": 5,
+    "actors": [
+      "aether_protocol_engine",
+      "builder_simulator",
+      "fabricator_simulator",
+      "monitoring_agent_stack"
+    ]
+  },
+  "outcome_event_summary": {
+    "outcome_event_id": "out-industrial-hook-sim-001-seed",
+    "event_type": "seed_example_not_real_world",
+    "delivery_status": "not_started_seed_only"
+  },
+  "human_review_required": true,
+  "engineering_review_required": true,
+  "final_status": "PASS"
+}

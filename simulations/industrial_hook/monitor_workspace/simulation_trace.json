@@ -1,0 +1,38 @@
+{
+  "simulation_name": "industrial_hook_end_to_end_simulation",
+  "lineage": [
+    {
+      "stage": "builder_package",
+      "artifact": "builder_workspace/cad/utility_hook_v1.mock_sldprt.json"
+    },
+    {
+      "stage": "build_packet",
+      "artifact": "aether_workspace/build_packet.yaml",
+      "project_id": "industrial-hook-sim-001"
+    },
+    {
+      "stage": "quote_request",
+      "artifact": "aether_workspace/quote_request.json",
+      "quote_request_id": "rfq-industrial-hook-sim-001"
+    },
+    {
+      "stage": "rfq",
+      "artifact": "aether_workspace/RFQ.md"
+    },
+    {
+      "stage": "fabricator_response",
+      "artifact": "fabricator_workspace/quote_response.json",
+      "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001"
+    },
+    {
+      "stage": "validation",
+      "artifact": "fabricator_workspace/quote_response_validation_report.md"
+    },
+    {
+      "stage": "outcome",
+      "artifact": "monitor_workspace/outcome_event.json",
+      "outcome_event_id": "out-industrial-hook-sim-001-seed"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,24 @@
+{
+  "negotiation_event_id": "neg-resp-industrial-hook-sim-001-fabricator-sim-001",
+  "quote_request_id": "rfq-industrial-hook-sim-001",
+  "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001",
+  "event_type": "clarification_requested",
+  "actor": "human_operator",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "change_summary": "Human reviewer requested clarification on substrate, fastener specification, finish environment, and non-lifting use-case boundaries before comparison.",
+  "before": {
+    "comparison_status": "unreviewed",
+    "confidence_score": 0.81,
+    "clarification_questions_count": 4
+  },
+  "after": {
+    "comparison_status": "clarification_pending",
+    "required_follow_up": [
+      "Confirm the mounting substrate and expected attachment condition.",
+      "Confirm the fastener specification and installation boundary.",
+      "Confirm the intended environment for powder coat versus zinc primer review.",
+      "Confirm the non-lifting use case before any real fabrication review."
+    ]
+  },
+  "human_approval_required": true
+}

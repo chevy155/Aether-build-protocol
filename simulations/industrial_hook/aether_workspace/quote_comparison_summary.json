@@ -1,0 +1,132 @@
+{
+  "report_type": "quote_comparison_summary",
+  "comparison_mode": "local_only_information_quality",
+  "response_count": 3,
+  "responses": [
+    {
+      "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001",
+      "responder_name": "Deterministic Fabrication Simulator",
+      "responder_type": "fabricator_simulator",
+      "completeness_score": 100,
+      "category_scores": {
+        "response_completeness": 20,
+        "scope_clarity": 10,
+        "assumptions_clarity": 10,
+        "exclusions_clarity": 10,
+        "price_range_clarity": 10,
+        "lead_time_clarity": 10,
+        "risk_disclosure": 10,
+        "clarification_quality": 10,
+        "human_review_readiness": 10
+      },
+      "missing_fields": [],
+      "strengths": [
+        "clear quoted scope",
+        "clear assumptions disclosure",
+        "clear exclusions disclosure",
+        "clear lead-time range",
+        "explicit risk disclosure",
+        "useful clarification questions",
+        "substitution boundaries stated"
+      ],
+      "weaknesses": [],
+      "clarification_needed": [],
+      "human_review_required": true,
+      "comparison_status": "MOST_COMPLETE_FOR_HUMAN_REVIEW",
+      "schema_errors": []
+    },
+    {
+      "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001-2",
+      "responder_name": "Deterministic Fabrication Simulator",
+      "responder_type": "fabricator_simulator",
+      "completeness_score": 99,
+      "category_scores": {
+        "response_completeness": 19,
+        "scope_clarity": 10,
+        "assumptions_clarity": 10,
+        "exclusions_clarity": 10,
+        "price_range_clarity": 10,
+        "lead_time_clarity": 10,
+        "risk_disclosure": 10,
+        "clarification_quality": 10,
+        "human_review_readiness": 10
+      },
+      "missing_fields": [
+        "substitutions"
+      ],
+      "strengths": [
+        "clear quoted scope",
+        "clear assumptions disclosure",
+        "clear exclusions disclosure",
+        "clear lead-time range",
+        "explicit risk disclosure",
+        "useful clarification questions"
+      ],
+      "weaknesses": [
+        "schema validation failed",
+        "substitution boundaries missing"
+      ],
+      "clarification_needed": [
+        "Fix schema validation issues before comparison.",
+        "State substitution boundaries before comparison."
+      ],
+      "human_review_required": true,
+      "comparison_status": "NOT_COMPARISON_READY",
+      "schema_errors": [
+        "<root>: 'substitutions' is a required property"
+      ]
+    },
+    {
+      "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001-3",
+      "responder_name": "Deterministic Fabrication Simulator",
+      "responder_type": "fabricator_simulator",
+      "completeness_score": 51,
+      "category_scores": {
+        "response_completeness": 16,
+        "scope_clarity": 10,
+        "assumptions_clarity": 0,
+        "exclusions_clarity": 0,
+        "price_range_clarity": 10,
+        "lead_time_clarity": 10,
+        "risk_disclosure": 5,
+        "clarification_quality": 0,
+        "human_review_readiness": 0
+      },
+      "missing_fields": [
+        "assumptions",
+        "clarification_questions",
+        "exclusions"
+      ],
+      "strengths": [
+        "clear quoted scope",
+        "clear lead-time range"
+      ],
+      "weaknesses": [
+        "assumptions need clarification",
+        "clarification questions are limited",
+        "confidence score is low",
+        "exclusions need clarification",
+        "risk disclosure is thin",
+        "schema validation failed",
+        "substitution boundaries missing"
+      ],
+      "clarification_needed": [
+        "Add clarification questions before comparison.",
+        "Add more risk disclosure before comparison.",
+        "Clarify assumptions before comparison.",
+        "Clarify exclusions before comparison.",
+        "Fix schema validation issues before comparison.",
+        "Review low confidence score before comparison.",
+        "State substitution boundaries before comparison."
+      ],
+      "human_review_required": true,
+      "comparison_status": "NOT_COMPARISON_READY",
+      "schema_errors": [
+        "<root>: 'assumptions' is a required property",
+        "<root>: 'exclusions' is a required property",
+        "<root>: 'clarification_questions' is a required property"
+      ]
+    }
+  ],
+  "guardrail_note": "This summary compares information quality only. It does not select contractors, approve hiring, or approve building."
+}

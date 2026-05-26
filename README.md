@@ -114,10 +114,11 @@ Run the local-only end-to-end simulation with:
 python scripts/simulate_industrial_hook_pipeline.py
 ```
 
-It simulates a builder-to-fabricator protocol handoff using a mock industrial-style steel utility hook.
+It is a protocol handoff demo that simulates a builder-to-fabricator review flow using a mock industrial-style steel utility hook.
 
 - local only
 - no real CAD parsing
+- no real SolidWorks parser
 - no supplier contact
 - no fabrication approval
 - no engineering approval

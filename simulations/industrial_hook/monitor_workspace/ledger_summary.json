@@ -1,0 +1,12 @@
+{
+  "ledger_id": "ledger-industrial-hook-sim-001",
+  "project_id": "industrial-hook-sim-001",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "feasibility_status": "REVIEWABLE_WITH_HUMAN_GATES",
+  "quote_response_id": "resp-industrial-hook-sim-001-fabricator-sim-001",
+  "human_review_required": true,
+  "engineering_review_required": true,
+  "guardrail_status": "PASS",
+  "external_action_taken": false,
+  "summary": "Local-only simulation completed without authorizing fabrication, lifting approval, supplier contact, or external action."
+}

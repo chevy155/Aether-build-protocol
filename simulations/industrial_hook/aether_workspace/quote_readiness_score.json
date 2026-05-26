@@ -1,0 +1,21 @@
+{
+  "score": 100,
+  "status": "READY_FOR_HUMAN_QUOTE_REVIEW",
+  "category_scores": {
+    "required_fields_present": 16,
+    "bom_completeness": 10,
+    "dimensions_and_tolerances": 10,
+    "site_conditions": 8,
+    "licensed_trade_flags": 7,
+    "code_permit_review_flags": 7,
+    "safety_notes": 8,
+    "unknowns_preserved": 8,
+    "assumptions_present": 6,
+    "capability_requirements": 8,
+    "quote_categories": 6,
+    "human_approval_gate": 6
+  },
+  "schema_errors": [],
+  "gaps": [],
+  "approved_to_build": false
+}

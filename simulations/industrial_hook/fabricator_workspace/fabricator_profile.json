@@ -1,0 +1,31 @@
+{
+  "fabricator_id": "fabricator-sim-001",
+  "fabricator_name": "Deterministic Fabrication Simulator",
+  "capabilities": [
+    "CNC_LASER_CUTTING",
+    "CNC_PLASMA_CUTTING",
+    "DEBURRING",
+    "PRESS_BRAKE_FORMING",
+    "POWDER_COATING",
+    "SMALL_BATCH_FABRICATION"
+  ],
+  "supported_materials": [
+    "A36 steel",
+    "mild steel"
+  ],
+  "constraints": {
+    "max_thickness_inches": 0.5,
+    "tolerance_capability_inches": 0.03,
+    "minimum_order_quantity": 5,
+    "max_part_size_inches": {
+      "height": 48.0,
+      "width": 24.0
+    },
+    "coating_options": [
+      "powder coat black matte optional",
+      "zinc primer"
+    ],
+    "requires_engineering_review_for_load_bearing_parts": true,
+    "refuses_certification_without_engineer_stamp": true
+  }
+}
