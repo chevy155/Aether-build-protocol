@@ -2,7 +2,13 @@
 
 ## Purpose
 
-This release proves that Aether Build Protocol can compare multiple local quote responses for information quality without becoming a marketplace, vendor-selection engine, or hiring workflow.
+Aether Build Protocol is the foundational digital coordination layer for machine-readable hardware execution.
+
+It establishes the standardized data highway between upstream design environments such as CAD metadata, structured BOMs, and drawing packages, and downstream fabrication-review systems that need explicit scope, risk, traceable constraints, and deterministic handoff artifacts.
+
+This v0.2.1 milestone proves the local cognitive layer of that network. By ingesting, validating, and deterministically scoring multiple inbound quote responses, the protocol creates a local verification interface for data completeness, structural risk disclosure, lead-time alignment, and human-review readiness.
+
+It remains intentionally narrow. This release does not select contractors, approve hiring, approve fabrication, approve engineering, route suppliers, or trigger autonomous external action.
 
 ## What Changed Since v0.1
 

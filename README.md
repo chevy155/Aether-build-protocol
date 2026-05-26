@@ -1,8 +1,18 @@
-# Aether Build Protocol v0.2.2 Public Release Candidate
+# Aether Build Protocol v0.2.3 End-to-End Fabrication Simulation Harness
 
-Aether Build Protocol is an infrastructure layer for physical build intent.
+Aether Build Protocol is the machine-readable coordination layer between digital design intent and downstream fabrication review systems.
 
-It turns project intent, geometry, BOM data, trade requirements, unknowns, and risk flags into machine-readable protocol objects that can be validated, reviewed, quoted, negotiated, and recorded.
+It turns project intent, geometry, BOM data, trade requirements, unknowns, and risk flags into validated protocol objects that can move cleanly between builder-side systems, quote-review workflows, and future execution infrastructure.
+
+## Purpose
+
+Aether Build Protocol serves as the foundational digital coordination network for machine-readable hardware execution.
+
+It establishes a standardized data highway between upstream design environments such as CAD metadata, generative geometry, structured BOMs, and drawing packages, and downstream fabrication-review systems that need explicit scope, risk, and traceable handoff artifacts.
+
+This repository demonstrates the local cognitive layer of that network. It ingests, validates, transforms, and deterministically scores protocol artifacts so teams can inspect data completeness, structural risk, trade constraints, and lead-time alignment before any external action is authorized.
+
+The point is not to claim autonomous fabrication. The point is to make the handoff between design intent and physical execution legible, auditable, and automation-ready while preserving human approval gates and safety-critical unknowns.
 
 ## What It Is
 
@@ -28,7 +38,7 @@ It turns project intent, geometry, BOM data, trade requirements, unknowns, and r
 
 Physical projects are still described in fragmented ways: CAD files, ad hoc notes, spreadsheets, emails, drawings, and vendor-specific quote formats. That fragmentation slows review, quoting, negotiation, and execution.
 
-Aether Build Protocol creates a common machine-readable language between digital design intent and physical execution systems. It preserves unknowns, flags risk, and standardizes the data needed for later routing and quoting.
+Aether Build Protocol creates a common machine-readable language between digital design intent and physical execution systems. It preserves unknowns, flags risk, and standardizes the data needed for later routing, quoting, and controlled automation layers without collapsing the human review boundary.
 
 ## AGI/ASI Era Relevance
 
@@ -80,9 +90,10 @@ A second small reference packet lives in `examples/micro_shelter_node/` to prove
 
 ## Run Commands
 
-From `Fractal_Infinity_Aether/`:
+From the repository root:
 
 ```powershell
+python scripts/simulate_industrial_hook_pipeline.py
 python scripts/validate_build_packet.py examples/sauna_node/build_packet.yaml
 python scripts/generate_quote_request.py examples/sauna_node/build_packet.yaml
 python scripts/generate_rfq_markdown.py examples/sauna_node/quote_request.json
@@ -94,6 +105,26 @@ python scripts/generate_quote_comparison_summary.py examples/sauna_node/quote_re
 python scripts/generate_agent_manifest.py examples/sauna_node/build_packet.yaml
 python -m pytest tests/ -v
 ```
+
+## End-to-End Fabrication Simulation
+
+Run the local-only end-to-end simulation with:
+
+```powershell
+python scripts/simulate_industrial_hook_pipeline.py
+```
+
+It simulates a builder-to-fabricator protocol handoff using a mock industrial-style steel utility hook.
+
+- local only
+- no real CAD parsing
+- no supplier contact
+- no fabrication approval
+- no engineering approval
+- no load certification
+- human review required
+
+The harness writes a full artifact chain under `simulations/industrial_hook/`, including builder workspace inputs, Aether protocol artifacts, deterministic fabricator outputs, monitoring logs, and a final simulation report.
 
 ## Closed Loop
 
