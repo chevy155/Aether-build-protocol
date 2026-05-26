@@ -1,0 +1,49 @@
+{
+  "response_id": "resp_validation_passed_validate_build_packet_build_packet_001",
+  "response_type": "success",
+  "status": "PASS",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "protocol_version": "0.2.6",
+  "operation": "validate_build_packet",
+  "artifact_id": "build_packet_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "Local validation completed successfully.",
+  "next_safe_actions": [
+    "generate_local_artifact",
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "approve_build"
+  ],
+  "evidence": [
+    "machine/response_templates.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "generated_artifacts": [
+    "outputs/machine_response_latest.json"
+  ],
+  "validation_summary": {
+    "severity": "INFO",
+    "safe_to_retry": true,
+    "forbidden_auto_action": false
+  },
+  "suggested_human_action": "Review the local validation result before any next step.",
+  "related_docs": [
+    "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+    "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+  ],
+  "related_schema": "machine/response_envelope.schema.json",
+  "request_echo": {
+    "code": "VALIDATION_PASSED",
+    "operation": "validate_build_packet",
+    "artifact_id": "build_packet_001"
+  }
+}

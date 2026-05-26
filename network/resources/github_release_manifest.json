@@ -1,0 +1,42 @@
+{
+  "resource_id": "github_release_package",
+  "purpose": "Describe release evidence for the public repo package and live v0.2.4 release without granting publication authority.",
+  "artifacts": [
+    "README.md",
+    "CHANGELOG.md",
+    "docs/COMPANY_PILOT_BRIEF.md",
+    "https://github.com/chevy155/Aether-build-protocol/releases/tag/v0.2.4-company-integration-sandbox"
+  ],
+  "schemas_used": [],
+  "scripts_used": [],
+  "tests_covering_resource": [
+    "tests/test_guardrails.py"
+  ],
+  "generated_outputs": [],
+  "allowed_agent_actions": [
+    "read_manifest",
+    "read_protocol_artifact",
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_agent_actions": [
+    "publish_release",
+    "external_share",
+    "call_external_api",
+    "scan_network"
+  ],
+  "required_human_approvals": [
+    "publish_release",
+    "external_share"
+  ],
+  "known_limitations": [
+    "release evidence only",
+    "not runtime authority",
+    "no automatic publication",
+    "no external API access"
+  ],
+  "evidence_paths": [
+    "README.md",
+    "CHANGELOG.md"
+  ]
+}

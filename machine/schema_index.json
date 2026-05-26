@@ -1,0 +1,115 @@
+{
+  "schemas": [
+    {
+      "schema_id": "build_packet",
+      "path": "protocols/build_intent/schemas/build_packet.schema.json",
+      "object_type": "Build Packet",
+      "purpose": "Canonical machine-readable build intent payload.",
+      "required_human_review": true,
+      "external_action_allowed": false,
+      "related_scripts": [
+        "scripts/validate_build_packet.py",
+        "scripts/generate_quote_request.py",
+        "scripts/score_quote_readiness.py"
+      ],
+      "related_examples": [
+        "examples/sauna_node/build_packet.yaml",
+        "integrations/company_sandbox/mapped/build_packet.yaml"
+      ]
+    },
+    {
+      "schema_id": "bom_item",
+      "path": "protocols/build_intent/schemas/bom_item.schema.json",
+      "object_type": "BOM Item",
+      "purpose": "Normalized bill-of-material line item used by Build Packets.",
+      "required_human_review": true,
+      "external_action_allowed": false,
+      "related_scripts": [
+        "scripts/validate_build_packet.py",
+        "scripts/simulate_company_integration.py"
+      ],
+      "related_examples": [
+        "examples/sauna_node/build_packet.yaml",
+        "integrations/company_sandbox/inbound/company_bom_export.csv"
+      ]
+    },
+    {
+      "schema_id": "capability_requirement",
+      "path": "protocols/build_intent/schemas/capability_requirement.schema.json",
+      "object_type": "Capability Requirement",
+      "purpose": "Defines fabrication or trade capabilities required by a project.",
+      "required_human_review": true,
+      "external_action_allowed": false,
+      "related_scripts": [
+        "scripts/validate_build_packet.py",
+        "scripts/simulate_company_integration.py"
+      ],
+      "related_examples": [
+        "examples/sauna_node/build_packet.yaml",
+        "integrations/company_sandbox/mapped/build_packet.yaml"
+      ]
+    },
+    {
+      "schema_id": "quote_request",
+      "path": "protocols/build_intent/schemas/quote_request.schema.json",
+      "object_type": "Quote Request",
+      "purpose": "Normalized request for budgetary quote review.",
+      "required_human_review": true,
+      "external_action_allowed": false,
+      "related_scripts": [
+        "scripts/generate_quote_request.py",
+        "scripts/generate_rfq_markdown.py"
+      ],
+      "related_examples": [
+        "examples/sauna_node/quote_request.json",
+        "integrations/company_sandbox/mapped/quote_request.json"
+      ]
+    },
+    {
+      "schema_id": "quote_response",
+      "path": "protocols/build_intent/schemas/quote_response.schema.json",
+      "object_type": "Quote Response",
+      "purpose": "Normalized local quote response for validation and comparison.",
+      "required_human_review": true,
+      "external_action_allowed": false,
+      "related_scripts": [
+        "scripts/validate_quote_response.py",
+        "scripts/generate_quote_comparison_summary.py"
+      ],
+      "related_examples": [
+        "examples/sauna_node/quote_response_example.json",
+        "simulations/industrial_hook/fabricator_workspace/quote_response.json"
+      ]
+    },
+    {
+      "schema_id": "negotiation_event",
+      "path": "protocols/build_intent/schemas/negotiation_event.schema.json",
+      "object_type": "Negotiation Event",
+      "purpose": "Local synthetic negotiation state for review and traceability.",
+      "required_human_review": true,
+      "external_action_allowed": false,
+      "related_scripts": [
+        "scripts/generate_negotiation_event.py"
+      ],
+      "related_examples": [
+        "examples/sauna_node/negotiation_event_example.json",
+        "simulations/industrial_hook/aether_workspace/negotiation_event.json"
+      ]
+    },
+    {
+      "schema_id": "outcome_event",
+      "path": "protocols/build_intent/schemas/outcome_event.schema.json",
+      "object_type": "Outcome Event",
+      "purpose": "Local synthetic outcome artifact for trust and reporting workflows.",
+      "required_human_review": true,
+      "external_action_allowed": false,
+      "related_scripts": [
+        "scripts/generate_outcome_event.py"
+      ],
+      "related_examples": [
+        "examples/sauna_node/outcome_event_example.json",
+        "simulations/industrial_hook/monitor_workspace/outcome_event.json"
+      ]
+    }
+  ]
+}

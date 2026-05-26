@@ -1,0 +1,43 @@
+{
+  "response_id": "resp_fabrication_approval_forbidden_approve_fabrication_build_packet_001",
+  "response_type": "refusal",
+  "status": "BLOCKED",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "protocol_version": "0.2.6",
+  "operation": "approve_fabrication",
+  "artifact_id": "build_packet_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "Fabrication approval is forbidden in the local-only sandbox.",
+  "next_safe_actions": [
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_actions": [
+    "approve_fabrication",
+    "approve_build"
+  ],
+  "evidence": [
+    "machine/response_templates.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json"
+  ],
+  "errors": [
+    {
+      "code": "FABRICATION_APPROVAL_FORBIDDEN",
+      "message": "Fabrication approval is forbidden in the local-only sandbox.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "warnings": [],
+  "suggested_human_action": "Keep the artifact local and escalate to a human for any real-world decision.",
+  "related_docs": [
+    "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+  ],
+  "related_schema": "machine/response_envelope.schema.json",
+  "request_echo": {
+    "code": "FABRICATION_APPROVAL_FORBIDDEN",
+    "operation": "approve_fabrication",
+    "artifact_id": "build_packet_001"
+  }
+}

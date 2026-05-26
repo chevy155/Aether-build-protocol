@@ -1,0 +1,54 @@
+{
+  "response_id": "resp_human_approval_required_external_release_quote_request_001",
+  "response_type": "human_approval_required",
+  "status": "BLOCKED",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "protocol_version": "0.2.6",
+  "operation": "external_release",
+  "artifact_id": "quote_request_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "External action requires a Human Approval Event.",
+  "next_safe_actions": [
+    "generate_local_artifact",
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote",
+    "approve_build",
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment"
+  ],
+  "evidence": [
+    "machine/response_templates.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json"
+  ],
+  "errors": [
+    {
+      "code": "HUMAN_APPROVAL_REQUIRED",
+      "message": "External action requires a Human Approval Event.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "warnings": [],
+  "approval_required_for": [
+    "external_release"
+  ],
+  "suggested_human_action": "Generate or attach a valid Human Approval Event before external release.",
+  "related_docs": [
+    "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+    "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+  ],
+  "related_schema": "machine/response_envelope.schema.json",
+  "request_echo": {
+    "code": "HUMAN_APPROVAL_REQUIRED",
+    "operation": "external_release",
+    "artifact_id": "quote_request_001"
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "tools": [
+    {
+      "tool_id": "validate_build_packet",
+      "path": "scripts/validate_build_packet.py",
+      "description": "Validate a Build Packet against the canonical schema and generate a local validation report.",
+      "input_artifacts": [
+        "build_packet.yaml"
+      ],
+      "output_artifacts": [
+        "outputs/validation_report_latest.md"
+      ],
+      "allowed_actions": [
+        "read_schema",
+        "read_local_artifact",
+        "run_local_validation",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "approve_build"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "generate_quote_request",
+      "path": "scripts/generate_quote_request.py",
+      "description": "Generate a local Quote Request from a Build Packet.",
+      "input_artifacts": [
+        "build_packet.yaml"
+      ],
+      "output_artifacts": [
+        "outputs/quote_request_latest.json"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "contact_supplier",
+        "approve_build",
+        "approve_fabrication"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "generate_rfq_markdown",
+      "path": "scripts/generate_rfq_markdown.py",
+      "description": "Render a human-readable local RFQ markdown document from a Quote Request.",
+      "input_artifacts": [
+        "quote_request.json"
+      ],
+      "output_artifacts": [
+        "outputs/rfq_latest.md"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "route_quote",
+        "contact_supplier",
+        "approve_build"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "generate_agent_manifest",
+      "path": "scripts/generate_agent_manifest.py",
+      "description": "Generate a local agent-facing manifest from a Build Packet.",
+      "input_artifacts": [
+        "build_packet.yaml"
+      ],
+      "output_artifacts": [
+        "outputs/agent_manifest_latest.json"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "call_external_api",
+        "contact_supplier",
+        "approve_build",
+        "scan_network"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "validate_quote_response",
+      "path": "scripts/validate_quote_response.py",
+      "description": "Validate a local Quote Response and generate a deterministic validation report.",
+      "input_artifacts": [
+        "quote_response.json"
+      ],
+      "output_artifacts": [
+        "outputs/quote_response_validation_report_latest.md"
+      ],
+      "allowed_actions": [
+        "read_schema",
+        "read_local_artifact",
+        "run_local_validation",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "contact_supplier",
+        "approve_fabrication",
+        "approve_payment"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "score_quote_readiness",
+      "path": "scripts/score_quote_readiness.py",
+      "description": "Score a Build Packet for local quote-review readiness.",
+      "input_artifacts": [
+        "build_packet.yaml"
+      ],
+      "output_artifacts": [
+        "outputs/quote_readiness_score_latest.json",
+        "outputs/quote_readiness_score_latest.md"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "approve_build",
+        "approve_fabrication",
+        "approve_engineering",
+        "certify_load_rating"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "generate_negotiation_event",
+      "path": "scripts/generate_negotiation_event.py",
+      "description": "Generate a local synthetic negotiation event from quote artifacts.",
+      "input_artifacts": [
+        "quote_request.json",
+        "quote_response.json"
+      ],
+      "output_artifacts": [
+        "outputs/negotiation_event_latest.json"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "contact_supplier",
+        "select_contractor",
+        "approve_hiring"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "generate_outcome_event",
+      "path": "scripts/generate_outcome_event.py",
+      "description": "Generate a local synthetic outcome event from a quote response.",
+      "input_artifacts": [
+        "quote_response.json"
+      ],
+      "output_artifacts": [
+        "outputs/outcome_event_latest.json"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact"
+      ],
+      "forbidden_actions": [
+        "approve_build",
+        "approve_fabrication",
+        "approve_payment",
+        "certify_load_rating"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "generate_quote_comparison_summary",
+      "path": "scripts/generate_quote_comparison_summary.py",
+      "description": "Generate a local deterministic comparison summary for multiple quote responses.",
+      "input_artifacts": [
+        "quote_response.json"
+      ],
+      "output_artifacts": [
+        "outputs/quote_comparison_summary_latest.json",
+        "outputs/quote_comparison_summary_latest.md"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "select_contractor",
+        "approve_hiring",
+        "approve_build",
+        "route_quote"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "simulate_industrial_hook_pipeline",
+      "path": "scripts/simulate_industrial_hook_pipeline.py",
+      "description": "Run the local-only industrial-hook builder-to-fabricator simulation harness.",
+      "input_artifacts": [
+        "simulations/industrial_hook/builder_workspace/"
+      ],
+      "output_artifacts": [
+        "simulations/industrial_hook/outputs/simulation_report.json",
+        "simulations/industrial_hook/outputs/simulation_report.md"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "contact_supplier",
+        "approve_fabrication",
+        "approve_engineering",
+        "certify_load_rating"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "simulate_company_integration",
+      "path": "scripts/simulate_company_integration.py",
+      "description": "Run the local-only fake company integration sandbox and produce preview-only artifacts and provenance ledgers.",
+      "input_artifacts": [
+        "integrations/company_sandbox/inbound/"
+      ],
+      "output_artifacts": [
+        "integrations/company_sandbox/ledger/company_integration_summary.json",
+        "integrations/company_sandbox/ledger/artifact_provenance_manifest.json"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact",
+        "generate_preview_notification",
+        "generate_preview_webhook",
+        "compute_artifact_hash"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "approve_payment"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    },
+    {
+      "tool_id": "generate_machine_response",
+      "path": "scripts/generate_machine_response.py",
+      "description": "Generate a deterministic machine response envelope from response templates, permission boundaries, and the error catalog.",
+      "input_artifacts": [
+        "machine/response_templates.json",
+        "machine/permission_manifest.json",
+        "machine/error_catalog.json"
+      ],
+      "output_artifacts": [
+        "outputs/machine_response_latest.json"
+      ],
+      "allowed_actions": [
+        "read_local_artifact",
+        "generate_local_artifact",
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "approve_fabrication",
+        "approve_engineering",
+        "approve_payment"
+      ],
+      "external_action_taken": false,
+      "human_review_required": true,
+      "deterministic": true
+    }
+  ]
+}

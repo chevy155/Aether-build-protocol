@@ -1,0 +1,105 @@
+{
+  "trust_policy_id": "asi_network_trust_map_v0_2_5",
+  "classification_rules": {
+    "source_of_truth": "Canonical schemas, core guardrail docs, and primary protocol definitions may be HIGH trust.",
+    "generated_artifact": "Generated local outputs may be MEDIUM trust and remain human-review-required.",
+    "simulation_only": "Simulation artifacts are never production authority.",
+    "synthetic_example": "Synthetic examples are LOW to MEDIUM trust depending on their purpose.",
+    "release_evidence": "Release evidence may be MEDIUM trust for release history but not operational authority.",
+    "human_review_required": "Any artifact implying real-world interpretation remains human-review-required.",
+    "unsafe_for_external_action": "No simulation artifact is authority for external action."
+  },
+  "artifacts": [
+    {
+      "artifact_path": "protocols/build_intent/schemas/build_packet.schema.json",
+      "classification": "source_of_truth",
+      "trust_level": "HIGH",
+      "human_review_required": false,
+      "unsafe_for_external_action": false
+    },
+    {
+      "artifact_path": "protocols/build_intent/schemas/quote_request.schema.json",
+      "classification": "source_of_truth",
+      "trust_level": "HIGH",
+      "human_review_required": false,
+      "unsafe_for_external_action": false
+    },
+    {
+      "artifact_path": "README.md",
+      "classification": "source_of_truth",
+      "trust_level": "HIGH",
+      "human_review_required": false,
+      "unsafe_for_external_action": false
+    },
+    {
+      "artifact_path": "docs/COMPANY_PILOT_BRIEF.md",
+      "classification": "source_of_truth",
+      "trust_level": "HIGH",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "docs/INTEGRATION_FINDINGS_REPORT_TEMPLATE.md",
+      "classification": "source_of_truth",
+      "trust_level": "HIGH",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "examples/sauna_node/build_packet.yaml",
+      "classification": "synthetic_example",
+      "trust_level": "MEDIUM",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "examples/sauna_node/quote_response_example.json",
+      "classification": "synthetic_example",
+      "trust_level": "LOW",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "simulations/industrial_hook/aether_workspace/build_packet.yaml",
+      "classification": "simulation_only",
+      "trust_level": "MEDIUM",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "simulations/industrial_hook/outputs/simulation_report.json",
+      "classification": "generated_artifact",
+      "trust_level": "MEDIUM",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "integrations/company_sandbox/mapped/build_packet.yaml",
+      "classification": "simulation_only",
+      "trust_level": "MEDIUM",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "integrations/company_sandbox/ledger/artifact_provenance_manifest.json",
+      "classification": "generated_artifact",
+      "trust_level": "MEDIUM",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    },
+    {
+      "artifact_path": "CHANGELOG.md",
+      "classification": "release_evidence",
+      "trust_level": "MEDIUM",
+      "human_review_required": false,
+      "unsafe_for_external_action": false
+    },
+    {
+      "artifact_path": "https://github.com/chevy155/Aether-build-protocol/releases/tag/v0.2.4-company-integration-sandbox",
+      "classification": "release_evidence",
+      "trust_level": "MEDIUM",
+      "human_review_required": true,
+      "unsafe_for_external_action": true
+    }
+  ]
+}

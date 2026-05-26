@@ -1,0 +1,55 @@
+{
+  "response_id": "resp_external_action_forbidden_send_email_notification_event_001",
+  "response_type": "error",
+  "status": "FAIL",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "protocol_version": "0.2.6",
+  "operation": "send_email",
+  "artifact_id": "notification_event_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "External action is forbidden in local_only_sandbox mode.",
+  "next_safe_actions": [
+    "generate_preview_notification",
+    "generate_preview_webhook",
+    "generate_local_report"
+  ],
+  "forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote"
+  ],
+  "evidence": [
+    "machine/response_templates.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json"
+  ],
+  "errors": [
+    {
+      "code": "EXTERNAL_ACTION_FORBIDDEN",
+      "message": "External action is forbidden in local_only_sandbox mode.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "warnings": [],
+  "generated_artifacts": [
+    "outputs/machine_response_latest.json"
+  ],
+  "validation_summary": {
+    "severity": "BLOCKING",
+    "safe_to_retry": false,
+    "forbidden_auto_action": true
+  },
+  "suggested_human_action": "Use preview-only local artifacts or stop the action.",
+  "related_docs": [
+    "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+    "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+  ],
+  "related_schema": "machine/response_envelope.schema.json",
+  "request_echo": {
+    "code": "EXTERNAL_ACTION_FORBIDDEN",
+    "operation": "send_email",
+    "artifact_id": "notification_event_001"
+  }
+}

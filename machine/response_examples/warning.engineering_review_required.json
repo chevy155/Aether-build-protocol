@@ -1,0 +1,44 @@
+{
+  "response_id": "resp_engineering_review_required_review_packet_build_packet_001",
+  "response_type": "warning",
+  "status": "WARN",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "protocol_version": "0.2.6",
+  "operation": "review_packet",
+  "artifact_id": "build_packet_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "Engineering review is required before real-world interpretation.",
+  "next_safe_actions": [
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_actions": [
+    "approve_engineering",
+    "approve_fabrication",
+    "certify_load_rating"
+  ],
+  "evidence": [
+    "machine/response_templates.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json"
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "code": "ENGINEERING_REVIEW_REQUIRED",
+      "message": "Engineering review is required before real-world interpretation.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "suggested_human_action": "Escalate to qualified engineering review.",
+  "related_docs": [
+    "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+  ],
+  "related_schema": "machine/response_envelope.schema.json",
+  "request_echo": {
+    "code": "ENGINEERING_REVIEW_REQUIRED",
+    "operation": "review_packet",
+    "artifact_id": "build_packet_001"
+  }
+}

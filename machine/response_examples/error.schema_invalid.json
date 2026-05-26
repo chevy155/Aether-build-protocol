@@ -1,0 +1,50 @@
+{
+  "response_id": "resp_build_packet_schema_invalid_validate_build_packet_build_packet_001",
+  "response_type": "error",
+  "status": "FAIL",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "protocol_version": "0.2.6",
+  "operation": "validate_build_packet",
+  "artifact_id": "build_packet_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "Build Packet failed schema validation.",
+  "next_safe_actions": [
+    "read_schema",
+    "run_local_validation",
+    "generate_local_report"
+  ],
+  "forbidden_actions": [
+    "approve_build",
+    "approve_fabrication",
+    "route_quote"
+  ],
+  "evidence": [
+    "machine/response_templates.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json"
+  ],
+  "errors": [
+    {
+      "code": "BUILD_PACKET_SCHEMA_INVALID",
+      "message": "Build Packet failed schema validation.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "warnings": [],
+  "validation_summary": {
+    "severity": "BLOCKING",
+    "safe_to_retry": true,
+    "forbidden_auto_action": false
+  },
+  "suggested_human_action": "Repair the Build Packet before any next local workflow.",
+  "related_docs": [
+    "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+  ],
+  "related_schema": "machine/response_envelope.schema.json",
+  "request_echo": {
+    "code": "BUILD_PACKET_SCHEMA_INVALID",
+    "operation": "validate_build_packet",
+    "artifact_id": "build_packet_001"
+  }
+}

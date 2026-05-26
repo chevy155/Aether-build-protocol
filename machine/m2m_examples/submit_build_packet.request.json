@@ -1,0 +1,16 @@
+{
+  "status": "REQUEST",
+  "artifact_id": "request-build-packet-sauna-001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "next_safe_actions": [
+    "run_local_validation",
+    "generate_local_report"
+  ],
+  "forbidden_actions": [
+    "approve_build",
+    "route_quote",
+    "contact_supplier"
+  ],
+  "build_packet_path": "examples/sauna_node/build_packet.yaml"
+}

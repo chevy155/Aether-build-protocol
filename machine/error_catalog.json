@@ -1,0 +1,421 @@
+{
+  "errors": [
+    {
+      "error_code": "BUILD_PACKET_SCHEMA_INVALID",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Build Packet failed schema validation.",
+      "likely_cause": "Required fields are missing or malformed.",
+      "suggested_action": "Correct the Build Packet fields and rerun local validation.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "read_schema",
+        "run_local_validation",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "approve_build",
+        "approve_fabrication",
+        "route_quote"
+      ]
+    },
+    {
+      "error_code": "QUOTE_REQUEST_GENERATION_FAILED",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Quote Request generation could not complete.",
+      "likely_cause": "Build Packet data is incomplete or invalid.",
+      "suggested_action": "Validate the Build Packet and repair missing project inputs.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "run_local_validation",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "approve_build"
+      ]
+    },
+    {
+      "error_code": "QUOTE_RESPONSE_SCHEMA_INVALID",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Quote Response failed schema validation.",
+      "likely_cause": "The response is missing required normalized fields.",
+      "suggested_action": "Repair the Quote Response payload and rerun local validation.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "run_local_validation",
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "contact_supplier",
+        "approve_fabrication"
+      ]
+    },
+    {
+      "error_code": "QUOTE_RESPONSE_MISSING_ASSUMPTIONS",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Quote Response is missing assumptions.",
+      "likely_cause": "The response omitted an assumptions list required for comparison.",
+      "suggested_action": "Add explicit assumptions before comparison or human review.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "run_local_validation",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "select_contractor"
+      ]
+    },
+    {
+      "error_code": "QUOTE_RESPONSE_MISSING_EXCLUSIONS",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Quote Response is missing exclusions.",
+      "likely_cause": "The response omitted explicit exclusions required for safe interpretation.",
+      "suggested_action": "Add exclusions and rerun validation.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "run_local_validation",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "approve_build"
+      ]
+    },
+    {
+      "error_code": "QUOTE_RESPONSE_MISSING_LEAD_TIME",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Quote Response is missing lead-time information.",
+      "likely_cause": "Lead time fields were not provided.",
+      "suggested_action": "Provide lead-time bounds before comparison.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "run_local_validation",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "route_quote",
+        "approve_build"
+      ]
+    },
+    {
+      "error_code": "HUMAN_APPROVAL_REQUIRED",
+      "response_type": "human_approval_required",
+      "severity": "BLOCKING",
+      "message": "External action requires a Human Approval Event.",
+      "likely_cause": "The requested action crosses the sandbox boundary.",
+      "suggested_action": "Generate or attach a valid Human Approval Event before any external release.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_local_artifact",
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "route_quote",
+        "approve_build",
+        "approve_fabrication",
+        "approve_engineering",
+        "approve_payment"
+      ]
+    },
+    {
+      "error_code": "ENGINEERING_REVIEW_REQUIRED",
+      "response_type": "warning",
+      "severity": "BLOCKING",
+      "message": "Engineering review is required before real-world interpretation.",
+      "likely_cause": "The artifact implies engineering significance beyond sandbox scope.",
+      "suggested_action": "Escalate to qualified engineering review.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "approve_engineering",
+        "approve_fabrication",
+        "certify_load_rating"
+      ]
+    },
+    {
+      "error_code": "LOAD_CERTIFICATION_NOT_PROVIDED",
+      "response_type": "warning",
+      "severity": "BLOCKING",
+      "message": "Load certification is not provided.",
+      "likely_cause": "A simulated artifact was interpreted as load-bearing authority.",
+      "suggested_action": "Treat the artifact as informational only and require qualified certification.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "certify_load_rating",
+        "approve_engineering"
+      ]
+    },
+    {
+      "error_code": "EXTERNAL_ACTION_FORBIDDEN",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "External action is forbidden in local_only_sandbox mode.",
+      "likely_cause": "An action would contact or modify an external system.",
+      "suggested_action": "Use preview-only local artifacts or stop the action.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_preview_notification",
+        "generate_preview_webhook",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "route_quote"
+      ]
+    },
+    {
+      "error_code": "EMAIL_PREVIEW_ONLY",
+      "response_type": "warning",
+      "severity": "INFO",
+      "message": "Email output is preview-only.",
+      "likely_cause": "The sandbox only supports rendered email previews.",
+      "suggested_action": "Review the preview locally; do not send it automatically.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_preview_notification",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "send_email"
+      ]
+    },
+    {
+      "error_code": "WEBHOOK_PREVIEW_ONLY",
+      "response_type": "warning",
+      "severity": "INFO",
+      "message": "Webhook output is preview-only.",
+      "likely_cause": "The sandbox only supports rendered webhook payload previews.",
+      "suggested_action": "Review the payload locally; do not deliver it automatically.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_preview_webhook",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "call_webhook"
+      ]
+    },
+    {
+      "error_code": "PROVENANCE_HASH_MISSING",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Required provenance hash is missing.",
+      "likely_cause": "The provenance manifest is incomplete.",
+      "suggested_action": "Recompute artifact hashes and regenerate the provenance manifest.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "compute_artifact_hash",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "external_release"
+      ]
+    },
+    {
+      "error_code": "UNSAFE_APPROVAL_LANGUAGE_DETECTED",
+      "response_type": "error",
+      "severity": "BLOCKING",
+      "message": "Unsafe approval language was detected in a local artifact.",
+      "likely_cause": "A file implies real-world approval beyond sandbox scope.",
+      "suggested_action": "Replace approval language with explicit sandbox guardrails.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "approve_build",
+        "approve_fabrication",
+        "approve_engineering",
+        "approve_payment"
+      ]
+    },
+    {
+      "error_code": "FABRICATOR_REJECTION_REQUIRED",
+      "response_type": "warning",
+      "severity": "INFO",
+      "message": "A simulated fabricator rejection or clarification path is required.",
+      "likely_cause": "The scenario needs a refusal or clarification example for realism.",
+      "suggested_action": "Add a local rejection or clarification artifact.",
+      "safe_to_retry": true,
+      "human_review_required": true,
+      "forbidden_auto_action": false,
+      "next_safe_actions": [
+        "generate_local_artifact",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "approve_fabrication"
+      ]
+    },
+    {
+      "error_code": "REAL_CAD_PARSER_NOT_AVAILABLE",
+      "response_type": "warning",
+      "severity": "INFO",
+      "message": "A real CAD parser is not available in this repository.",
+      "likely_cause": "The repo intentionally uses manifest-only or mock CAD inputs.",
+      "suggested_action": "Treat CAD references as local metadata or simulation inputs only.",
+      "safe_to_retry": false,
+      "human_review_required": false,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "call_external_api",
+        "external_release"
+      ]
+    },
+    {
+      "error_code": "REAL_COMPANY_SYSTEM_NOT_CONNECTED",
+      "response_type": "warning",
+      "severity": "INFO",
+      "message": "No real company system is connected.",
+      "likely_cause": "The integration flow is sandbox-only.",
+      "suggested_action": "Use local simulation inputs and preserve human approval boundaries.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "call_external_api",
+        "external_release"
+      ]
+    },
+    {
+      "error_code": "FABRICATION_APPROVAL_FORBIDDEN",
+      "response_type": "refusal",
+      "severity": "BLOCKING",
+      "message": "Fabrication approval is forbidden in the local-only sandbox.",
+      "likely_cause": "A request attempted to authorize fabrication from a simulated or local artifact.",
+      "suggested_action": "Keep the artifact local and escalate to a human for any real-world decision.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "approve_fabrication",
+        "approve_build"
+      ]
+    },
+    {
+      "error_code": "PAYMENT_APPROVAL_FORBIDDEN",
+      "response_type": "refusal",
+      "severity": "BLOCKING",
+      "message": "Payment approval is forbidden in the local-only sandbox.",
+      "likely_cause": "A request attempted to authorize payment from a local artifact flow.",
+      "suggested_action": "Keep payment decisions outside the sandbox and require human review.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "approve_payment"
+      ]
+    },
+    {
+      "error_code": "SUPPLIER_CONTACT_FORBIDDEN",
+      "response_type": "refusal",
+      "severity": "BLOCKING",
+      "message": "Supplier contact is forbidden in the local-only sandbox.",
+      "likely_cause": "A request attempted to contact a supplier from a simulated workflow.",
+      "suggested_action": "Use preview-only local artifacts and require explicit human approval for any external contact.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "generate_preview_notification",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "contact_supplier",
+        "route_quote"
+      ]
+    },
+    {
+      "error_code": "MCP_TOOL_REFUSAL",
+      "response_type": "refusal",
+      "severity": "BLOCKING",
+      "message": "The requested MCP tool action is not permitted in the local-only sandbox.",
+      "likely_cause": "An MCP client requested a forbidden or undeclared action.",
+      "suggested_action": "Use a declared safe local tool or stop the request.",
+      "safe_to_retry": false,
+      "human_review_required": true,
+      "forbidden_auto_action": true,
+      "next_safe_actions": [
+        "read_local_artifact",
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "approve_fabrication",
+        "approve_engineering",
+        "scan_network",
+        "read_outside_repo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "resource_id": "company_integration_sandbox",
+  "purpose": "Map a fake company payload into local Aether artifacts, human approval events, preview-only notifications, and provenance ledgers.",
+  "artifacts": [
+    "integrations/company_sandbox/inbound/company_project_payload.json",
+    "integrations/company_sandbox/inbound/company_bom_export.csv",
+    "integrations/company_sandbox/inbound/company_drawing_manifest.json",
+    "integrations/company_sandbox/mapped/build_packet.yaml",
+    "integrations/company_sandbox/mapped/quote_request.json",
+    "integrations/company_sandbox/mapped/human_approval_event.json",
+    "integrations/company_sandbox/outbound/email_preview.md",
+    "integrations/company_sandbox/outbound/webhook_payload.json",
+    "integrations/company_sandbox/ledger/artifact_provenance_manifest.json"
+  ],
+  "schemas_used": [
+    "protocols/build_intent/schemas/build_packet.schema.json",
+    "protocols/build_intent/schemas/quote_request.schema.json"
+  ],
+  "scripts_used": [
+    "scripts/simulate_company_integration.py"
+  ],
+  "tests_covering_resource": [
+    "tests/test_company_integration_sandbox.py"
+  ],
+  "generated_outputs": [
+    "integrations/company_sandbox/ledger/company_integration_summary.json",
+    "integrations/company_sandbox/ledger/integration_event_log.jsonl",
+    "integrations/company_sandbox/ledger/artifact_provenance_manifest.json"
+  ],
+  "allowed_agent_actions": [
+    "read_manifest",
+    "read_protocol_artifact",
+    "run_local_validation",
+    "generate_local_report",
+    "generate_gap_register",
+    "propose_next_action"
+  ],
+  "forbidden_agent_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote",
+    "approve_payment",
+    "scan_network"
+  ],
+  "required_human_approvals": [
+    "company_pilot_start",
+    "real_webhook_enablement",
+    "real_email_enablement",
+    "paid_engagement"
+  ],
+  "known_limitations": [
+    "sandbox only",
+    "no real company connection",
+    "no external delivery",
+    "not production integration"
+  ],
+  "evidence_paths": [
+    "docs/COMPANY_INTEGRATION_ARCHITECTURE.md",
+    "docs/COMPANY_CONNECTION_REQUIREMENTS.md",
+    "docs/HUMAN_APPROVAL_EVENT_SPEC.md"
+  ]
+}

@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.2.6 - Deterministic Machine Response Envelopes
+
+- added a deterministic machine response envelope schema, response templates, response examples, and a local response generator
+- aligned the machine gateway, OpenAPI contract, and MCP skeleton around the standard response envelope shape
+- preserved local-only execution with explicit forbidden actions, human approval gates, and `external_action_taken: false` in every machine response
+
+## v0.2.5 - Machine-to-Machine Agent Gateway
+
+- added machine-readable discovery files including `llms.txt`, agent manifest, schema index, tool catalog, permission manifest, deterministic error catalog, and machine-readable examples
+- added a contract-only OpenAPI description and a local-only MCP skeleton for safe agent discovery and tool interpretation
+- preserved local-only boundaries with no hosted API, no external calls, and no unsafe approval or routing actions
+
+## v0.2.5 - ASI Network Sense Sandbox
+
+- added a local-only manifest-based ASI network sense sandbox for safe future-agent workspace understanding
+- added resource registry, capability manifests, trust map, data lineage map, and permission boundary files under `network/`
+- added ASI network sense simulation outputs and regression coverage while preserving the existing company sandbox, industrial hook, and sauna proof loops
+
+## Unreleased
+
+- added Integration Findings Report template for company sandbox pilots
+
 ## v0.2.4 - Fake Company Integration Sandbox
 
 - added a deterministic fake company integration sandbox for Northstar Fabrication Systems under `integrations/company_sandbox/`

@@ -1,0 +1,45 @@
+{
+  "resource_id": "docs_and_findings",
+  "purpose": "Provide company-facing and reviewer-facing documentation that explains guardrails, pilot framing, and findings delivery.",
+  "artifacts": [
+    "docs/COMPANY_PILOT_BRIEF.md",
+    "docs/INTEGRATION_FINDINGS_REPORT_TEMPLATE.md",
+    "docs/COMPANY_INTEGRATION_ARCHITECTURE.md",
+    "docs/COMPANY_CONNECTION_REQUIREMENTS.md",
+    "docs/ASI_NETWORK_SENSE_ARCHITECTURE.md"
+  ],
+  "schemas_used": [],
+  "scripts_used": [],
+  "tests_covering_resource": [
+    "tests/test_guardrails.py"
+  ],
+  "generated_outputs": [],
+  "allowed_agent_actions": [
+    "read_manifest",
+    "read_protocol_artifact",
+    "generate_local_report",
+    "generate_reviewer_packet",
+    "propose_next_action"
+  ],
+  "forbidden_agent_actions": [
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment",
+    "certify_load_rating",
+    "scan_network"
+  ],
+  "required_human_approvals": [
+    "external_share",
+    "paid_engagement",
+    "production_integration"
+  ],
+  "known_limitations": [
+    "documentation only",
+    "not operational control",
+    "not production authority"
+  ],
+  "evidence_paths": [
+    "docs/COMPANY_PILOT_BRIEF.md",
+    "docs/INTEGRATION_FINDINGS_REPORT_TEMPLATE.md"
+  ]
+}

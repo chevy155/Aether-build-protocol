@@ -1,0 +1,341 @@
+openapi: 3.1.0
+info:
+  title: Aether Build Protocol Local Gateway Contract
+  version: 0.2.6
+  summary: Contract-only local gateway for machine-to-machine discovery and safe artifact workflows.
+  description: >-
+    This OpenAPI document is a local-only contract for Aether Build Protocol. It does not imply a running
+    hosted API, external connectivity, supplier routing, fabrication approval, engineering approval, or
+    any autonomous external action.
+servers:
+  - url: http://localhost/local-only-contract
+    description: Conceptual local contract endpoint only. No hosted service is provided by this repository.
+tags:
+  - name: Build Packets
+  - name: Quote Requests
+  - name: Quote Responses
+  - name: Comparisons
+  - name: Human Approval
+  - name: Provenance
+  - name: Discovery
+paths:
+  /v1/build-packets/validate:
+    post:
+      tags: [Build Packets]
+      summary: Validate a Build Packet locally.
+      description: >-
+        Validates a Build Packet using local schemas only. Human review is still required. No external action
+        is permitted.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildPacketValidationRequest'
+      responses:
+        '200':
+          description: Local validation result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+        '400':
+          description: Deterministic validation error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/quote-requests/generate:
+    post:
+      tags: [Quote Requests]
+      summary: Generate a Quote Request locally.
+      description: >-
+        Generates a local Quote Request from a Build Packet. This does not distribute a quote request or
+        contact any external party.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildPacketOperationRequest'
+      responses:
+        '200':
+          description: Local quote request generation result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+        '400':
+          description: Deterministic generation error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/quote-responses/validate:
+    post:
+      tags: [Quote Responses]
+      summary: Validate a Quote Response locally.
+      description: >-
+        Validates a local Quote Response and returns deterministic errors if required fields are missing.
+        Human review remains required.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuoteResponseValidationRequest'
+      responses:
+        '200':
+          description: Local quote response validation result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+        '400':
+          description: Deterministic validation error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/quote-comparisons/generate:
+    post:
+      tags: [Comparisons]
+      summary: Generate a local quote comparison summary.
+      description: >-
+        Produces a deterministic local comparison summary. It does not select contractors or route quotes.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuoteComparisonRequest'
+      responses:
+        '200':
+          description: Local quote comparison result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+        '400':
+          description: Deterministic comparison error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/human-approval-events:
+    post:
+      tags: [Human Approval]
+      summary: Record a local Human Approval Event.
+      description: >-
+        Records a local human approval artifact. This endpoint does not grant fabrication approval,
+        engineering approval, or any external authority.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HumanApprovalEventRequest'
+      responses:
+        '200':
+          description: Local human approval artifact result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+        '400':
+          description: Deterministic approval error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/provenance/manifests:
+    post:
+      tags: [Provenance]
+      summary: Generate a local provenance manifest.
+      description: >-
+        Generates a local provenance manifest for artifacts. This does not certify manufacturability,
+        engineering sufficiency, or load rating.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProvenanceManifestRequest'
+      responses:
+        '200':
+          description: Local provenance generation result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+        '400':
+          description: Deterministic provenance error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/agent/manifest:
+    get:
+      tags: [Discovery]
+      summary: Read the Aether agent manifest.
+      description: Returns the local machine-readable agent manifest for safe discovery.
+      responses:
+        '200':
+          description: Local manifest read result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/schemas:
+    get:
+      tags: [Discovery]
+      summary: Read the schema index.
+      description: Returns the local schema index for machine discovery.
+      responses:
+        '200':
+          description: Local schema discovery result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/tools:
+    get:
+      tags: [Discovery]
+      summary: Read the tool catalog.
+      description: Returns the safe local tool catalog.
+      responses:
+        '200':
+          description: Local tool discovery result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+  /v1/errors:
+    get:
+      tags: [Discovery]
+      summary: Read the deterministic error catalog.
+      description: Returns the local deterministic error catalog for agent self-correction.
+      responses:
+        '200':
+          description: Local error discovery result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseEnvelope'
+components:
+  schemas:
+    BuildPacketValidationRequest:
+      type: object
+      required: [build_packet_path]
+      properties:
+        build_packet_path:
+          type: string
+          description: Repository-local path to the Build Packet.
+    BuildPacketOperationRequest:
+      type: object
+      required: [build_packet_path]
+      properties:
+        build_packet_path:
+          type: string
+    QuoteResponseValidationRequest:
+      type: object
+      required: [quote_response_path]
+      properties:
+        quote_response_path:
+          type: string
+    QuoteComparisonRequest:
+      type: object
+      required: [quote_response_paths]
+      properties:
+        quote_response_paths:
+          type: array
+          items:
+            type: string
+    HumanApprovalEventRequest:
+      type: object
+      required: [project_id, artifact_id, approval_type, decision]
+      properties:
+        project_id:
+          type: string
+        artifact_id:
+          type: string
+        approval_type:
+          type: string
+        decision:
+          type: string
+          description: Human review gate only. Not authority for fabrication or engineering approval.
+    ProvenanceManifestRequest:
+      type: object
+      required: [artifact_paths]
+      properties:
+        artifact_paths:
+          type: array
+          items:
+            type: string
+    ResponseEnvelope:
+      type: object
+      required:
+        - response_id
+        - response_type
+        - status
+        - timestamp
+        - protocol_version
+        - operation
+        - artifact_id
+        - human_review_required
+        - external_action_taken
+        - message
+        - next_safe_actions
+        - forbidden_actions
+        - evidence
+        - errors
+        - warnings
+      properties:
+        response_id:
+          type: string
+        response_type:
+          type: string
+          enum: [success, error, warning, refusal, human_approval_required]
+        status:
+          type: string
+          enum: [PASS, FAIL, WARN, BLOCKED]
+        timestamp:
+          type: string
+        protocol_version:
+          type: string
+        operation:
+          type: string
+        artifact_id:
+          type: string
+        human_review_required:
+          type: boolean
+        external_action_taken:
+          type: boolean
+          const: false
+        next_safe_actions:
+          type: array
+          items:
+            type: string
+        forbidden_actions:
+          type: array
+          items:
+            type: string
+        message:
+          type: string
+        evidence:
+          type: array
+          items:
+            type: string
+        errors:
+          type: array
+          items:
+            type: object
+        warnings:
+          type: array
+          items:
+            type: object
+        approval_required_for:
+          type: array
+          items:
+            type: string
+      description: Standard deterministic machine response envelope aligned to machine/response_envelope.schema.json.

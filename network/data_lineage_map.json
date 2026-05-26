@@ -1,0 +1,70 @@
+{
+  "lineages": [
+    {
+      "lineage_id": "company_payload_to_previews",
+      "input_artifacts": [
+        "integrations/company_sandbox/inbound/company_project_payload.json",
+        "integrations/company_sandbox/inbound/company_bom_export.csv",
+        "integrations/company_sandbox/inbound/company_drawing_manifest.json"
+      ],
+      "transformation_script": "scripts/simulate_company_integration.py",
+      "output_artifacts": [
+        "integrations/company_sandbox/mapped/build_packet.yaml",
+        "integrations/company_sandbox/mapped/quote_request.json",
+        "integrations/company_sandbox/mapped/human_approval_event.json",
+        "integrations/company_sandbox/outbound/email_preview.md",
+        "integrations/company_sandbox/outbound/webhook_payload.json",
+        "integrations/company_sandbox/ledger/artifact_provenance_manifest.json"
+      ],
+      "validation_artifacts": [
+        "integrations/company_sandbox/ledger/company_integration_summary.json",
+        "integrations/company_sandbox/ledger/integration_event_log.jsonl",
+        "tests/test_company_integration_sandbox.py"
+      ],
+      "human_review_required": true,
+      "external_action_taken": false
+    },
+    {
+      "lineage_id": "industrial_hook_builder_to_outcome",
+      "input_artifacts": [
+        "simulations/industrial_hook/builder_workspace/cad/utility_hook_v1.mock_sldprt.json",
+        "simulations/industrial_hook/builder_workspace/cad/utility_hook_print_rev0.mock_pdf.json",
+        "simulations/industrial_hook/builder_workspace/bom/bom_raw.csv"
+      ],
+      "transformation_script": "scripts/simulate_industrial_hook_pipeline.py",
+      "output_artifacts": [
+        "simulations/industrial_hook/aether_workspace/build_packet.yaml",
+        "simulations/industrial_hook/aether_workspace/RFQ.md",
+        "simulations/industrial_hook/fabricator_workspace/quote_response.json",
+        "simulations/industrial_hook/monitor_workspace/guardrail_audit.json",
+        "simulations/industrial_hook/monitor_workspace/outcome_event.json"
+      ],
+      "validation_artifacts": [
+        "simulations/industrial_hook/outputs/simulation_report.json",
+        "tests/test_industrial_hook_simulation.py"
+      ],
+      "human_review_required": true,
+      "external_action_taken": false
+    },
+    {
+      "lineage_id": "sauna_reference_packet_to_comparison",
+      "input_artifacts": [
+        "examples/sauna_node/build_packet.yaml"
+      ],
+      "transformation_script": "scripts/generate_quote_request.py",
+      "output_artifacts": [
+        "examples/sauna_node/quote_request.json",
+        "examples/sauna_node/RFQ.md",
+        "examples/sauna_node/quote_response_example.json",
+        "examples/sauna_node/quote_comparison_summary.json"
+      ],
+      "validation_artifacts": [
+        "examples/sauna_node/validation_report.md",
+        "examples/sauna_node/quote_response_validation_report.md",
+        "tests/test_quote_comparison_summary.py"
+      ],
+      "human_review_required": true,
+      "external_action_taken": false
+    }
+  ]
+}

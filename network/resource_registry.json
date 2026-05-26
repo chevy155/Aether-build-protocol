@@ -1,0 +1,149 @@
+{
+  "registry_id": "asi_network_resource_registry_v0_2_5",
+  "resources": [
+    {
+      "resource_id": "aether_protocol_core",
+      "resource_type": "protocol_core",
+      "description": "Canonical Aether protocol schemas, scripts, and guardrail documentation.",
+      "manifest_path": "network/resources/aether_protocol_manifest.json",
+      "source_of_truth_status": "primary_source_of_truth",
+      "trust_level": "HIGH",
+      "synthetic_or_real": "mixed_local_protocol_core",
+      "allowed_read": true,
+      "allowed_write": false,
+      "forbidden_actions": [
+        "approve_build",
+        "approve_fabrication",
+        "approve_engineering",
+        "approve_payment",
+        "call_external_api"
+      ],
+      "human_approval_required_for": [
+        "publish_release",
+        "external_share",
+        "production_integration"
+      ],
+      "audit_required": true,
+      "provenance_required": true
+    },
+    {
+      "resource_id": "sauna_reference_example",
+      "resource_type": "synthetic_example",
+      "description": "Reference sauna example proving the local protocol loop on a multi-trade example.",
+      "manifest_path": "network/resources/sauna_reference_manifest.json",
+      "source_of_truth_status": "reference_example",
+      "trust_level": "MEDIUM",
+      "synthetic_or_real": "synthetic_example",
+      "allowed_read": true,
+      "allowed_write": false,
+      "forbidden_actions": [
+        "route_quote",
+        "contact_supplier",
+        "approve_build",
+        "scan_network"
+      ],
+      "human_approval_required_for": [
+        "external_share",
+        "paid_engagement"
+      ],
+      "audit_required": true,
+      "provenance_required": false
+    },
+    {
+      "resource_id": "industrial_hook_simulation",
+      "resource_type": "simulation_harness",
+      "description": "Local-only industrial-hook builder-to-fabricator simulation harness and outputs.",
+      "manifest_path": "network/resources/industrial_hook_simulation_manifest.json",
+      "source_of_truth_status": "simulation_reference",
+      "trust_level": "MEDIUM",
+      "synthetic_or_real": "simulation_only",
+      "allowed_read": true,
+      "allowed_write": false,
+      "forbidden_actions": [
+        "approve_fabrication",
+        "approve_engineering",
+        "certify_load_rating",
+        "scan_network"
+      ],
+      "human_approval_required_for": [
+        "external_share",
+        "company_pilot_start"
+      ],
+      "audit_required": true,
+      "provenance_required": true
+    },
+    {
+      "resource_id": "company_integration_sandbox",
+      "resource_type": "company_sandbox",
+      "description": "Local-only company payload mapping, human approval events, notification previews, and integration ledgers.",
+      "manifest_path": "network/resources/company_sandbox_manifest.json",
+      "source_of_truth_status": "sandbox_reference",
+      "trust_level": "MEDIUM",
+      "synthetic_or_real": "simulation_only",
+      "allowed_read": true,
+      "allowed_write": false,
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "route_quote",
+        "approve_payment"
+      ],
+      "human_approval_required_for": [
+        "company_pilot_start",
+        "real_webhook_enablement",
+        "real_email_enablement",
+        "paid_engagement"
+      ],
+      "audit_required": true,
+      "provenance_required": true
+    },
+    {
+      "resource_id": "github_release_package",
+      "resource_type": "release_evidence",
+      "description": "Release-facing package including README, changelog, and the live v0.2.4 GitHub release reference.",
+      "manifest_path": "network/resources/github_release_manifest.json",
+      "source_of_truth_status": "release_record",
+      "trust_level": "MEDIUM",
+      "synthetic_or_real": "release_evidence",
+      "allowed_read": true,
+      "allowed_write": false,
+      "forbidden_actions": [
+        "publish_release",
+        "external_share",
+        "call_external_api",
+        "scan_network"
+      ],
+      "human_approval_required_for": [
+        "publish_release",
+        "external_share"
+      ],
+      "audit_required": true,
+      "provenance_required": false
+    },
+    {
+      "resource_id": "docs_and_findings",
+      "resource_type": "documentation_package",
+      "description": "Company-facing pilot briefs, findings templates, specs, and review documents.",
+      "manifest_path": "network/resources/docs_and_findings_manifest.json",
+      "source_of_truth_status": "documentation_reference",
+      "trust_level": "HIGH",
+      "synthetic_or_real": "mixed_documentation",
+      "allowed_read": true,
+      "allowed_write": false,
+      "forbidden_actions": [
+        "approve_fabrication",
+        "approve_engineering",
+        "approve_payment",
+        "certify_load_rating"
+      ],
+      "human_approval_required_for": [
+        "external_share",
+        "paid_engagement",
+        "production_integration"
+      ],
+      "audit_required": true,
+      "provenance_required": false
+    }
+  ]
+}

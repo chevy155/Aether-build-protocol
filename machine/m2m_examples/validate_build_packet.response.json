@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "artifact_id": "build_packet_validation_sauna_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "next_safe_actions": [
+    "generate_quote_request",
+    "generate_local_report"
+  ],
+  "forbidden_actions": [
+    "approve_build",
+    "send_email",
+    "call_webhook"
+  ],
+  "validation_report_path": "outputs/validation_report_latest.md"
+}

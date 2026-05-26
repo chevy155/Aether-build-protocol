@@ -1,0 +1,20 @@
+{
+  "status": "FAIL",
+  "artifact_id": "quote_response_validation_error_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "next_safe_actions": [
+    "repair_quote_response_assumptions",
+    "repair_quote_response_exclusions",
+    "rerun_local_validation"
+  ],
+  "forbidden_actions": [
+    "route_quote",
+    "contact_supplier",
+    "approve_fabrication"
+  ],
+  "errors": [
+    "QUOTE_RESPONSE_MISSING_ASSUMPTIONS",
+    "QUOTE_RESPONSE_MISSING_EXCLUSIONS"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "resource_id": "industrial_hook_simulation",
+  "purpose": "Demonstrate a local-only builder-to-fabricator review flow using a mock industrial-style steel utility hook.",
+  "artifacts": [
+    "simulations/industrial_hook/builder_workspace/cad/utility_hook_v1.mock_sldprt.json",
+    "simulations/industrial_hook/builder_workspace/bom/bom_raw.csv",
+    "simulations/industrial_hook/aether_workspace/build_packet.yaml",
+    "simulations/industrial_hook/aether_workspace/RFQ.md",
+    "simulations/industrial_hook/fabricator_workspace/quote_response.json",
+    "simulations/industrial_hook/monitor_workspace/guardrail_audit.json",
+    "simulations/industrial_hook/outputs/simulation_report.json"
+  ],
+  "schemas_used": [
+    "protocols/build_intent/schemas/build_packet.schema.json",
+    "protocols/build_intent/schemas/quote_request.schema.json",
+    "protocols/build_intent/schemas/quote_response.schema.json",
+    "protocols/build_intent/schemas/outcome_event.schema.json"
+  ],
+  "scripts_used": [
+    "scripts/simulate_industrial_hook_pipeline.py"
+  ],
+  "tests_covering_resource": [
+    "tests/test_industrial_hook_simulation.py"
+  ],
+  "generated_outputs": [
+    "simulations/industrial_hook/outputs/simulation_report.json",
+    "simulations/industrial_hook/outputs/simulation_report.md"
+  ],
+  "allowed_agent_actions": [
+    "read_manifest",
+    "read_protocol_artifact",
+    "run_local_validation",
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_agent_actions": [
+    "approve_fabrication",
+    "approve_engineering",
+    "certify_load_rating",
+    "contact_supplier",
+    "scan_network"
+  ],
+  "required_human_approvals": [
+    "company_pilot_start",
+    "external_share"
+  ],
+  "known_limitations": [
+    "simulation only",
+    "no real CAD parsing",
+    "no real SolidWorks parser",
+    "no fabrication authorization"
+  ],
+  "evidence_paths": [
+    "docs/END_TO_END_SIMULATION_SPEC.md",
+    "docs/V0_2_3_FINDINGS_BRIEF.md",
+    "docs/V0_2_3_REDCELL_REVIEW.md"
+  ]
+}

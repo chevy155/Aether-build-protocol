@@ -1,0 +1,84 @@
+project: Aether Build Protocol
+purpose: Local-first machine-readable protocol for physical build intent, quote-readiness workflows, simulations, and human-gated integration artifacts.
+repo_mode: local_only_sandbox
+
+begin_here:
+- read machine/aether_agent_manifest.json
+- read machine/permission_manifest.json
+- read machine/schema_index.json
+- read machine/tool_catalog.json
+- read machine/error_catalog.json
+
+primary_schemas:
+- protocols/build_intent/schemas/build_packet.schema.json
+- protocols/build_intent/schemas/bom_item.schema.json
+- protocols/build_intent/schemas/capability_requirement.schema.json
+- protocols/build_intent/schemas/quote_request.schema.json
+- protocols/build_intent/schemas/quote_response.schema.json
+- protocols/build_intent/schemas/negotiation_event.schema.json
+- protocols/build_intent/schemas/outcome_event.schema.json
+
+safe_scripts:
+- scripts/validate_build_packet.py
+- scripts/generate_quote_request.py
+- scripts/generate_rfq_markdown.py
+- scripts/generate_agent_manifest.py
+- scripts/validate_quote_response.py
+- scripts/score_quote_readiness.py
+- scripts/generate_negotiation_event.py
+- scripts/generate_outcome_event.py
+- scripts/generate_quote_comparison_summary.py
+
+simulation_scripts:
+- scripts/simulate_industrial_hook_pipeline.py
+- scripts/simulate_company_integration.py
+- scripts/simulate_asi_network_sense.py
+
+guardrails:
+- docs/GUARDRAILS.md
+- docs/COMPANY_CONNECTION_REQUIREMENTS.md
+- docs/PERMISSION_BOUNDARY_SPEC.md
+- machine/permission_manifest.json
+
+forbidden_actions:
+- send_email
+- call_webhook
+- contact_supplier
+- route_quote
+- select_contractor
+- approve_build
+- approve_fabrication
+- approve_engineering
+- approve_payment
+- certify_load_rating
+- call_external_api
+- read_outside_repo
+- scan_network
+
+human_approval_required_for:
+- external_release
+- real_company_integration
+- supplier_contact
+- production_api_enablement
+- email_sending
+- webhook_delivery
+- quote_distribution
+- purchase_order_creation
+- fabrication_authorization
+- paid_engagement
+
+important_docs:
+- README.md
+- docs/MACHINE_TO_MACHINE_GATEWAY.md
+- docs/AGENT_DISCOVERY_GUIDE.md
+- docs/OPENAPI_CONTRACT_SPEC.md
+- docs/MCP_SERVER_SPEC.md
+- docs/DETERMINISTIC_ERROR_CATALOG.md
+
+release_notes:
+- CHANGELOG.md
+
+agent_start_rule:
+- read manifests before proposing actions
+- prefer local validation and local report generation
+- refuse unsafe or external actions

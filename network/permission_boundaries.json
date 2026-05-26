@@ -1,0 +1,38 @@
+{
+  "global_allowed_actions": [
+    "read_manifest",
+    "read_schema",
+    "read_protocol_artifact",
+    "run_local_validation",
+    "generate_local_report",
+    "generate_gap_register",
+    "generate_reviewer_packet",
+    "propose_next_action"
+  ],
+  "global_forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote",
+    "select_contractor",
+    "approve_hiring",
+    "approve_build",
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment",
+    "certify_load_rating",
+    "read_outside_repo",
+    "call_external_api",
+    "scan_network"
+  ],
+  "actions_requiring_human_approval": [
+    "publish_release",
+    "external_share",
+    "company_pilot_start",
+    "production_integration",
+    "supplier_contact",
+    "paid_engagement",
+    "real_webhook_enablement",
+    "real_email_enablement"
+  ]
+}

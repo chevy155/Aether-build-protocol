@@ -1,4 +1,4 @@
-# Aether Build Protocol v0.2.4 Fake Company Integration Sandbox
+# Aether Build Protocol v0.2.6 Deterministic Machine Response Envelopes
 
 Aether Build Protocol is the machine-readable coordination layer between digital design intent and downstream fabrication review systems.
 
@@ -156,6 +156,78 @@ It demonstrates how a fake company, Northstar Fabrication Systems, could map a l
 - provenance hashes generated
 
 The sandbox writes a full artifact chain under `integrations/company_sandbox/`, including inbound company payloads, mapped Aether artifacts, preview-only outbound notifications, and ledger-grade provenance/event tracking.
+
+The company-facing pilot materials now include `docs/COMPANY_PILOT_BRIEF.md` and a companion `docs/INTEGRATION_FINDINGS_REPORT_TEMPLATE.md` for post-pilot sandbox findings delivery.
+
+## ASI Network Sense Sandbox
+
+Run the local manifest-based ASI network sense sandbox with:
+
+```powershell
+python scripts/simulate_asi_network_sense.py
+```
+
+It demonstrates how a future AGI or ASI system could safely understand the Aether workspace through local resource manifests, trust maps, permission boundaries, and artifact lineage.
+
+- local-only
+- manifest-based
+- no real network scanning
+- no external access
+- no autonomous control
+- no supplier contact
+- no fabrication approval
+- no engineering approval
+- human approval required
+
+The sandbox reads only local manifest files under `network/` and writes summary outputs to `outputs/asi_network_sense_report.json` and `outputs/asi_network_sense_report.md`.
+
+## Machine-to-Machine Agent Gateway
+
+The machine-to-machine gateway adds the repo's beacon layer for agent discovery and safe machine interpretation.
+
+- `machine/llms.txt`
+- `machine/aether_agent_manifest.json`
+- `machine/schema_index.json`
+- `machine/tool_catalog.json`
+- `machine/permission_manifest.json`
+- `machine/error_catalog.json`
+- `openapi/aether.openapi.yaml`
+- `mcp/` skeleton
+
+Run and validate with:
+
+```powershell
+python -m pytest tests/ -v
+```
+
+The gateway is:
+
+- local-only
+- not a hosted API
+- not a real MCP deployment dependency
+- no external action
+- human approval required
+- designed for agent discovery and safe machine-to-machine interpretation
+
+## Deterministic Machine Response Envelopes
+
+The response envelope layer adds deterministic machine-readable success, error, warning, refusal, and human-approval-required envelopes.
+
+- `machine/response_envelope.schema.json`
+- `machine/response_templates.json`
+- `machine/response_examples/`
+- `scripts/generate_machine_response.py`
+
+Run and validate with:
+
+```powershell
+python scripts/generate_machine_response.py --code VALIDATION_PASSED --operation validate_build_packet --artifact-id build_packet_001
+python scripts/generate_machine_response.py --code HUMAN_APPROVAL_REQUIRED --operation external_release --artifact-id quote_request_001
+python scripts/generate_machine_response.py --code EXTERNAL_ACTION_FORBIDDEN --operation send_email --artifact-id notification_event_001
+python -m pytest tests/ -v
+```
+
+Every envelope keeps `external_action_taken: false` so machines can prove the sandbox did not cross the external-action boundary.
 
 ## Closed Loop
 

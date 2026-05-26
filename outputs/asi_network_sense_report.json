@@ -1,0 +1,89 @@
+{
+  "report_id": "asi_network_sense_report_v0_2_5",
+  "resource_count": 6,
+  "source_of_truth_resources": [
+    "aether_protocol_core",
+    "docs_and_findings"
+  ],
+  "simulation_only_resources": [
+    "sauna_reference_example",
+    "industrial_hook_simulation",
+    "company_integration_sandbox"
+  ],
+  "high_trust_artifacts": [
+    "protocols/build_intent/schemas/build_packet.schema.json",
+    "protocols/build_intent/schemas/quote_request.schema.json",
+    "README.md",
+    "docs/COMPANY_PILOT_BRIEF.md",
+    "docs/INTEGRATION_FINDINGS_REPORT_TEMPLATE.md"
+  ],
+  "low_trust_artifacts": [
+    "examples/sauna_node/quote_response_example.json"
+  ],
+  "human_approval_gates": [
+    "company_pilot_start",
+    "external_share",
+    "paid_engagement",
+    "production_integration",
+    "publish_release",
+    "real_email_enablement",
+    "real_webhook_enablement",
+    "supplier_contact"
+  ],
+  "forbidden_actions_summary": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote",
+    "select_contractor",
+    "approve_hiring",
+    "approve_build",
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment",
+    "certify_load_rating",
+    "read_outside_repo",
+    "call_external_api",
+    "scan_network"
+  ],
+  "safe_next_actions": [
+    "generate integration findings report",
+    "collect reviewer feedback",
+    "add bad-input simulation",
+    "add human approval event schema tests",
+    "add provenance verification tests"
+  ],
+  "refused_unsafe_actions": [
+    "send real email",
+    "call webhook",
+    "contact supplier",
+    "approve fabrication",
+    "approve engineering",
+    "certify load rating",
+    "scan network",
+    "read outside repo"
+  ],
+  "recommended_next_build_phase": "Expand manifest coverage and add provenance verification tests before any external enablement.",
+  "lineage_records": [
+    "company_payload_to_previews",
+    "industrial_hook_builder_to_outcome",
+    "sauna_reference_packet_to_comparison"
+  ],
+  "refusal_reason": "Unsafe actions remain outside the manifest-defined local sandbox.",
+  "guardrails": {
+    "local_manifests_only": true,
+    "real_network_scanning": false,
+    "external_api_calls": false,
+    "email_sent": false,
+    "webhook_called": false,
+    "supplier_contacted": false,
+    "quote_routed": false,
+    "contractor_selected": false,
+    "build_approved": false,
+    "fabrication_approved": false,
+    "engineering_approved": false,
+    "payment_approved": false,
+    "load_certified": false,
+    "human_approval_required": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "resource_id": "sauna_reference_example",
+  "purpose": "Provide a stable local reference packet and quote-review loop for the sauna example.",
+  "artifacts": [
+    "examples/sauna_node/build_packet.yaml",
+    "examples/sauna_node/quote_request.json",
+    "examples/sauna_node/RFQ.md",
+    "examples/sauna_node/quote_response_example.json",
+    "examples/sauna_node/quote_comparison_summary.json",
+    "examples/sauna_node/validation_report.md"
+  ],
+  "schemas_used": [
+    "protocols/build_intent/schemas/build_packet.schema.json",
+    "protocols/build_intent/schemas/quote_request.schema.json",
+    "protocols/build_intent/schemas/quote_response.schema.json",
+    "protocols/build_intent/schemas/negotiation_event.schema.json",
+    "protocols/build_intent/schemas/outcome_event.schema.json"
+  ],
+  "scripts_used": [
+    "scripts/validate_build_packet.py",
+    "scripts/generate_quote_request.py",
+    "scripts/generate_rfq_markdown.py",
+    "scripts/validate_quote_response.py",
+    "scripts/score_quote_readiness.py",
+    "scripts/generate_negotiation_event.py",
+    "scripts/generate_outcome_event.py",
+    "scripts/generate_quote_comparison_summary.py"
+  ],
+  "tests_covering_resource": [
+    "tests/test_quote_request_generation.py",
+    "tests/test_quote_response_schema.py",
+    "tests/test_quote_comparison_summary.py",
+    "tests/test_sauna_reference_packet.py"
+  ],
+  "generated_outputs": [
+    "examples/sauna_node/quote_request.json",
+    "examples/sauna_node/RFQ.md",
+    "examples/sauna_node/quote_response_validation_report.md",
+    "examples/sauna_node/quote_comparison_summary.md"
+  ],
+  "allowed_agent_actions": [
+    "read_manifest",
+    "read_protocol_artifact",
+    "run_local_validation",
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_agent_actions": [
+    "route_quote",
+    "select_contractor",
+    "approve_build",
+    "approve_hiring",
+    "contact_supplier"
+  ],
+  "required_human_approvals": [
+    "external_share",
+    "paid_engagement"
+  ],
+  "known_limitations": [
+    "synthetic example",
+    "no supplier routing",
+    "no contractor selection",
+    "human review required"
+  ],
+  "evidence_paths": [
+    "examples/sauna_node/validation_report.md",
+    "examples/sauna_node/quote_response_validation_report.md",
+    "examples/sauna_node/quote_comparison_summary.md"
+  ]
+}

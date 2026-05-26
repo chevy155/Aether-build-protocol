@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED",
+  "artifact_id": "human_approval_gate_001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "next_safe_actions": [
+    "generate_human_approval_event",
+    "generate_local_report"
+  ],
+  "forbidden_actions": [
+    "external_release",
+    "send_email",
+    "call_webhook",
+    "contact_supplier"
+  ],
+  "error_code": "HUMAN_APPROVAL_REQUIRED"
+}

@@ -1,0 +1,54 @@
+{
+  "server_name": "aether_local_mcp_skeleton",
+  "local_only_mode": true,
+  "resources": [
+    "machine/aether_agent_manifest.json",
+    "machine/permission_manifest.json",
+    "machine/schema_index.json",
+    "machine/tool_catalog.json",
+    "machine/error_catalog.json",
+    "machine/response_envelope.schema.json",
+    "machine/response_templates.json"
+  ],
+  "tools": [
+    "read_aether_agent_manifest",
+    "read_permission_manifest",
+    "read_schema_index",
+    "read_tool_catalog",
+    "read_error_catalog",
+    "read_response_envelope_schema",
+    "read_response_templates",
+    "generate_machine_response",
+    "generate_human_approval_required_response",
+    "generate_external_action_forbidden_response",
+    "run_build_packet_validation",
+    "run_industrial_hook_simulation",
+    "run_company_integration_simulation"
+  ],
+  "prompts": [
+    "review_this_build_packet",
+    "generate_integration_findings_report",
+    "summarize_guardrails"
+  ],
+  "forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote",
+    "approve_build",
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment",
+    "certify_load_rating",
+    "scan_network",
+    "read_outside_repo"
+  ],
+  "human_approval_gates": [
+    "external_release",
+    "real_company_integration",
+    "production_api_enablement",
+    "email_sending",
+    "webhook_delivery",
+    "paid_engagement"
+  ]
+}

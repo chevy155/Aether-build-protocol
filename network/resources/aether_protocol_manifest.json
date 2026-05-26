@@ -1,0 +1,70 @@
+{
+  "resource_id": "aether_protocol_core",
+  "purpose": "Define canonical protocol schemas, generators, validators, and guardrail references for local Aether reasoning.",
+  "artifacts": [
+    "protocols/build_intent/schemas/build_packet.schema.json",
+    "protocols/build_intent/schemas/quote_request.schema.json",
+    "scripts/protocol_utils.py",
+    "README.md",
+    "docs/GUARDRAILS.md"
+  ],
+  "schemas_used": [
+    "protocols/build_intent/schemas/build_packet.schema.json",
+    "protocols/build_intent/schemas/quote_request.schema.json",
+    "protocols/build_intent/schemas/quote_response.schema.json",
+    "protocols/build_intent/schemas/negotiation_event.schema.json",
+    "protocols/build_intent/schemas/outcome_event.schema.json"
+  ],
+  "scripts_used": [
+    "scripts/validate_build_packet.py",
+    "scripts/generate_quote_request.py",
+    "scripts/generate_rfq_markdown.py",
+    "scripts/validate_quote_response.py",
+    "scripts/score_quote_readiness.py",
+    "scripts/generate_agent_manifest.py"
+  ],
+  "tests_covering_resource": [
+    "tests/test_build_packet_schema.py",
+    "tests/test_quote_request_generation.py",
+    "tests/test_quote_response_schema.py",
+    "tests/test_guardrails.py"
+  ],
+  "generated_outputs": [
+    "outputs/validation_report_latest.md",
+    "outputs/quote_request_latest.json",
+    "outputs/rfq_latest.md",
+    "outputs/agent_manifest_latest.json"
+  ],
+  "allowed_agent_actions": [
+    "read_manifest",
+    "read_schema",
+    "read_protocol_artifact",
+    "run_local_validation",
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_agent_actions": [
+    "approve_build",
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment",
+    "call_external_api",
+    "scan_network"
+  ],
+  "required_human_approvals": [
+    "publish_release",
+    "external_share",
+    "production_integration"
+  ],
+  "known_limitations": [
+    "local-first only",
+    "no supplier routing",
+    "no hosted service",
+    "no autonomous execution"
+  ],
+  "evidence_paths": [
+    "README.md",
+    "CHANGELOG.md",
+    "docs/GUARDRAILS.md"
+  ]
+}
