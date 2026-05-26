@@ -1,0 +1,7 @@
+item_id,name,category,quantity,unit,material,dimensions,finish,supplier_preference,substitution_allowed,notes
+SA-001,Cedar interior cladding,interior_finish,220,sqft,Western red cedar,1x4 boards,natural oil,local cedar mill,true,Interior wall and ceiling surface
+SA-002,Stone accent wall veneer,finish_surface,1,lot,Natural stone,Approx 80 sqft,sealed,regional stone yard,false,Heat-adjacent accent wall
+SA-003,Harvia heater,mechanical,1,unit,Steel and stone,Model per final heat load,factory finish,Harvia distributor,false,Electrical review required
+SA-004,LED lighting kit,electrical,1,lot,LED fixtures and drivers,Sauna rated low voltage,warm dimmable,specified integrator,true,Must be sauna-rated
+SA-005,Outdoor shower assembly,plumbing,1,assembly,Stainless and plumbing hardware,Freestanding fixture,brushed,preferred plumbing supplier,true,Coordinate drainage and freeze protection
+SA-006,Cold plunge pad,sitework,1,pad,Concrete and waterproofing,8ft x 8ft,slip-resistant,local concrete crew,false,Drainage and slope critical

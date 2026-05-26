@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Negotiation Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "negotiation_event_id",
+    "quote_request_id",
+    "quote_response_id",
+    "event_type",
+    "actor",
+    "timestamp",
+    "change_summary",
+    "before",
+    "after",
+    "human_approval_required"
+  ],
+  "properties": {
+    "negotiation_event_id": { "type": "string" },
+    "quote_request_id": { "type": "string" },
+    "quote_response_id": { "type": "string" },
+    "event_type": { "type": "string" },
+    "actor": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "change_summary": { "type": "string" },
+    "before": { "type": "object" },
+    "after": { "type": "object" },
+    "human_approval_required": { "type": "boolean", "const": true }
+  }
+}

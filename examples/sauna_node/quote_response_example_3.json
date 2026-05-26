@@ -1,0 +1,21 @@
+{
+  "quote_response_id": "resp-sauna-node-001-003",
+  "quote_request_id": "rfq-sauna-node-001",
+  "responder_name": "Summit Outdoor Builds",
+  "responder_type": "general_builder",
+  "quoted_scope": "Sauna package.",
+  "price_min": 40000,
+  "price_max": 64000,
+  "currency": "USD",
+  "lead_time_min_days": 30,
+  "lead_time_max_days": 90,
+  "assumptions": [],
+  "exclusions": [],
+  "substitutions": [],
+  "confidence_score": 0.45,
+  "risk_notes": [
+    "Site conditions may affect scope."
+  ],
+  "clarification_questions": [],
+  "human_review_required": true
+}

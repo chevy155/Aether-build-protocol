@@ -1,0 +1,23 @@
+{
+  "negotiation_event_id": "neg-resp-sauna-node-001-001",
+  "quote_request_id": "rfq-sauna-node-001",
+  "quote_response_id": "resp-sauna-node-001-001",
+  "event_type": "clarification_requested",
+  "actor": "human_operator",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "change_summary": "Human reviewer requested clarification on drainage assumptions, heater sizing, and substitution boundaries before quote comparison.",
+  "before": {
+    "comparison_status": "unreviewed",
+    "confidence_score": 0.72,
+    "clarification_questions_count": 3
+  },
+  "after": {
+    "comparison_status": "clarification_pending",
+    "required_follow_up": [
+      "Confirm heater circuit sizing assumption.",
+      "Confirm drainage scope boundary.",
+      "Confirm whether cedar substitutions are allowed."
+    ]
+  },
+  "human_approval_required": true
+}

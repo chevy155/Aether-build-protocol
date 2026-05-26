@@ -1,0 +1,19 @@
+{
+  "outcome_event_id": "out-sauna-node-001-seed",
+  "project_id": "sauna-node-001",
+  "quote_response_id": "resp-sauna-node-001-001",
+  "event_type": "seed_example_not_real_world",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "actor": "human_operator",
+  "cost_actual": 49000.0,
+  "timeline_actual_days": 48,
+  "quality_score": 0,
+  "inspection_status": "not_performed_seed_only",
+  "delivery_status": "not_started_seed_only",
+  "dispute_status": "none",
+  "lessons_learned": [
+    "Seed outcome only. Replace with real-world outcome data when a controlled pilot completes.",
+    "Outcome ledger fields remain local and human-entered in v0.2."
+  ],
+  "trust_signal": "seed_only_not_for_builder_scoring"
+}

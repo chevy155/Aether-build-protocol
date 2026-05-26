@@ -1,0 +1,119 @@
+{
+  "report_type": "quote_comparison_summary",
+  "comparison_mode": "local_only_information_quality",
+  "response_count": 3,
+  "responses": [
+    {
+      "quote_response_id": "resp-sauna-node-001-001",
+      "responder_name": "Cascade Sauna Build Co.",
+      "responder_type": "regional_builder",
+      "completeness_score": 100,
+      "category_scores": {
+        "response_completeness": 20,
+        "scope_clarity": 10,
+        "assumptions_clarity": 10,
+        "exclusions_clarity": 10,
+        "price_range_clarity": 10,
+        "lead_time_clarity": 10,
+        "risk_disclosure": 10,
+        "clarification_quality": 10,
+        "human_review_readiness": 10
+      },
+      "missing_fields": [],
+      "strengths": [
+        "clear quoted scope",
+        "clear assumptions disclosure",
+        "clear exclusions disclosure",
+        "clear lead-time range",
+        "explicit risk disclosure",
+        "useful clarification questions",
+        "substitution boundaries stated"
+      ],
+      "weaknesses": [],
+      "clarification_needed": [],
+      "human_review_required": true,
+      "comparison_status": "MOST_COMPLETE_FOR_HUMAN_REVIEW",
+      "schema_errors": []
+    },
+    {
+      "quote_response_id": "resp-sauna-node-001-002",
+      "responder_name": "North Ridge Fabrication",
+      "responder_type": "fabrication_partner",
+      "completeness_score": 85,
+      "category_scores": {
+        "response_completeness": 20,
+        "scope_clarity": 5,
+        "assumptions_clarity": 10,
+        "exclusions_clarity": 10,
+        "price_range_clarity": 10,
+        "lead_time_clarity": 10,
+        "risk_disclosure": 5,
+        "clarification_quality": 5,
+        "human_review_readiness": 10
+      },
+      "missing_fields": [],
+      "strengths": [
+        "clear assumptions disclosure",
+        "clear exclusions disclosure",
+        "clear lead-time range",
+        "substitution boundaries stated"
+      ],
+      "weaknesses": [
+        "clarification questions are limited",
+        "risk disclosure is thin",
+        "scope needs more detail"
+      ],
+      "clarification_needed": [
+        "Add clarification questions before comparison.",
+        "Add more risk disclosure before comparison.",
+        "Expand quoted scope detail before comparison."
+      ],
+      "human_review_required": true,
+      "comparison_status": "NEEDS_CLARIFICATION_BEFORE_COMPARISON",
+      "schema_errors": []
+    },
+    {
+      "quote_response_id": "resp-sauna-node-001-003",
+      "responder_name": "Summit Outdoor Builds",
+      "responder_type": "general_builder",
+      "completeness_score": 45,
+      "category_scores": {
+        "response_completeness": 20,
+        "scope_clarity": 0,
+        "assumptions_clarity": 0,
+        "exclusions_clarity": 0,
+        "price_range_clarity": 10,
+        "lead_time_clarity": 10,
+        "risk_disclosure": 5,
+        "clarification_quality": 0,
+        "human_review_readiness": 0
+      },
+      "missing_fields": [],
+      "strengths": [
+        "clear lead-time range"
+      ],
+      "weaknesses": [
+        "assumptions need clarification",
+        "clarification questions are limited",
+        "confidence score is low",
+        "exclusions need clarification",
+        "risk disclosure is thin",
+        "scope needs more detail",
+        "substitution boundaries missing"
+      ],
+      "clarification_needed": [
+        "Add clarification questions before comparison.",
+        "Add more risk disclosure before comparison.",
+        "Clarify assumptions before comparison.",
+        "Clarify exclusions before comparison.",
+        "Expand quoted scope detail before comparison.",
+        "Review low confidence score before comparison.",
+        "State substitution boundaries before comparison."
+      ],
+      "human_review_required": true,
+      "comparison_status": "NOT_COMPARISON_READY",
+      "schema_errors": []
+    }
+  ],
+  "guardrail_note": "This summary compares information quality only. It does not select contractors, approve hiring, or approve building."
+}

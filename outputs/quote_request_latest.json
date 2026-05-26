@@ -1,0 +1,75 @@
+{
+  "quote_request_id": "rfq-sauna-node-001",
+  "project_id": "sauna-node-001",
+  "scope_summary": "Multi-trade outdoor sauna project with cedar interior, stone accent wall, Harvia heater, LED lighting, angled roof, ventilation, outdoor shower, cold plunge pad, waterproofing and drainage, and electrical scope.",
+  "requested_quote_categories": [
+    "fabrication",
+    "electrical",
+    "plumbing",
+    "sitework",
+    "installation",
+    "waterproofing"
+  ],
+  "required_capabilities": [
+    "sauna_builder",
+    "electrician",
+    "plumber",
+    "stone_supplier",
+    "installer",
+    "permit_reviewer"
+  ],
+  "deliverables": [
+    "Budgetary price range",
+    "Lead time range",
+    "Assumptions list",
+    "Exclusions list",
+    "Clarification questions",
+    "Risk notes"
+  ],
+  "location_context": {
+    "city": "Bend",
+    "state": "Oregon",
+    "site_type": "residential outdoor yard",
+    "climate_notes": "Freeze-thaw and moisture exposure",
+    "utility_context": "Electrical service available; plumbing tie-in to be confirmed"
+  },
+  "desired_timeline": {
+    "target_start_window": "2026-Q3",
+    "pricing_stage": "budgetary_review"
+  },
+  "required_response_fields": [
+    "price_min",
+    "price_max",
+    "lead_time_min_days",
+    "lead_time_max_days",
+    "assumptions",
+    "exclusions",
+    "substitutions",
+    "confidence_score",
+    "risk_notes",
+    "clarification_questions"
+  ],
+  "assumptions_to_confirm": [
+    "Residential property access is available for install crew",
+    "Local utilities can support the chosen heater",
+    "Design intent drawings will be updated before procurement",
+    "Final heater model and circuit sizing",
+    "Exact site slope and drainage path",
+    "Permit pathway and inspection requirements",
+    "Outdoor shower freeze-protection strategy"
+  ],
+  "exclusions_to_state": [
+    "Engineering approval",
+    "Permit issuance",
+    "Construction approval",
+    "Autonomous procurement"
+  ],
+  "risk_questions": [
+    "Which portions of scope require licensed trade execution or signoff?",
+    "What code review or setback concerns must be resolved before final pricing?",
+    "What permit pathway, inspections, or local authority reviews are required?",
+    "What site conditions could materially change price or lead time?",
+    "Which assumptions would you need confirmed before firm pricing?"
+  ],
+  "human_approval_required": true
+}

@@ -1,0 +1,38 @@
+{
+  "quote_response_id": "resp-sauna-node-001-001",
+  "quote_request_id": "rfq-sauna-node-001",
+  "responder_name": "Cascade Sauna Build Co.",
+  "responder_type": "regional_builder",
+  "quoted_scope": "Sauna shell fabrication, cedar interior package, site install coordination, heater install coordination, waterproofing prep, and commissioning support.",
+  "price_min": 42000,
+  "price_max": 56000,
+  "currency": "USD",
+  "lead_time_min_days": 35,
+  "lead_time_max_days": 60,
+  "assumptions": [
+    "Existing electrical service can support selected heater after licensed review.",
+    "Site access supports small equipment and crew entry.",
+    "Drainage tie-in remains within 20 feet of the sauna pad."
+  ],
+  "exclusions": [
+    "Stamped engineering",
+    "Permit fees",
+    "Utility upgrades beyond assumed capacity"
+  ],
+  "substitutions": [
+    "Alternative cedar supplier allowed if lead time extends beyond 6 weeks.",
+    "Equivalent waterproofing membrane allowed with approval."
+  ],
+  "confidence_score": 0.72,
+  "risk_notes": [
+    "Final price may move if field drainage work expands.",
+    "Heater model change could alter electrical scope.",
+    "Stone lead time may vary seasonally."
+  ],
+  "clarification_questions": [
+    "Has the site slope been field measured?",
+    "Is the outdoor shower drain tying into an existing line or new drywell?",
+    "Will the owner supply the Harvia heater directly?"
+  ],
+  "human_review_required": true
+}

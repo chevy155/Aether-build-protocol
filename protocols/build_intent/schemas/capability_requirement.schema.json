@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability Requirement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "capability_id",
+    "capability_type",
+    "required_for",
+    "description",
+    "licensed_trade",
+    "certification_required",
+    "local_required",
+    "risk_level",
+    "notes"
+  ],
+  "properties": {
+    "capability_id": { "type": "string" },
+    "capability_type": { "type": "string" },
+    "required_for": { "type": "string" },
+    "description": { "type": "string" },
+    "licensed_trade": { "type": "boolean" },
+    "certification_required": { "type": "boolean" },
+    "local_required": { "type": "boolean" },
+    "risk_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "notes": { "type": "string" }
+  }
+}

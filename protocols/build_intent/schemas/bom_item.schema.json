@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOM Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "item_id",
+    "name",
+    "category",
+    "quantity",
+    "unit",
+    "material",
+    "dimensions",
+    "finish",
+    "supplier_preference",
+    "substitution_allowed",
+    "notes"
+  ],
+  "properties": {
+    "item_id": { "type": "string" },
+    "name": { "type": "string" },
+    "category": { "type": "string" },
+    "quantity": { "type": "number", "exclusiveMinimum": 0 },
+    "unit": { "type": "string" },
+    "material": { "type": "string" },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": { "type": ["string", "number"] }
+    },
+    "finish": { "type": "string" },
+    "supplier_preference": { "type": "string" },
+    "substitution_allowed": { "type": "boolean" },
+    "notes": { "type": "string" }
+  }
+}

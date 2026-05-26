@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Outcome Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "outcome_event_id",
+    "project_id",
+    "quote_response_id",
+    "event_type",
+    "timestamp",
+    "actor",
+    "cost_actual",
+    "timeline_actual_days",
+    "quality_score",
+    "inspection_status",
+    "delivery_status",
+    "dispute_status",
+    "lessons_learned",
+    "trust_signal"
+  ],
+  "properties": {
+    "outcome_event_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "quote_response_id": { "type": "string" },
+    "event_type": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "actor": { "type": "string" },
+    "cost_actual": { "type": "number", "minimum": 0 },
+    "timeline_actual_days": { "type": "integer", "minimum": 0 },
+    "quality_score": { "type": "number", "minimum": 0, "maximum": 10 },
+    "inspection_status": { "type": "string" },
+    "delivery_status": { "type": "string" },
+    "dispute_status": { "type": "string" },
+    "lessons_learned": { "type": "array", "items": { "type": "string" } },
+    "trust_signal": { "type": "string" }
+  }
+}

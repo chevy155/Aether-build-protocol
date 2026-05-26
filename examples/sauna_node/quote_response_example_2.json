@@ -1,0 +1,31 @@
+{
+  "quote_response_id": "resp-sauna-node-001-002",
+  "quote_request_id": "rfq-sauna-node-001",
+  "responder_name": "North Ridge Fabrication",
+  "responder_type": "fabrication_partner",
+  "quoted_scope": "Fabricate sauna shell, coordinate cedar package, and support site install handoff.",
+  "price_min": 45000,
+  "price_max": 59000,
+  "currency": "USD",
+  "lead_time_min_days": 42,
+  "lead_time_max_days": 70,
+  "assumptions": [
+    "Owner provides final site measurements before fabrication release.",
+    "Electrical rough-in is scheduled separately."
+  ],
+  "exclusions": [
+    "Permit fees",
+    "Final electrical signoff"
+  ],
+  "substitutions": [
+    "Equivalent cedar source may be used if specified mill is delayed."
+  ],
+  "confidence_score": 0.66,
+  "risk_notes": [
+    "Price may shift if drainage scope expands."
+  ],
+  "clarification_questions": [
+    "Will the owner finalize the heater model before fabrication starts?"
+  ],
+  "human_review_required": true
+}

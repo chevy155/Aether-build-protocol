@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Build Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "project_id",
+    "project_name",
+    "project_type",
+    "project_description",
+    "design_files",
+    "geometry_summary",
+    "bom_items",
+    "material_specs",
+    "finish_requirements",
+    "dimensions",
+    "tolerances",
+    "site_conditions",
+    "location_context",
+    "quote_categories",
+    "capability_requirements",
+    "install_scope",
+    "licensed_trade_required",
+    "code_review_required",
+    "permit_review_required",
+    "safety_notes",
+    "unknowns",
+    "assumptions",
+    "human_approval_required"
+  ],
+  "$defs": {
+    "bom_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "name",
+        "category",
+        "quantity",
+        "unit",
+        "material",
+        "dimensions",
+        "finish",
+        "supplier_preference",
+        "substitution_allowed",
+        "notes"
+      ],
+      "properties": {
+        "item_id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "quantity": { "type": "number", "exclusiveMinimum": 0 },
+        "unit": { "type": "string" },
+        "material": { "type": "string" },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": { "type": ["string", "number"] }
+        },
+        "finish": { "type": "string" },
+        "supplier_preference": { "type": "string" },
+        "substitution_allowed": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "capability_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_id",
+        "capability_type",
+        "required_for",
+        "description",
+        "licensed_trade",
+        "certification_required",
+        "local_required",
+        "risk_level",
+        "notes"
+      ],
+      "properties": {
+        "capability_id": { "type": "string" },
+        "capability_type": { "type": "string" },
+        "required_for": { "type": "string" },
+        "description": { "type": "string" },
+        "licensed_trade": { "type": "boolean" },
+        "certification_required": { "type": "boolean" },
+        "local_required": { "type": "boolean" },
+        "risk_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"]
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "properties": {
+    "protocol_version": { "type": "string" },
+    "project_id": { "type": "string" },
+    "project_name": { "type": "string" },
+    "project_type": { "type": "string" },
+    "project_description": { "type": "string" },
+    "design_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["file_name", "file_type", "path", "notes"],
+        "properties": {
+          "file_name": { "type": "string" },
+          "file_type": { "type": "string" },
+          "path": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "geometry_summary": { "type": "string" },
+    "bom_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/bom_item" }
+    },
+    "material_specs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "finish_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "dimensions": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": ["string", "number"] }
+    },
+    "tolerances": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "site_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "location_context": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": ["string", "number", "boolean"] }
+    },
+    "quote_categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "capability_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/capability_requirement" }
+    },
+    "install_scope": { "type": "string" },
+    "licensed_trade_required": { "type": "boolean" },
+    "code_review_required": { "type": "boolean" },
+    "permit_review_required": { "type": "boolean" },
+    "safety_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "human_approval_required": { "type": "boolean", "const": true }
+  }
+}

@@ -1,0 +1,204 @@
+protocol_version: "0.2"
+project_id: "sauna-node-001"
+project_name: "Cedar Sauna Node"
+project_type: "outdoor_sauna_installation"
+project_description: >-
+  Multi-trade outdoor sauna project with cedar interior, stone accent wall,
+  Harvia heater, LED lighting, angled roof, ventilation, outdoor shower,
+  cold plunge pad, waterproofing and drainage, and electrical scope.
+design_files:
+  - file_name: "sauna_node_layout.pdf"
+    file_type: "layout_pdf"
+    path: "design/sauna_node_layout.pdf"
+    notes: "Plan and elevation placeholder for v0.2"
+  - file_name: "sauna_node_concept.step"
+    file_type: "cad_step"
+    path: "design/sauna_node_concept.step"
+    notes: "Concept geometry export placeholder"
+geometry_summary: >-
+  Approximate 8ft x 12ft outdoor sauna volume with angled roof, interior bench
+  layout, front entry, adjacent shower zone, and nearby cold plunge pad.
+bom_items:
+  - item_id: "SA-001"
+    name: "Cedar interior cladding"
+    category: "interior_finish"
+    quantity: 220
+    unit: "sqft"
+    material: "Western red cedar"
+    dimensions:
+      board_profile: "1x4"
+      coverage_sqft: 220
+    finish: "Natural sauna-safe oil"
+    supplier_preference: "Local cedar supplier"
+    substitution_allowed: true
+    notes: "Moisture-stable interior finish"
+  - item_id: "SA-002"
+    name: "Stone accent wall veneer"
+    category: "finish_surface"
+    quantity: 1
+    unit: "lot"
+    material: "Natural stone"
+    dimensions:
+      coverage_sqft: 80
+    finish: "Sealed natural finish"
+    supplier_preference: "Regional stone supplier"
+    substitution_allowed: false
+    notes: "Heat-adjacent wall surface"
+  - item_id: "SA-003"
+    name: "Harvia heater"
+    category: "mechanical_electrical"
+    quantity: 1
+    unit: "unit"
+    material: "Factory assembly"
+    dimensions:
+      model: "Harvia to be confirmed by heat-load review"
+    finish: "Factory finish"
+    supplier_preference: "Authorized Harvia distributor"
+    substitution_allowed: false
+    notes: "Requires electrical sizing and safety clearance review"
+  - item_id: "SA-004"
+    name: "Sauna-rated LED lighting"
+    category: "electrical"
+    quantity: 1
+    unit: "lot"
+    material: "LED fixtures and drivers"
+    dimensions:
+      voltage: "Low voltage"
+    finish: "Warm dimmable"
+    supplier_preference: "Specified lighting integrator"
+    substitution_allowed: true
+    notes: "Use sauna-rated fixtures only"
+  - item_id: "SA-005"
+    name: "Outdoor shower assembly"
+    category: "plumbing"
+    quantity: 1
+    unit: "assembly"
+    material: "Stainless fixture set"
+    dimensions:
+      zone: "adjacent shower bay"
+    finish: "Brushed stainless"
+    supplier_preference: "Preferred plumbing supplier"
+    substitution_allowed: true
+    notes: "Coordinate with drainage and freeze protection"
+  - item_id: "SA-006"
+    name: "Cold plunge pad"
+    category: "sitework"
+    quantity: 1
+    unit: "pad"
+    material: "Concrete and waterproofing stack"
+    dimensions:
+      footprint: "8ft x 8ft"
+    finish: "Slip-resistant"
+    supplier_preference: "Local concrete and waterproofing crew"
+    substitution_allowed: false
+    notes: "Slope and drainage critical"
+material_specs:
+  - "Western red cedar interior surfaces"
+  - "Natural stone accent wall"
+  - "Sauna-rated waterproofing and drainage materials"
+  - "Exterior fasteners and hardware rated for moisture exposure"
+finish_requirements:
+  - "Natural cedar visual appearance"
+  - "Sauna-safe low-VOC finishes"
+  - "Slip-resistant exterior pad finish"
+dimensions:
+  primary_footprint: "8ft x 12ft"
+  wall_height_low: "8ft"
+  wall_height_high: "10ft"
+  roof_type: "single-slope angled roof"
+tolerances:
+  - "Field-confirmed site dimensions required before fabrication"
+  - "Heater clearances must follow manufacturer instructions"
+  - "Drainage slope must be confirmed during site review"
+site_conditions:
+  - "Outdoor installation on sloped site"
+  - "Moisture and freeze-thaw exposure"
+  - "Need access confirmation for installation equipment"
+location_context:
+  city: "Bend"
+  state: "Oregon"
+  site_type: "residential outdoor yard"
+  climate_notes: "Freeze-thaw and moisture exposure"
+  utility_context: "Electrical service available; plumbing tie-in to be confirmed"
+quote_categories:
+  - "fabrication"
+  - "electrical"
+  - "plumbing"
+  - "sitework"
+  - "installation"
+  - "waterproofing"
+capability_requirements:
+  - capability_id: "sauna_builder"
+    capability_type: "builder"
+    required_for: "Sauna enclosure fabrication and install"
+    description: "Fabricate and install outdoor sauna shell and interior layout"
+    licensed_trade: false
+    certification_required: false
+    local_required: true
+    risk_level: "high"
+    notes: "Needs experience with outdoor sauna assemblies"
+  - capability_id: "electrician"
+    capability_type: "licensed_trade"
+    required_for: "Heater power and lighting"
+    description: "Licensed electrician for heater circuit, controls, and LED integration"
+    licensed_trade: true
+    certification_required: true
+    local_required: true
+    risk_level: "critical"
+    notes: "Heater load and local code review required"
+  - capability_id: "plumber"
+    capability_type: "licensed_trade"
+    required_for: "Outdoor shower and drainage tie-in"
+    description: "Plumbing review for shower supply, drain routing, and freeze protection"
+    licensed_trade: true
+    certification_required: true
+    local_required: true
+    risk_level: "high"
+    notes: "Confirm drain and winterization details"
+  - capability_id: "stone_supplier"
+    capability_type: "supplier"
+    required_for: "Stone accent wall materials"
+    description: "Supply heat-tolerant stone veneer system"
+    licensed_trade: false
+    certification_required: false
+    local_required: false
+    risk_level: "medium"
+    notes: "Need heat and moisture compatibility"
+  - capability_id: "installer"
+    capability_type: "field_install"
+    required_for: "Final site installation"
+    description: "Coordinate assembly, waterproofing, drainage, and commissioning"
+    licensed_trade: false
+    certification_required: false
+    local_required: true
+    risk_level: "high"
+    notes: "Installation sequencing matters across trades"
+  - capability_id: "permit_reviewer"
+    capability_type: "review"
+    required_for: "Code and permit review"
+    description: "Review local code, setbacks, utility, and permit implications"
+    licensed_trade: false
+    certification_required: false
+    local_required: true
+    risk_level: "critical"
+    notes: "Do not route externally before local review"
+install_scope: >-
+  Fabrication, site coordination, waterproofing, drainage prep, sauna assembly,
+  electrical integration, outdoor shower integration, and final commissioning.
+licensed_trade_required: true
+code_review_required: true
+permit_review_required: true
+safety_notes:
+  - "Electrical heater installation requires licensed electrician review"
+  - "Waterproofing and drainage failure could create slip or moisture risk"
+  - "Heat clearances must match manufacturer and local code requirements"
+unknowns:
+  - "Final heater model and circuit sizing"
+  - "Exact site slope and drainage path"
+  - "Permit pathway and inspection requirements"
+  - "Outdoor shower freeze-protection strategy"
+assumptions:
+  - "Residential property access is available for install crew"
+  - "Local utilities can support the chosen heater"
+  - "Design intent drawings will be updated before procurement"
+human_approval_required: true

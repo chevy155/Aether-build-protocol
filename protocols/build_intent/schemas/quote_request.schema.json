@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quote Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "quote_request_id",
+    "project_id",
+    "scope_summary",
+    "requested_quote_categories",
+    "required_capabilities",
+    "deliverables",
+    "location_context",
+    "desired_timeline",
+    "required_response_fields",
+    "assumptions_to_confirm",
+    "exclusions_to_state",
+    "risk_questions",
+    "human_approval_required"
+  ],
+  "properties": {
+    "quote_request_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "scope_summary": { "type": "string" },
+    "requested_quote_categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "required_capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "deliverables": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "location_context": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": true
+    },
+    "desired_timeline": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "required_response_fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "assumptions_to_confirm": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "exclusions_to_state": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risk_questions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "human_approval_required": { "type": "boolean", "const": true }
+  }
+}

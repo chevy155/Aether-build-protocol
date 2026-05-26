@@ -1,0 +1,65 @@
+protocol_version: "0.2"
+project_id: "micro-shelter-001"
+project_name: "Cedar Equipment Shelter"
+project_type: "small_outdoor_shelter"
+project_description: >-
+  Small outdoor cedar equipment shelter with pad anchoring, simple sloped roof,
+  ventilated enclosure, and lockable access door.
+design_files:
+  - file_name: "micro_shelter_layout.pdf"
+    file_type: "layout_pdf"
+    path: "design/micro_shelter_layout.pdf"
+    notes: "Reference concept only"
+geometry_summary: "Approximate 4ft x 8ft cedar shelter on simple anchored pad."
+bom_items:
+  - item_id: "MS-001"
+    name: "Cedar framing kit"
+    category: "framing"
+    quantity: 1
+    unit: "lot"
+    material: "Cedar"
+    dimensions:
+      footprint: "4ft x 8ft"
+    finish: "Exterior sealant"
+    supplier_preference: "Local lumber yard"
+    substitution_allowed: true
+    notes: "Exterior-grade framing package"
+material_specs:
+  - "Cedar framing and exterior cladding"
+finish_requirements:
+  - "Weather-resistant exterior sealant"
+dimensions:
+  footprint: "4ft x 8ft"
+  roof_type: "single slope"
+tolerances:
+  - "Field measure existing pad before install"
+site_conditions:
+  - "Outdoor residential yard"
+location_context:
+  city: "Bend"
+  state: "Oregon"
+  site_type: "residential outdoor yard"
+quote_categories:
+  - "fabrication"
+  - "installation"
+capability_requirements:
+  - capability_id: "carpenter"
+    capability_type: "builder"
+    required_for: "Shelter fabrication and install"
+    description: "Build and install small cedar shelter"
+    licensed_trade: false
+    certification_required: false
+    local_required: true
+    risk_level: "medium"
+    notes: "Simple outdoor carpentry scope"
+install_scope: "Fabrication and on-site installation of small outdoor shelter."
+licensed_trade_required: false
+code_review_required: false
+permit_review_required: false
+safety_notes:
+  - "Anchor to stable base and confirm wind exposure assumptions"
+unknowns:
+  - "Final pad anchoring detail"
+assumptions:
+  - "Existing site is level enough for minor shim adjustment only"
+human_approval_required: true

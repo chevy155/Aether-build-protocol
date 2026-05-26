@@ -1,0 +1,34 @@
+{
+  "project_id": "sauna-node-001",
+  "project_name": "Cedar Sauna Node",
+  "protocol_version": "0.2",
+  "project_summary": "Multi-trade outdoor sauna project with cedar interior, stone accent wall, Harvia heater, LED lighting, angled roof, ventilation, outdoor shower, cold plunge pad, waterproofing and drainage, and electrical scope.",
+  "quote_ready_status": "ready_for_human_quote_review",
+  "required_capabilities": [
+    "sauna_builder",
+    "electrician",
+    "plumber",
+    "stone_supplier",
+    "installer",
+    "permit_reviewer"
+  ],
+  "risk_flags": [
+    "licensed_trade_required",
+    "code_review_required",
+    "permit_review_required",
+    "safety_notes_present"
+  ],
+  "unknowns": [
+    "Final heater model and circuit sizing",
+    "Exact site slope and drainage path",
+    "Permit pathway and inspection requirements",
+    "Outdoor shower freeze-protection strategy"
+  ],
+  "human_approval_required": true,
+  "next_recommended_human_review_steps": [
+    "Review unknowns before external quoting.",
+    "Confirm licensed electrician scope and heater power assumptions.",
+    "Confirm permit and code review path with local reviewer.",
+    "Approve outbound quote request before supplier routing."
+  ]
+}
