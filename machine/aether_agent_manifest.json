@@ -1,6 +1,6 @@
 {
   "protocol_name": "Aether Build Protocol",
-  "protocol_version": "0.2.5",
+  "protocol_version": "0.2.8",
   "protocol_type": "machine_readable_physical_build_intent",
   "current_mode": "local_only_sandbox",
   "primary_use_cases": [
@@ -11,6 +11,7 @@
     "local_simulation",
     "integration_mapping",
     "artifact_provenance_review",
+    "mcp_drive_agent_proof",
     "human_approval_gate_review"
   ],
   "safe_for": [
@@ -19,6 +20,7 @@
     "local_simulation",
     "integration_mapping",
     "artifact_provenance_review",
+    "mcp_drive_agent_proof",
     "human_approval_gate_review"
   ],
   "not_safe_for": [
@@ -62,12 +64,14 @@
     "scripts/score_quote_readiness.py",
     "scripts/generate_negotiation_event.py",
     "scripts/generate_outcome_event.py",
-    "scripts/generate_quote_comparison_summary.py"
+    "scripts/generate_quote_comparison_summary.py",
+    "scripts/run_mcp_drive_agent_test.py"
   ],
   "simulation_paths": [
     "scripts/simulate_industrial_hook_pipeline.py",
     "scripts/simulate_company_integration.py",
-    "scripts/simulate_asi_network_sense.py"
+    "scripts/simulate_asi_network_sense.py",
+    "scripts/run_mcp_drive_agent_test.py"
   ],
   "integration_paths": [
     "integrations/company_sandbox/",
@@ -78,6 +82,7 @@
   ],
   "output_paths": [
     "outputs/",
+    "outputs/mcp_drive/",
     "simulations/industrial_hook/outputs/",
     "integrations/company_sandbox/ledger/"
   ],

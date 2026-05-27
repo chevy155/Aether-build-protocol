@@ -7,11 +7,9 @@ from pathlib import Path
 from typing import Any
 
 
-RESPONSE_SCRIPT = ROOT / "scripts" / "generate_machine_response.py"
-
-
 ROOT = Path(__file__).resolve().parents[1]
 MACHINE_DIR = ROOT / "machine"
+RESPONSE_SCRIPT = ROOT / "scripts" / "generate_machine_response.py"
 
 FORBIDDEN_ACTIONS = {
     "send_email",

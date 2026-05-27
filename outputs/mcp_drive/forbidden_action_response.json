@@ -1,0 +1,58 @@
+{
+  "response_id": "resp_mcp_tool_refusal_send_email_mcp_drive_job_001",
+  "response_type": "refusal",
+  "status": "BLOCKED",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "protocol_version": "0.2.6",
+  "operation": "send_email",
+  "artifact_id": "mcp-drive-job-001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "The requested MCP tool action is not permitted in the local-only sandbox.",
+  "next_safe_actions": [
+    "read_local_artifact",
+    "generate_local_report",
+    "propose_next_action"
+  ],
+  "forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "approve_fabrication",
+    "approve_engineering",
+    "scan_network",
+    "read_outside_repo"
+  ],
+  "evidence": [
+    "machine/response_templates.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json"
+  ],
+  "errors": [
+    {
+      "code": "MCP_TOOL_REFUSAL",
+      "message": "The requested MCP tool action is not permitted in the local-only sandbox.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "warnings": [],
+  "generated_artifacts": [
+    "outputs/machine_response_latest.json"
+  ],
+  "validation_summary": {
+    "severity": "BLOCKING",
+    "safe_to_retry": false,
+    "forbidden_auto_action": true
+  },
+  "suggested_human_action": "Use a declared safe local tool or stop the request.",
+  "related_docs": [
+    "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+    "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+  ],
+  "related_schema": "machine/response_envelope.schema.json",
+  "request_echo": {
+    "code": "MCP_TOOL_REFUSAL",
+    "operation": "send_email",
+    "artifact_id": "mcp-drive-job-001"
+  }
+}

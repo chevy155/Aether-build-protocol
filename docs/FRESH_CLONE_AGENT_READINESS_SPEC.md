@@ -4,6 +4,8 @@
 
 This specification defines how a new local agent, new developer, or future machine-readable client should discover and operate Aether Build Protocol from a fresh clone without requiring human explanation.
 
+As of v0.2.8, that readiness surface also includes a bounded local MCP-drive proof harness that exercises discovery, local validation, invalid-case repair, forbidden-action blocking, and proof artifact generation without leaving the sandbox.
+
 ## What Fresh Clone Readiness Means
 
 Fresh clone readiness means a local agent can enter the repository, discover the machine-readable entrypoints, identify safe tools, preserve forbidden-action boundaries, run the sanctioned local proof workflows, and generate a deterministic readiness report.
@@ -61,17 +63,22 @@ Fresh clone readiness must preserve those gates instead of bypassing them.
 
 ```powershell
 python scripts/run_agent_readiness_check.py
+python scripts/run_mcp_drive_agent_test.py
 python scripts/generate_machine_response.py --code VALIDATION_PASSED --operation validate_build_packet --artifact-id build_packet_001
 python scripts/generate_machine_response.py --code HUMAN_APPROVAL_REQUIRED --operation external_release --artifact-id quote_request_001
 python scripts/generate_machine_response.py --code EXTERNAL_ACTION_FORBIDDEN --operation send_email --artifact-id notification_event_001
 python scripts/simulate_company_integration.py
 python scripts/simulate_industrial_hook_pipeline.py
+python -m pytest tests/agent_readiness/test_mcp_drive_agent_proof.py -q
+python -m pytest -q
 ```
 
 ## Expected Outputs
 
 - outputs/agent_readiness_report.json
 - outputs/agent_readiness_report.md
+- outputs/mcp_drive/latest_agent_run_report.json
+- outputs/mcp_drive/latest_agent_run_report.md
 - outputs/machine_response_latest.json
 - integrations/company_sandbox/ledger/company_integration_summary.json
 - simulations/industrial_hook/outputs/simulation_report.json
@@ -93,6 +100,7 @@ Pass requires the agent-readiness check to:
 ## Known Limitations
 
 - local repository readiness only
+- bounded local MCP-drive proof only
 - no real external agent connected
 - no hosted API
 - no real MCP deployment

@@ -33,6 +33,7 @@ simulation_scripts:
 - scripts/simulate_industrial_hook_pipeline.py
 - scripts/simulate_company_integration.py
 - scripts/simulate_asi_network_sense.py
+- scripts/run_mcp_drive_agent_test.py
 
 guardrails:
 - docs/GUARDRAILS.md
@@ -73,6 +74,7 @@ important_docs:
 - docs/AGENT_DISCOVERY_GUIDE.md
 - docs/OPENAPI_CONTRACT_SPEC.md
 - docs/MCP_SERVER_SPEC.md
+- docs/FRESH_CLONE_AGENT_READINESS_SPEC.md
 - docs/DETERMINISTIC_ERROR_CATALOG.md
 
 release_notes:

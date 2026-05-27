@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Aether Build Protocol Local Gateway Contract
-  version: 0.2.6
+  version: 0.2.8
   summary: Contract-only local gateway for machine-to-machine discovery and safe artifact workflows.
   description: >-
     This OpenAPI document is a local-only contract for Aether Build Protocol. It does not imply a running
