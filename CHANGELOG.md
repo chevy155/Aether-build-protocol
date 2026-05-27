@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- deployed the Hugging Face Dataset to https://huggingface.co/datasets/lonestar155/aether-build-protocol-examples
+- deployed the Hugging Face Space to https://huggingface.co/spaces/lonestar155/aether-cad-to-agent-sandbox and repaired the runtime to a live serving state
+- added a public AI-native demo surface for trying the protocol through a live sandbox
+
 ## v0.2.8 - MCP Drive Agent Proof
 
 - added a bounded local MCP Drive Agent Proof harness for deterministic repo discovery, machine/MCP surface discovery, synthetic CAD/job request mapping, Build Packet validation, invalid-case repair, forbidden-action blocking, and proof artifact generation
@@ -32,7 +38,7 @@
 - added resource registry, capability manifests, trust map, data lineage map, and permission boundary files under `network/`
 - added ASI network sense simulation outputs and regression coverage while preserving the existing company sandbox, industrial hook, and sauna proof loops
 
-## Unreleased
+## Prior Unreleased Notes
 
 - added Integration Findings Report template for company sandbox pilots
 - added a v0.2.9-prep public distribution draft package for GitHub Pages, Hugging Face, MCP registry listings, social launch posts, and manual publishing checklists without enabling automatic publication

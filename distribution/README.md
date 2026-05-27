@@ -10,6 +10,18 @@ These artifacts are preparation materials only.
 - manual login required for every external destination
 - all public text remains draft status until human review
 
+## Hugging Face Status
+
+- Hugging Face Dataset: LIVE
+- Hugging Face Space: LIVE
+- Space runtime repaired and serving
+- Manual checks completed
+
+Public URLs:
+
+- Space: https://huggingface.co/spaces/lonestar155/aether-cad-to-agent-sandbox
+- Dataset: https://huggingface.co/datasets/lonestar155/aether-build-protocol-examples
+
 ## Included Draft Surfaces
 
 - Hugging Face Space preview app

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import json
+import hashlib
 
 import gradio as gr
 
@@ -8,93 +8,144 @@ import gradio as gr
 FORBIDDEN_ACTIONS = [
     "send_email",
     "call_webhook",
-    "contact_supplier",
+    "contact_shop",
     "route_quote",
     "approve_print",
     "approve_fabrication",
+    "approve_engineering",
     "approve_payment",
-    "approve_delivery",
     "certify_load_rating",
 ]
 
 
-def preview_transaction(project_name: str, quantity: int, material: str, human_note: str):
+def _stable_id(*parts: str) -> str:
+    joined = "|".join(parts)
+    return hashlib.sha256(joined.encode("utf-8")).hexdigest()[:12]
+
+
+def build_previews(
+    part_name: str,
+    material: str,
+    process: str,
+    quantity: float,
+    tolerance: str,
+    finish: str,
+    unknowns: str,
+):
+    quantity_int = max(1, int(quantity))
+    part_ref = _stable_id(part_name, material, process, tolerance, finish, unknowns)
+    unknown_items = [item.strip() for item in unknowns.splitlines() if item.strip()]
+
     build_packet = {
-        "project_id": "m2m-print-hook-001",
-        "project_name": project_name,
-        "quantity": quantity,
+        "build_packet_id": f"bp-{part_ref}",
+        "artifact_type": "build_packet_preview",
+        "part_name": part_name,
         "material": material,
+        "process": process,
+        "quantity": quantity_int,
+        "tolerance": tolerance,
+        "finish": finish,
+        "unknowns": unknown_items,
         "sandbox_only": True,
-        "human_approval_required": True,
+        "external_action_taken": False,
+        "human_review_required": True,
     }
-    human_approval_event = {
-        "approval_event_id": "hae-m2m-print-hook-001",
-        "decision": "approved_for_internal_review_only",
-        "note": human_note,
-        "not_approved_actions": [
-            "external quote routing",
-            "real shop contact",
-            "fabrication",
-            "payment",
-            "delivery",
-        ],
+
+    quote_request = {
+        "quote_request_id": f"rfq-{part_ref}",
+        "artifact_type": "quote_request_preview",
+        "source_build_packet_id": build_packet["build_packet_id"],
+        "scope": "internal_preview_only",
+        "requested_process": process,
+        "requested_material": material,
+        "requested_quantity": quantity_int,
+        "requested_tolerance": tolerance,
+        "requested_finish": finish,
+        "open_questions": unknown_items,
+        "external_action_taken": False,
+        "human_review_required": True,
     }
-    machine_response = {
+
+    approval_response = {
         "response_type": "human_approval_required",
+        "decision": "blocked_for_external_release",
+        "reason": "Sandbox preview only. Human approval required before any quote routing or fabrication action.",
+        "external_action_taken": False,
+        "human_review_required": True,
+        "not_approved_actions": FORBIDDEN_ACTIONS,
+    }
+
+    machine_response = {
+        "envelope_type": "machine_response_envelope",
         "status": "BLOCKED",
         "external_action_taken": False,
-        "message": "External release remains blocked in the sandbox.",
+        "human_review_required": True,
+        "summary": "Local deterministic preview generated. No real shop contact or manufacturing action occurred.",
         "forbidden_actions": FORBIDDEN_ACTIONS,
     }
-    summary = {
-        "artifact_family": "Machine-to-Machine Print Transaction Sandbox",
-        "local_only": True,
-        "fake_shops_only": True,
-        "next_safe_actions": [
-            "review local artifacts",
-            "inspect comparison summary",
-            "propose next action under human review",
-        ],
+
+    forbidden_actions = {
+        "forbidden_actions": FORBIDDEN_ACTIONS,
+        "sandbox_guards": {
+            "no_real_shop_contact": True,
+            "no_real_quote_routing": True,
+            "no_print_approval": True,
+            "no_fabrication_approval": True,
+            "no_engineering_approval": True,
+            "no_payment_approval": True,
+            "no_load_certification": True,
+        },
     }
-    return (
-        json.dumps(build_packet, indent=2),
-        json.dumps(human_approval_event, indent=2),
-        json.dumps(machine_response, indent=2),
-        json.dumps(summary, indent=2),
-    )
+
+    return build_packet, quote_request, approval_response, machine_response, forbidden_actions
 
 
-with gr.Blocks(title="Aether M2M Print Transaction Sandbox") as demo:
+with gr.Blocks(title="Aether CAD-to-Agent Sandbox") as demo:
     gr.Markdown(
-        "# Aether Build Protocol Sandbox\n"
-        "Preview only. This draft Space demonstrates local artifacts and never contacts a real shop."
+        "# Aether CAD-to-Agent Sandbox\n\n"
+        "Preview only. This demo is local-only and sandbox-only. It makes no network calls, does not contact shops, does not route quotes, does not approve printing, fabrication, engineering, or payment, and does not certify load rating."
     )
+
     with gr.Row():
-        project_name = gr.Textbox(value="Wall-Mounted 3D Printed Cable Hook", label="Project Name")
-        material = gr.Textbox(value="PETG", label="Preferred Material")
-    with gr.Row():
-        quantity = gr.Number(value=12, precision=0, label="Quantity")
-        human_note = gr.Textbox(
-            value="Internal review only. No external release approved.",
-            label="Human Review Note",
+        part_name = gr.Textbox(label="Part Name", value="Wall-Mounted Cable Hook")
+        material = gr.Textbox(label="Material", value="PETG")
+        process = gr.Dropdown(
+            label="Process",
+            choices=["FDM 3D Printing", "SLA 3D Printing", "CNC Milling", "Waterjet Cutting"],
+            value="FDM 3D Printing",
         )
-    run_button = gr.Button("Generate Preview")
-    build_packet_output = gr.Code(label="Build Packet Preview", language="json")
-    approval_output = gr.Code(label="Human Approval Event Preview", language="json")
-    machine_response_output = gr.Code(label="Machine Response Preview", language="json")
-    summary_output = gr.Code(label="Sandbox Summary", language="json")
+
+    with gr.Row():
+        quantity = gr.Number(label="Quantity", value=12, precision=0)
+        tolerance = gr.Textbox(label="Tolerance", value="+/- 0.25 mm")
+        finish = gr.Textbox(label="Finish", value="Deburr and light bead blast")
+
+    unknowns = gr.Textbox(
+        label="Unknowns",
+        lines=4,
+        value="Confirm load case assumptions\nConfirm preferred color\nConfirm packaging constraints",
+    )
+
+    run_button = gr.Button("Generate Sandbox Preview")
+
+    build_packet_output = gr.JSON(label="Build Packet Preview")
+    quote_request_output = gr.JSON(label="Quote Request Preview")
+    approval_output = gr.JSON(label="Human Approval Required Response")
+    machine_response_output = gr.JSON(label="Machine Response Envelope")
+    forbidden_actions_output = gr.JSON(label="Forbidden Actions List")
 
     run_button.click(
-        preview_transaction,
-        inputs=[project_name, quantity, material, human_note],
+        build_previews,
+        inputs=[part_name, material, process, quantity, tolerance, finish, unknowns],
         outputs=[
             build_packet_output,
+            quote_request_output,
             approval_output,
             machine_response_output,
-            summary_output,
+            forbidden_actions_output,
         ],
     )
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=7860)

@@ -4,6 +4,22 @@ Aether Build Protocol is the machine-readable coordination layer between digital
 
 It turns project intent, geometry, BOM data, trade requirements, unknowns, and risk flags into validated protocol objects that can move cleanly between builder-side systems, quote-review workflows, and future execution infrastructure.
 
+## Try Aether Online
+
+Live Hugging Face Space:
+https://huggingface.co/spaces/lonestar155/aether-cad-to-agent-sandbox
+
+Example Dataset:
+https://huggingface.co/datasets/lonestar155/aether-build-protocol-examples
+
+- The Space is an interactive sandbox demo.
+- The Dataset contains machine-readable example artifacts.
+- Both are synthetic and local-first examples.
+- No real shop is contacted.
+- No quote is routed.
+- No print, fabrication, engineering, or payment approval occurs.
+- Human approval is required before any external action.
+
 ## Purpose
 
 Aether Build Protocol serves as the foundational digital coordination network for machine-readable hardware execution.
