@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.8 - MCP Drive Agent Proof
+
+- added a bounded local MCP Drive Agent Proof harness for deterministic repo discovery, machine/MCP surface discovery, synthetic CAD/job request mapping, Build Packet validation, invalid-case repair, forbidden-action blocking, and proof artifact generation
+- added focused regression coverage for the MCP-drive proof flow and verified the generated JSON and Markdown proof reports under `outputs/mcp_drive/`
+- preserved local-only boundaries with no hosted API, no live external MCP integration, no real webhooks or email delivery, no external actions, and no production gateway claim
+
 ## v0.2.7 - Fresh Clone Agent Readiness Test
 
 - added a fresh-clone agent readiness spec, test plan, optional checklist, and deterministic local readiness check script

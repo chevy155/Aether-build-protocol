@@ -1,0 +1,46 @@
+{
+  "job_id": "mcp-drive-job-001",
+  "job_name": "Synthetic Bracket Fabrication Review",
+  "requesting_org": "Northstar Sandbox Manufacturing",
+  "approval_state": "pending_human_review",
+  "requested_operation": "fabrication_review",
+  "part_name": "Offset Mounting Bracket",
+  "quantity": 12,
+  "material": {
+    "family": "steel",
+    "grade": "A36",
+    "form": "plate"
+  },
+  "finish_requirement": "zinc-rich primer",
+  "part_dimensions": {
+    "length_mm": 220,
+    "width_mm": 90,
+    "thickness_mm": 8
+  },
+  "tolerance_notes": "+/-0.25 mm on hole centers; bend angle tolerance +/-1 degree",
+  "cad_reference": {
+    "file_name": "offset_mounting_bracket.step",
+    "file_type": "step",
+    "path": "synthetic_cad/offset_mounting_bracket.step",
+    "notes": "Synthetic local CAD metadata only; no proprietary CAD included.",
+    "geometry_summary": "Bent steel bracket with two slotted mounting holes and one gusseted flange."
+  },
+  "operations": [
+    "laser_cut",
+    "press_brake",
+    "deburr"
+  ],
+  "inspection_notes": [
+    "Verify bend orientation before fabrication review.",
+    "Confirm hole spacing against drawing metadata."
+  ],
+  "open_questions": [
+    "Confirm final mounting hardware size before fabrication release.",
+    "Confirm primer compatibility with final install environment."
+  ],
+  "site_context": {
+    "submission_mode": "local_sandbox",
+    "physical_site_required": false,
+    "delivery_region": "N/A"
+  }
+}

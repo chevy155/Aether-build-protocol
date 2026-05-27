@@ -11,6 +11,8 @@ The current implementation is a skeleton and stub only.
 - no required MCP dependency yet
 - no production server
 - no external connectivity
+- used by the v0.2.8 bounded local MCP-drive proof as a local discovery and refusal surface only
+- not a live external MCP integration
 
 ## Safe Tool Surface
 

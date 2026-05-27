@@ -1,4 +1,4 @@
-# Aether Build Protocol v0.2.7 Fresh Clone Agent Readiness Test
+# Aether Build Protocol v0.2.8 MCP Drive Agent Proof
 
 Aether Build Protocol is the machine-readable coordination layer between digital design intent and downstream fabrication review systems.
 
@@ -254,6 +254,42 @@ This local-only readiness check tests whether an agent can discover Aether from 
 - no external action
 - no real external agent connected
 - no production readiness claim
+
+## Bounded Local MCP Drive Agent Proof
+
+Run the bounded local MCP-drive proof harness with:
+
+```powershell
+python scripts/run_mcp_drive_agent_test.py
+python -m pytest tests/agent_readiness/test_mcp_drive_agent_proof.py -q
+python -m pytest -q
+```
+
+This v0.2.8 addition is a deterministic local proof harness, not a hosted production gateway and not a live external MCP integration.
+
+It proves that a local agent-style workflow can:
+
+- discover the repo and machine/MCP surfaces
+- map a synthetic CAD/job-style request into a Build Packet
+- validate that payload locally
+- detect and repair an invalid local case
+- block a forbidden `send_email` action
+- preserve `human_approval_required`
+- write JSON and Markdown proof artifacts
+- re-run regression checks inside the sandbox
+
+The proof writes its primary artifacts to:
+
+- `outputs/mcp_drive/latest_agent_run_report.json`
+- `outputs/mcp_drive/latest_agent_run_report.md`
+
+It does not:
+
+- deploy a live API gateway
+- connect to an external MCP service
+- send email or webhooks
+- authorize fabrication, supplier contact, or external release
+- claim production runtime readiness
 
 ## Closed Loop
 

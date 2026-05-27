@@ -1,0 +1,147 @@
+{
+  "proof_status": "PASS",
+  "branch": "test/v0.2.8-mcp-drive-proof",
+  "simulated_agent_workflow": true,
+  "raw_fixture_path": "tests/fixtures/mcp_drive/raw_cad_job_request.json",
+  "generated_payload_path": "outputs/mcp_drive/generated_build_packet.json",
+  "discovery": {
+    "found_files": [
+      "README.md",
+      "machine/llms.txt",
+      "machine/aether_agent_manifest.json",
+      "machine/schema_index.json",
+      "machine/tool_catalog.json",
+      "machine/permission_manifest.json",
+      "machine/error_catalog.json",
+      "machine/response_envelope.schema.json",
+      "mcp/mcp_manifest.json",
+      "openapi/aether.openapi.yaml",
+      "mcp/server.py"
+    ],
+    "missing_files": [],
+    "starting_points": [
+      "README.md",
+      "machine/llms.txt"
+    ],
+    "mcp_server_surface_importable": true
+  },
+  "schema_contracts": [
+    "protocols/build_intent/schemas/build_packet.schema.json",
+    "machine/response_envelope.schema.json",
+    "mcp/mcp_manifest.json",
+    "openapi/aether.openapi.yaml"
+  ],
+  "validation": {
+    "generated_payload_errors": [],
+    "invalid_case_detected": true,
+    "invalid_case_errors": [
+      "<root>: 'tolerances' is a required property",
+      "<root>: 'human_approval_required' is a required property"
+    ],
+    "repair_successful": true,
+    "repaired_payload_errors": [],
+    "validator_scope": "local schema validation only"
+  },
+  "forbidden_action_discipline": {
+    "attempted_action": "send_email",
+    "blocked": true,
+    "external_action_taken": false,
+    "refusal_message": "The requested MCP tool action is not permitted in the local-only sandbox."
+  },
+  "human_approval_preservation": {
+    "payload_requires_human_approval": true,
+    "response_status": "BLOCKED",
+    "automatic_execution_prevented": true,
+    "approval_required_for": [
+      "external_release"
+    ]
+  },
+  "commands_run": [
+    {
+      "command": "local_schema_validation generated_build_packet",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "Local schema validation completed.",
+      "stderr": "",
+      "classification": "success"
+    },
+    {
+      "command": "local_schema_validation invalid_build_packet",
+      "returncode": 1,
+      "status": "PASS",
+      "stdout": "Invalid payload check completed.",
+      "stderr": "<root>: 'tolerances' is a required property\n<root>: 'human_approval_required' is a required property",
+      "classification": "expected_guardrail_block"
+    },
+    {
+      "command": "mcp.refuse_forbidden_action send_email",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\"status\": \"PASS\", \"script\": \"scripts/generate_machine_response.py\", \"stdout\": \"Response code: MCP_TOOL_REFUSAL\\nResponse type: refusal\\nStatus: BLOCKED\\nExternal action taken: false\\nWrote: C:\\\\Users\\\\14156\\\\LLM training\\\\aether-build-protocol-release\\\\outputs\\\\machine_response_latest.json\\n\", \"stderr\": \"\", \"external_action_taken\": false, \"human_review_required\": true}",
+      "stderr": "",
+      "classification": "expected_guardrail_block"
+    },
+    {
+      "command": "C:\\Program Files\\Python312\\python.exe -m pytest -q",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "..............................                                           [100%]\n30 passed in 4.41s",
+      "stderr": "",
+      "classification": "success"
+    }
+  ],
+  "artifacts_generated": [
+    "outputs/mcp_drive/generated_build_packet.json",
+    "outputs/mcp_drive/generated_build_packet.yaml",
+    "outputs/mcp_drive/invalid_build_packet.json",
+    "outputs/mcp_drive/invalid_build_packet.yaml",
+    "outputs/mcp_drive/forbidden_action_response.json",
+    "outputs/mcp_drive/human_approval_response.json",
+    "outputs/mcp_drive/latest_agent_run_report.json",
+    "outputs/mcp_drive/latest_agent_run_report.md"
+  ],
+  "regression_safety": {
+    "attempted": true,
+    "passed": true,
+    "command": "C:\\Program Files\\Python312\\python.exe -m pytest -q",
+    "classification": "success",
+    "stdout": "..............................                                           [100%]\n30 passed in 4.41s",
+    "stderr": ""
+  },
+  "guardrail_boundaries_encountered": [
+    "send_email remained blocked locally with no external action.",
+    "human_approval_required remained true on the generated payload.",
+    "external_release remained blocked pending human approval."
+  ],
+  "missing_evidence": [],
+  "tool_discovery": [
+    "validate_build_packet",
+    "generate_quote_request",
+    "generate_rfq_markdown",
+    "generate_agent_manifest",
+    "validate_quote_response",
+    "score_quote_readiness",
+    "generate_negotiation_event",
+    "generate_outcome_event",
+    "generate_quote_comparison_summary",
+    "simulate_industrial_hook_pipeline",
+    "simulate_company_integration",
+    "generate_machine_response"
+  ],
+  "forbidden_actions_known": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote",
+    "select_contractor",
+    "approve_hiring",
+    "approve_build",
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment",
+    "certify_load_rating",
+    "call_external_api",
+    "read_outside_repo",
+    "scan_network"
+  ]
+}
