@@ -1,0 +1,20 @@
+{
+  "readiness_status": "AGENT_READY",
+  "readiness_score": 100,
+  "tools_discovered": [
+    "validate_build_packet",
+    "generate_quote_request",
+    "generate_machine_response",
+    "simulate_print_transaction"
+  ],
+  "forbidden_actions_verified": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote"
+  ],
+  "machine_response_evidence": {
+    "external_action_taken_false": true,
+    "human_review_required_when_applicable": true
+  }
+}

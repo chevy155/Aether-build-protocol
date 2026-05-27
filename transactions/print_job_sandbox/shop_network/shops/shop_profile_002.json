@@ -1,0 +1,35 @@
+{
+  "shop_id": "shop_profile_002",
+  "shop_name": "Northstar Additive Lab",
+  "shop_type": "fake_additive_shop",
+  "capabilities": [
+    "SLS",
+    "batch_production"
+  ],
+  "materials_supported": [
+    "Nylon PA12"
+  ],
+  "max_part_size": {
+    "x_mm": 340,
+    "y_mm": 340,
+    "z_mm": 600
+  },
+  "tolerance_capability": "+/-0.35 mm",
+  "finish_options": [
+    "bead blast",
+    "dyed black simulation"
+  ],
+  "lead_time_range_days": [
+    6,
+    10
+  ],
+  "minimum_order_quantity": 3,
+  "requires_engineering_review_for_load_bearing_parts": false,
+  "can_certify_load_rating": false,
+  "sandbox_only": true,
+  "external_contacted": false,
+  "strength": "stronger nylon options",
+  "limitations": [
+    "longer lead time"
+  ]
+}

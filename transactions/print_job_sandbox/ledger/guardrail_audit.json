@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "no_email_sent": true,
+  "no_webhook_called": true,
+  "no_real_shop_contacted": true,
+  "no_quote_routed": true,
+  "no_shop_selected": true,
+  "no_print_approved": true,
+  "no_fabrication_approved": true,
+  "no_payment_approved": true,
+  "no_delivery_approved": true,
+  "no_engineering_approval": true,
+  "no_load_certification": true,
+  "human_approval_required": true,
+  "local_only_sandbox": true,
+  "forbidden_labels_present": []
+}

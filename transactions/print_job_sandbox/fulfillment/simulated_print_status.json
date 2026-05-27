@@ -1,0 +1,12 @@
+{
+  "print_status_id": "simulated_print_status_001",
+  "project_id": "m2m-print-hook-001",
+  "status": "simulated_complete",
+  "progress_percent": 100,
+  "notes": [
+    "Synthetic print completion event.",
+    "No real printer was used."
+  ],
+  "sandbox_only": true,
+  "external_action_taken": false
+}

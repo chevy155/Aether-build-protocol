@@ -1,0 +1,305 @@
+{
+  "project_id": "m2m-print-hook-001",
+  "status": "PASS",
+  "current_state": "CLOSED_LOCAL_ONLY",
+  "artifact_count": 27,
+  "machine_responses": [
+    {
+      "response_id": "resp_validation_passed_validate_build_packet_m2m_print_hook_001",
+      "response_type": "success",
+      "status": "PASS",
+      "timestamp": "2026-05-26T00:00:00Z",
+      "protocol_version": "0.2.6",
+      "operation": "validate_build_packet",
+      "artifact_id": "m2m-print-hook-001",
+      "human_review_required": true,
+      "external_action_taken": false,
+      "message": "Local validation completed successfully.",
+      "next_safe_actions": [
+        "generate_local_artifact",
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "approve_build"
+      ],
+      "evidence": [
+        "machine/response_templates.json",
+        "machine/permission_manifest.json",
+        "machine/error_catalog.json"
+      ],
+      "errors": [],
+      "warnings": [],
+      "generated_artifacts": [
+        "outputs/machine_response_latest.json"
+      ],
+      "validation_summary": {
+        "severity": "INFO",
+        "safe_to_retry": true,
+        "forbidden_auto_action": false
+      },
+      "suggested_human_action": "Proceed with the next safe local artifact generation step.",
+      "related_docs": [
+        "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+        "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+      ],
+      "related_schema": "machine/response_envelope.schema.json",
+      "request_echo": {
+        "code": "VALIDATION_PASSED",
+        "operation": "validate_build_packet",
+        "artifact_id": "m2m-print-hook-001"
+      }
+    },
+    {
+      "response_id": "resp_human_approval_required_external_release_rfq_m2m_print_hook_001",
+      "response_type": "human_approval_required",
+      "status": "BLOCKED",
+      "timestamp": "2026-05-26T00:00:00Z",
+      "protocol_version": "0.2.6",
+      "operation": "external_release",
+      "artifact_id": "rfq-m2m-print-hook-001",
+      "human_review_required": true,
+      "external_action_taken": false,
+      "message": "External action requires a Human Approval Event.",
+      "next_safe_actions": [
+        "generate_local_artifact",
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "route_quote",
+        "approve_build",
+        "approve_fabrication",
+        "approve_engineering",
+        "approve_payment",
+        "select_contractor",
+        "approve_hiring",
+        "certify_load_rating",
+        "call_external_api",
+        "read_outside_repo",
+        "scan_network"
+      ],
+      "evidence": [
+        "machine/response_templates.json",
+        "machine/permission_manifest.json",
+        "machine/error_catalog.json"
+      ],
+      "errors": [
+        {
+          "code": "HUMAN_APPROVAL_REQUIRED",
+          "message": "External action requires a Human Approval Event.",
+          "severity": "BLOCKING"
+        }
+      ],
+      "warnings": [],
+      "generated_artifacts": [
+        "outputs/machine_response_latest.json"
+      ],
+      "validation_summary": {
+        "severity": "BLOCKING",
+        "safe_to_retry": false,
+        "forbidden_auto_action": true
+      },
+      "suggested_human_action": "Generate or attach a valid Human Approval Event before external release.",
+      "related_docs": [
+        "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+        "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+      ],
+      "related_schema": "machine/response_envelope.schema.json",
+      "request_echo": {
+        "code": "HUMAN_APPROVAL_REQUIRED",
+        "operation": "external_release",
+        "artifact_id": "rfq-m2m-print-hook-001"
+      },
+      "approval_required_for": [
+        "external_release"
+      ]
+    },
+    {
+      "response_id": "resp_external_action_forbidden_contact_supplier_m2m_print_hook_001",
+      "response_type": "error",
+      "status": "FAIL",
+      "timestamp": "2026-05-26T00:00:00Z",
+      "protocol_version": "0.2.6",
+      "operation": "contact_supplier",
+      "artifact_id": "m2m-print-hook-001",
+      "human_review_required": true,
+      "external_action_taken": false,
+      "message": "External action is forbidden in local_only_sandbox mode.",
+      "next_safe_actions": [
+        "generate_preview_notification",
+        "generate_preview_webhook",
+        "generate_local_report"
+      ],
+      "forbidden_actions": [
+        "send_email",
+        "call_webhook",
+        "contact_supplier",
+        "route_quote"
+      ],
+      "evidence": [
+        "machine/response_templates.json",
+        "machine/permission_manifest.json",
+        "machine/error_catalog.json"
+      ],
+      "errors": [
+        {
+          "code": "EXTERNAL_ACTION_FORBIDDEN",
+          "message": "External action is forbidden in local_only_sandbox mode.",
+          "severity": "BLOCKING"
+        }
+      ],
+      "warnings": [],
+      "generated_artifacts": [
+        "outputs/machine_response_latest.json"
+      ],
+      "validation_summary": {
+        "severity": "BLOCKING",
+        "safe_to_retry": false,
+        "forbidden_auto_action": true
+      },
+      "suggested_human_action": "Use preview-only local artifacts or stop the action.",
+      "related_docs": [
+        "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+        "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+      ],
+      "related_schema": "machine/response_envelope.schema.json",
+      "request_echo": {
+        "code": "EXTERNAL_ACTION_FORBIDDEN",
+        "operation": "contact_supplier",
+        "artifact_id": "m2m-print-hook-001"
+      }
+    },
+    {
+      "response_id": "resp_engineering_review_required_engineering_review_m2m_print_hook_001",
+      "response_type": "warning",
+      "status": "WARN",
+      "timestamp": "2026-05-26T00:00:00Z",
+      "protocol_version": "0.2.6",
+      "operation": "engineering_review",
+      "artifact_id": "m2m-print-hook-001",
+      "human_review_required": true,
+      "external_action_taken": false,
+      "message": "Engineering review is required before real-world interpretation.",
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "approve_engineering",
+        "approve_fabrication",
+        "certify_load_rating"
+      ],
+      "evidence": [
+        "machine/response_templates.json",
+        "machine/permission_manifest.json",
+        "machine/error_catalog.json"
+      ],
+      "errors": [],
+      "warnings": [
+        {
+          "code": "ENGINEERING_REVIEW_REQUIRED",
+          "message": "Engineering review is required before real-world interpretation.",
+          "severity": "BLOCKING"
+        }
+      ],
+      "generated_artifacts": [
+        "outputs/machine_response_latest.json"
+      ],
+      "validation_summary": {
+        "severity": "BLOCKING",
+        "safe_to_retry": false,
+        "forbidden_auto_action": true
+      },
+      "suggested_human_action": "Escalate to qualified engineering review.",
+      "related_docs": [
+        "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+        "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+      ],
+      "related_schema": "machine/response_envelope.schema.json",
+      "request_echo": {
+        "code": "ENGINEERING_REVIEW_REQUIRED",
+        "operation": "engineering_review",
+        "artifact_id": "m2m-print-hook-001"
+      }
+    },
+    {
+      "response_id": "resp_load_certification_not_provided_load_certification_m2m_print_hook_001",
+      "response_type": "warning",
+      "status": "WARN",
+      "timestamp": "2026-05-26T00:00:00Z",
+      "protocol_version": "0.2.6",
+      "operation": "load_certification",
+      "artifact_id": "m2m-print-hook-001",
+      "human_review_required": true,
+      "external_action_taken": false,
+      "message": "Load certification is not provided.",
+      "next_safe_actions": [
+        "generate_local_report",
+        "propose_next_action"
+      ],
+      "forbidden_actions": [
+        "certify_load_rating",
+        "approve_engineering"
+      ],
+      "evidence": [
+        "machine/response_templates.json",
+        "machine/permission_manifest.json",
+        "machine/error_catalog.json"
+      ],
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOAD_CERTIFICATION_NOT_PROVIDED",
+          "message": "Load certification is not provided.",
+          "severity": "BLOCKING"
+        }
+      ],
+      "generated_artifacts": [
+        "outputs/machine_response_latest.json"
+      ],
+      "validation_summary": {
+        "severity": "BLOCKING",
+        "safe_to_retry": false,
+        "forbidden_auto_action": true
+      },
+      "suggested_human_action": "Treat the artifact as informational only and require qualified certification.",
+      "related_docs": [
+        "docs/MACHINE_RESPONSE_ENVELOPE_SPEC.md",
+        "docs/MACHINE_RESPONSE_ERROR_HANDLING.md"
+      ],
+      "related_schema": "machine/response_envelope.schema.json",
+      "request_echo": {
+        "code": "LOAD_CERTIFICATION_NOT_PROVIDED",
+        "operation": "load_certification",
+        "artifact_id": "m2m-print-hook-001"
+      }
+    }
+  ],
+  "guardrail_audit": {
+    "status": "PASS",
+    "no_email_sent": true,
+    "no_webhook_called": true,
+    "no_real_shop_contacted": true,
+    "no_quote_routed": true,
+    "no_shop_selected": true,
+    "no_print_approved": true,
+    "no_fabrication_approved": true,
+    "no_payment_approved": true,
+    "no_delivery_approved": true,
+    "no_engineering_approval": true,
+    "no_load_certification": true,
+    "human_approval_required": true,
+    "local_only_sandbox": true,
+    "forbidden_labels_present": []
+  },
+  "provenance_record_count": 27,
+  "external_action_taken": false,
+  "human_approval_required": true
+}

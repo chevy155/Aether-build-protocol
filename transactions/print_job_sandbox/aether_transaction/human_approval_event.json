@@ -1,0 +1,29 @@
+{
+  "human_approval_event_id": "approval-m2m-print-hook-001",
+  "project_id": "m2m-print-hook-001",
+  "timestamp": "2026-05-27T00:00:02Z",
+  "actor": "internal_review_board",
+  "decision": "approved_for_internal_review_only",
+  "approved_actions": [
+    "internal_review",
+    "local_artifact_generation",
+    "simulated_quote_analysis"
+  ],
+  "not_approved_actions": [
+    "external quote routing",
+    "real shop contact",
+    "fabrication",
+    "payment",
+    "delivery",
+    "installation",
+    "engineering",
+    "load certification"
+  ],
+  "scope_limitations": [
+    "No external RFQ distribution.",
+    "No physical print order.",
+    "No supplier or shop contact."
+  ],
+  "human_approval_required_for_next_stage": true,
+  "sandbox_only": true
+}

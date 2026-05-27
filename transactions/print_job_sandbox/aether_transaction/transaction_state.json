@@ -1,0 +1,19 @@
+{
+  "states": [
+    "REQUEST_CREATED",
+    "BUILD_PACKET_CREATED",
+    "QUOTE_REQUEST_CREATED",
+    "SHOP_MATCH_SIMULATED",
+    "QUOTE_RESPONSES_SIMULATED",
+    "QUOTE_COMPARISON_CREATED",
+    "HUMAN_APPROVAL_REQUIRED",
+    "NEGOTIATION_SIMULATED",
+    "WORK_ORDER_SIMULATED",
+    "DELIVERY_SIMULATED",
+    "OUTCOME_RECORDED",
+    "CLOSED_LOCAL_ONLY"
+  ],
+  "current_state": "CLOSED_LOCAL_ONLY",
+  "human_approval_required": true,
+  "external_action_taken": false
+}

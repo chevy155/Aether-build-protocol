@@ -1,0 +1,38 @@
+{
+  "quote_response_id": "quote_response_003",
+  "quote_request_id": "rfq-m2m-print-hook-001",
+  "responder_name": "Apex Composite Print",
+  "responder_type": "fake_shop_profile",
+  "quoted_scope": "Informational only carbon fiber nylon simulation for stiffness review with explicit engineering escalation before any real interpretation.",
+  "price_min": 104.0,
+  "price_max": 154.0,
+  "currency": "USD",
+  "lead_time_min_days": 5,
+  "lead_time_max_days": 8,
+  "assumptions": [
+    "Carbon fiber nylon remains simulation-only.",
+    "Engineering review is required before any real structural interpretation.",
+    "Informational only; no real quote issued."
+  ],
+  "exclusions": [
+    "No shop contacted.",
+    "No print authorized.",
+    "No payment authorized.",
+    "No load certification provided."
+  ],
+  "substitutions": [
+    "Nylon PA12 recommended if engineering review is not available."
+  ],
+  "confidence_score": 0.74,
+  "risk_notes": [
+    "Engineering review required.",
+    "No load certification available in sandbox."
+  ],
+  "clarification_questions": [
+    "Is the stiffness review worth the additional engineering gate?",
+    "Does the designer want to avoid composite-material assumptions?"
+  ],
+  "human_review_required": true,
+  "external_action_taken": false,
+  "sandbox_only": true
+}

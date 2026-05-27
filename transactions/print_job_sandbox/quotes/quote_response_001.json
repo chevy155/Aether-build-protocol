@@ -1,0 +1,39 @@
+{
+  "quote_response_id": "quote_response_001",
+  "quote_request_id": "rfq-m2m-print-hook-001",
+  "responder_name": "Pacific Layer Works",
+  "responder_type": "fake_shop_profile",
+  "quoted_scope": "Informational only PETG FDM prototype run for six non-load-rated cable hooks with standard cleanup and packaging simulation.",
+  "price_min": 42.0,
+  "price_max": 68.0,
+  "currency": "USD",
+  "lead_time_min_days": 2,
+  "lead_time_max_days": 5,
+  "assumptions": [
+    "PETG is acceptable.",
+    "No real CAD repair is required.",
+    "Mounting hardware remains outside print scope.",
+    "Informational only; no real quote issued."
+  ],
+  "exclusions": [
+    "No shop contacted.",
+    "No print authorized.",
+    "No payment authorized.",
+    "No engineering review or load certification."
+  ],
+  "substitutions": [
+    "PLA possible for visual fit-check only; not recommended for final use."
+  ],
+  "confidence_score": 0.86,
+  "risk_notes": [
+    "Mounting substrate remains unknown.",
+    "Hook orientation needs human approval."
+  ],
+  "clarification_questions": [
+    "Should PETG remain the baseline material?",
+    "What wall anchor system is intended?"
+  ],
+  "human_review_required": true,
+  "external_action_taken": false,
+  "sandbox_only": true
+}

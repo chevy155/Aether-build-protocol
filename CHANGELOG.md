@@ -5,6 +5,8 @@
 - added a bounded local MCP Drive Agent Proof harness for deterministic repo discovery, machine/MCP surface discovery, synthetic CAD/job request mapping, Build Packet validation, invalid-case repair, forbidden-action blocking, and proof artifact generation
 - added focused regression coverage for the MCP-drive proof flow and verified the generated JSON and Markdown proof reports under `outputs/mcp_drive/`
 - preserved local-only boundaries with no hosted API, no live external MCP integration, no real webhooks or email delivery, no external actions, and no production gateway claim
+- added a deterministic Machine-to-Machine Print Transaction Sandbox for local designer request capture, Build Packet mapping, fake shop matching, quote simulation, negotiation simulation, fulfillment simulation, outcome recording, provenance hashing, and guardrail auditing under `transactions/print_job_sandbox/`
+- extended the quote-response schema to permit explicit local sandbox metadata while preserving `human_review_required` and `external_action_taken: false` semantics
 
 ## v0.2.7 - Fresh Clone Agent Readiness Test
 
@@ -33,6 +35,7 @@
 ## Unreleased
 
 - added Integration Findings Report template for company sandbox pilots
+- added a v0.2.9-prep public distribution draft package for GitHub Pages, Hugging Face, MCP registry listings, social launch posts, and manual publishing checklists without enabling automatic publication
 
 ## v0.2.4 - Fake Company Integration Sandbox
 

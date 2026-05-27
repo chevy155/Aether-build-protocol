@@ -291,6 +291,42 @@ It does not:
 - authorize fabrication, supplier contact, or external release
 - claim production runtime readiness
 
+## Machine-to-Machine Print Transaction Sandbox
+
+Run the print transaction sandbox with:
+
+```powershell
+python scripts/simulate_print_transaction.py
+```
+
+This v0.2.8 sandbox simulates a designer-to-shop machine-to-machine print transaction for a wall-mounted 3D printed cable hook.
+
+It proves a local-only flow for:
+
+- designer request capture
+- Build Packet mapping
+- Quote Request generation
+- fake shop capability matching
+- simulated quote responses
+- quote comparison and negotiation simulation
+- simulated work order, print status, delivery, and outcome events
+- provenance hashing and deterministic guardrail auditing
+
+The sandbox is:
+
+- local-only
+- fake shops only
+- no external action
+- no shop contacted
+- no payment
+- no print approval
+- no fabrication approval
+- no delivery approval
+- no engineering approval
+- human approval required
+
+The artifact chain is written under `transactions/print_job_sandbox/`.
+
 ## Closed Loop
 
 v0.2 closes the local protocol loop:

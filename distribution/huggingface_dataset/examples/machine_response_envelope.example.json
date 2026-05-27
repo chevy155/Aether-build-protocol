@@ -1,0 +1,16 @@
+{
+  "response_id": "resp_human_approval_required_external_release_rfq_m2m_print_hook_001",
+  "response_type": "human_approval_required",
+  "status": "BLOCKED",
+  "operation": "external_release",
+  "artifact_id": "rfq-m2m-print-hook-001",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "message": "External action requires a Human Approval Event.",
+  "forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote"
+  ]
+}

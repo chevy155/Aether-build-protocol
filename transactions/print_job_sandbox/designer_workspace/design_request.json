@@ -1,0 +1,41 @@
+{
+  "requester_id": "designer_sandbox_001",
+  "project_id": "m2m-print-hook-001",
+  "project_name": "Wall-Mounted 3D Printed Cable Hook",
+  "project_description": "A designer needs a small functional wall-mounted hook 3D printed for local protocol transaction simulation only.",
+  "intended_use": "Cable management hook for light-duty interior organization review.",
+  "quantity": 6,
+  "target_material": "PETG",
+  "acceptable_material_substitutions": [
+    "Nylon PA12",
+    "Carbon fiber nylon simulation only"
+  ],
+  "color_preference": "Matte black",
+  "finish_preference": "Minimal support marks, light bead blast if SLS simulated",
+  "dimensions_summary": {
+    "height_mm": 72,
+    "width_mm": 28,
+    "depth_mm": 46,
+    "wall_thickness_mm": 6
+  },
+  "tolerance_requirement": "+/-0.4 mm",
+  "strength_requirement": "Functional light-duty hook only; not load-rated and not safety-critical.",
+  "mounting_method": "Two-screw wall mount with human review required for substrate and fastener selection.",
+  "cad_manifest_reference": "transactions/print_job_sandbox/designer_workspace/mock_cad_manifest.json",
+  "bom_reference": "transactions/print_job_sandbox/designer_workspace/bom.csv",
+  "unknowns": [
+    "real CAD file not provided",
+    "load requirement not validated",
+    "mounting substrate unknown",
+    "fastener spec unknown",
+    "print orientation not approved",
+    "layer height preference unknown",
+    "real shop not contacted"
+  ],
+  "assumptions": [
+    "This remains a local-only machine-to-machine sandbox transaction.",
+    "The hook is treated as a non-safety-critical plastic part pending human review.",
+    "No real print order, payment, or delivery is authorized."
+  ],
+  "human_approval_required": true
+}

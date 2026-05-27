@@ -1,0 +1,38 @@
+{
+  "quote_response_id": "quote_response_002",
+  "quote_request_id": "rfq-m2m-print-hook-001",
+  "responder_name": "Northstar Additive Lab",
+  "responder_type": "fake_shop_profile",
+  "quoted_scope": "Informational only Nylon PA12 SLS production simulation for six cable hooks with stronger material option and batch-friendly setup assumptions.",
+  "price_min": 88.0,
+  "price_max": 126.0,
+  "currency": "USD",
+  "lead_time_min_days": 6,
+  "lead_time_max_days": 10,
+  "assumptions": [
+    "Nylon PA12 substitution is acceptable.",
+    "Longer lead time is acceptable for stronger material review.",
+    "Informational only; no real quote issued."
+  ],
+  "exclusions": [
+    "No shop contacted.",
+    "No print authorized.",
+    "No payment authorized.",
+    "No shipping commitment."
+  ],
+  "substitutions": [
+    "Black dye finish may be simulated for appearance only."
+  ],
+  "confidence_score": 0.81,
+  "risk_notes": [
+    "Lead time increases for SLS batching.",
+    "Fastener and substrate assumptions remain unresolved."
+  ],
+  "clarification_questions": [
+    "Is Nylon PA12 preferred over PETG for the functional review?",
+    "Is surface finish or strength the higher priority?"
+  ],
+  "human_review_required": true,
+  "external_action_taken": false,
+  "sandbox_only": true
+}

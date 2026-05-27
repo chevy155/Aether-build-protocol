@@ -1,0 +1,15 @@
+{
+  "project_id": "m2m-print-hook-001",
+  "project_name": "Wall-Mounted 3D Printed Cable Hook",
+  "part_name": "cable_hook_body",
+  "process": "FDM",
+  "material": "PETG",
+  "quantity": 12,
+  "tolerances": {
+    "general": "+/-0.30 mm"
+  },
+  "intended_use": "light cable management only",
+  "human_approval_required": true,
+  "sandbox_only": true,
+  "external_action_taken": false
+}

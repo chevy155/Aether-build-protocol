@@ -1,0 +1,21 @@
+{
+  "negotiation_event_id": "negotiation_event_001",
+  "actor": "designer",
+  "event_type": "clarification_requested",
+  "timestamp": "2026-05-27T00:00:05Z",
+  "change_summary": "Designer asks whether PETG can be substituted with Nylon PA12 for better durability.",
+  "before": {
+    "target_material": "PETG",
+    "lead_time_range_days": [
+      2,
+      5
+    ]
+  },
+  "after": {
+    "candidate_material": "Nylon PA12",
+    "quote_review_status": "clarification_pending"
+  },
+  "human_approval_required": true,
+  "external_action_taken": false,
+  "sandbox_only": true
+}

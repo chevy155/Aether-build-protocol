@@ -1,0 +1,35 @@
+{
+  "shop_id": "shop_profile_003",
+  "shop_name": "Apex Composite Print",
+  "shop_type": "fake_additive_shop",
+  "capabilities": [
+    "FDM",
+    "composite_print_simulation"
+  ],
+  "materials_supported": [
+    "Carbon fiber nylon simulation only"
+  ],
+  "max_part_size": {
+    "x_mm": 300,
+    "y_mm": 300,
+    "z_mm": 300
+  },
+  "tolerance_capability": "+/-0.45 mm",
+  "finish_options": [
+    "standard composite simulation finish"
+  ],
+  "lead_time_range_days": [
+    5,
+    8
+  ],
+  "minimum_order_quantity": 1,
+  "requires_engineering_review_for_load_bearing_parts": true,
+  "can_certify_load_rating": false,
+  "sandbox_only": true,
+  "external_contacted": false,
+  "strength": "high stiffness material options",
+  "limitations": [
+    "requires engineering review",
+    "no load certification in sandbox"
+  ]
+}

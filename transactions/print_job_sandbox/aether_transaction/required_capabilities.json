@@ -1,0 +1,22 @@
+{
+  "project_id": "m2m-print-hook-001",
+  "required_processes": [
+    "FDM",
+    "SLS"
+  ],
+  "required_materials": [
+    "PETG",
+    "Nylon PA12",
+    "Carbon fiber nylon simulation only"
+  ],
+  "tolerance_requirement": "+/-0.4 mm",
+  "needs_engineering_review_for_load_bearing": true,
+  "requires_human_review": true,
+  "forbidden_actions": [
+    "contact_supplier",
+    "route_quote",
+    "approve_fabrication",
+    "approve_payment",
+    "certify_load_rating"
+  ]
+}

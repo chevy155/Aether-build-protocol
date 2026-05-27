@@ -1,0 +1,38 @@
+{
+  "shop_id": "shop_profile_001",
+  "shop_name": "Pacific Layer Works",
+  "shop_type": "fake_additive_shop",
+  "capabilities": [
+    "FDM",
+    "rapid_prototyping"
+  ],
+  "materials_supported": [
+    "PETG",
+    "PLA",
+    "ASA"
+  ],
+  "max_part_size": {
+    "x_mm": 220,
+    "y_mm": 220,
+    "z_mm": 250
+  },
+  "tolerance_capability": "+/-0.4 mm",
+  "finish_options": [
+    "standard FDM",
+    "vapor smoothing simulation"
+  ],
+  "lead_time_range_days": [
+    2,
+    5
+  ],
+  "minimum_order_quantity": 1,
+  "requires_engineering_review_for_load_bearing_parts": false,
+  "can_certify_load_rating": false,
+  "sandbox_only": true,
+  "external_contacted": false,
+  "strength": "fast local prototyping",
+  "limitations": [
+    "no SLS",
+    "no engineering certification"
+  ]
+}

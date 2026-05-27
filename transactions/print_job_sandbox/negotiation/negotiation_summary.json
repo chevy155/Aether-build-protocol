@@ -1,0 +1,12 @@
+{
+  "project_id": "m2m-print-hook-001",
+  "quote_request_id": "rfq-m2m-print-hook-001",
+  "events": [
+    "negotiation_event_001",
+    "negotiation_event_002"
+  ],
+  "summary": "Negotiation remained simulated only. Nylon PA12 is feasible for review but increases cost and lead time.",
+  "human_review_required": true,
+  "external_action_taken": false,
+  "sandbox_only": true
+}

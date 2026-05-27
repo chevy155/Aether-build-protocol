@@ -1,0 +1,11 @@
+process_options:
+- FDM
+- SLS
+material_options:
+- PETG
+- Nylon PA12
+- Carbon fiber nylon simulation only
+safety_statement: This is not load-rated, not safety-critical, and not approved for
+  real installation without human review.
+human_approval_required: true
+external_contact_authorized: false

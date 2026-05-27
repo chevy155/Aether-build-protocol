@@ -1,0 +1,17 @@
+{
+  "manifest_id": "mock-cad-hook-001",
+  "project_id": "m2m-print-hook-001",
+  "cad_files": [
+    {
+      "file_name": "wall_mounted_cable_hook.step",
+      "file_type": "manifest_only_step_reference",
+      "provided": false,
+      "notes": "Real CAD file not provided. Geometry is represented by manifest metadata only."
+    }
+  ],
+  "geometry_notes": [
+    "Simulation-only cable hook geometry.",
+    "No watertight mesh or real print file is included.",
+    "No installation approval is implied."
+  ]
+}

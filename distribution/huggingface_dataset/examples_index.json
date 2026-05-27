@@ -1,0 +1,13 @@
+{
+  "dataset_name": "aether-build-protocol-m2m-print-sandbox-examples",
+  "status": "draft",
+  "examples": [
+    "examples/build_packet.example.json",
+    "examples/human_approval_event.example.json",
+    "examples/machine_response_envelope.example.json",
+    "examples/agent_readiness_report.example.json",
+    "examples/m2m_print_transaction_summary.example.json"
+  ],
+  "local_only": true,
+  "human_review_required": true
+}

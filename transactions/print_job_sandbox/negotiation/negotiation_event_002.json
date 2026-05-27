@@ -1,0 +1,32 @@
+{
+  "negotiation_event_id": "negotiation_event_002",
+  "actor": "simulated_shop_response",
+  "event_type": "clarification_response",
+  "timestamp": "2026-05-27T00:00:06Z",
+  "change_summary": "Simulated shop response says Nylon PA12 is possible but requires higher cost and longer lead time.",
+  "before": {
+    "material_option": "PETG",
+    "price_range": [
+      42.0,
+      68.0
+    ],
+    "lead_time_range_days": [
+      2,
+      5
+    ]
+  },
+  "after": {
+    "material_option": "Nylon PA12",
+    "price_range": [
+      88.0,
+      126.0
+    ],
+    "lead_time_range_days": [
+      6,
+      10
+    ]
+  },
+  "human_approval_required": true,
+  "external_action_taken": false,
+  "sandbox_only": true
+}

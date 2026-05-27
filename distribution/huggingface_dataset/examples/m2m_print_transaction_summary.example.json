@@ -1,0 +1,15 @@
+{
+  "project_id": "m2m-print-hook-001",
+  "status": "PASS",
+  "current_state": "CLOSED_LOCAL_ONLY",
+  "artifact_count": 27,
+  "external_action_taken": false,
+  "guardrails_preserved": true,
+  "machine_response_codes": [
+    "VALIDATION_PASSED",
+    "HUMAN_APPROVAL_REQUIRED",
+    "EXTERNAL_ACTION_FORBIDDEN",
+    "ENGINEERING_REVIEW_REQUIRED",
+    "LOAD_CERTIFICATION_NOT_PROVIDED"
+  ]
+}

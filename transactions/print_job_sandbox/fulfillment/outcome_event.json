@@ -1,0 +1,21 @@
+{
+  "outcome_event_id": "outcome_event_001",
+  "project_id": "m2m-print-hook-001",
+  "quote_response_id": "quote_response_001",
+  "event_type": "simulated_transaction_outcome",
+  "timestamp": "2026-05-27T00:00:09Z",
+  "actor": "aether_print_transaction_sandbox",
+  "cost_actual": 55.0,
+  "timeline_actual_days": 4,
+  "quality_score": 0.88,
+  "inspection_status": "simulated_pass_not_real_inspection",
+  "delivery_status": "simulated_received_not_real_delivery",
+  "dispute_status": "none",
+  "lessons_learned": [
+    "Material substitutions need explicit human review.",
+    "Shop profile matching is useful only for internal sandbox analysis."
+  ],
+  "trust_signal": "sandbox_only_informational_outcome",
+  "sandbox_only": true,
+  "external_action_taken": false
+}

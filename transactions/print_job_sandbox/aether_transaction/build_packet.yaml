@@ -1,0 +1,116 @@
+protocol_version: 0.2.8
+project_id: m2m-print-hook-001
+project_name: Wall-Mounted 3D Printed Cable Hook
+project_type: m2m_print_transaction_sandbox
+project_description: A designer needs a small functional wall-mounted hook 3D printed
+  for local protocol transaction simulation only.
+design_files:
+- file_name: wall_mounted_cable_hook.step
+  file_type: manifest_only_step_reference
+  path: transactions/print_job_sandbox/designer_workspace/mock_cad_manifest.json
+  notes: Manifest-only geometry reference. No real CAD file provided.
+geometry_summary: Wall-mounted cable hook for local 3D print transaction simulation,
+  represented by manifest metadata only.
+bom_items:
+- item_id: HOOK-001
+  name: Wall-mounted cable hook body
+  category: printed_part
+  quantity: 6
+  unit: ea
+  material: PETG
+  dimensions: &id001
+    height_mm: 72
+    width_mm: 28
+    depth_mm: 46
+    wall_thickness_mm: 6
+  finish: Minimal support marks, light bead blast if SLS simulated
+  supplier_preference: No real shop selected; sandbox review only
+  substitution_allowed: true
+  notes: Simulation-only printed hook body
+- item_id: HOOK-002
+  name: Wall-mount hardware placeholder
+  category: fastener_placeholder
+  quantity: 6
+  unit: ea
+  material: unknown
+  dimensions:
+    pending_review: Fastener spec intentionally unresolved
+  finish: Minimal support marks, light bead blast if SLS simulated
+  supplier_preference: No real shop selected; sandbox review only
+  substitution_allowed: false
+  notes: Fastener spec intentionally unresolved
+material_specs:
+- PETG
+- Nylon PA12 permitted as reviewed substitution.
+- Carbon fiber nylon is simulation-only and requires engineering review before any
+  real interpretation.
+finish_requirements:
+- Minimal support marks, light bead blast if SLS simulated
+- No cosmetic or structural approval is implied.
+dimensions: *id001
+tolerances:
+- 'Target tolerance: +/-0.4 mm'
+- Print orientation remains unapproved.
+site_conditions:
+- Local-only print transaction sandbox.
+- No real shop contacted.
+- No real installation authorized.
+location_context:
+  transaction_mode: local_only_sandbox
+  part_category: 3d_printed_hook
+  intended_environment: interior_light_duty_review_only
+  external_action_authorized: false
+quote_categories:
+- 3d_printing
+- prototype_review
+- material_option_review
+capability_requirements:
+- capability_id: fdm_printing
+  capability_type: additive_manufacturing
+  required_for: Baseline PETG production path
+  description: FDM simulation path for PETG prototype production review.
+  licensed_trade: false
+  certification_required: false
+  local_required: true
+  risk_level: medium
+  notes: No real print may proceed without human review.
+- capability_id: sls_printing
+  capability_type: additive_manufacturing
+  required_for: Nylon PA12 option review
+  description: SLS simulation path for stronger nylon substitution review.
+  licensed_trade: false
+  certification_required: false
+  local_required: true
+  risk_level: medium
+  notes: Substitution review is informational only.
+- capability_id: engineering_review
+  capability_type: review
+  required_for: Any load-bearing interpretation or carbon fiber nylon consideration
+  description: Engineering review remains required for any real-world stiffness or
+    load interpretation.
+  licensed_trade: false
+  certification_required: false
+  local_required: true
+  risk_level: high
+  notes: No engineering approval is granted inside the sandbox.
+install_scope: No real installation authorized. Internal review only.
+licensed_trade_required: false
+code_review_required: false
+permit_review_required: false
+safety_notes:
+- Not load-rated.
+- Not safety-critical.
+- No real installation without human review.
+unknowns:
+- real CAD file not provided
+- load requirement not validated
+- mounting substrate unknown
+- fastener spec unknown
+- print orientation not approved
+- layer height preference unknown
+- real shop not contacted
+assumptions:
+- This remains a local-only machine-to-machine sandbox transaction.
+- The hook is treated as a non-safety-critical plastic part pending human review.
+- No real print order, payment, or delivery is authorized.
+human_approval_required: true

@@ -1,0 +1,11 @@
+{
+  "delivery_event_id": "simulated_delivery_event_001",
+  "project_id": "m2m-print-hook-001",
+  "status": "simulated_delivery_only",
+  "notes": [
+    "No real delivery occurred.",
+    "No shipment was booked or fulfilled."
+  ],
+  "sandbox_only": true,
+  "external_action_taken": false
+}

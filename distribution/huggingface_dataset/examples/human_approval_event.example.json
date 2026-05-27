@@ -1,0 +1,19 @@
+{
+  "approval_event_id": "hae-m2m-print-hook-001",
+  "project_id": "m2m-print-hook-001",
+  "decision": "approved_for_internal_review_only",
+  "approved_actions": [
+    "local artifact generation",
+    "local comparison summary generation"
+  ],
+  "not_approved_actions": [
+    "external quote routing",
+    "real shop contact",
+    "fabrication",
+    "payment",
+    "delivery",
+    "engineering signoff"
+  ],
+  "human_review_required": true,
+  "sandbox_only": true
+}

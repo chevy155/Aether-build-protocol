@@ -1,0 +1,63 @@
+{
+  "project_id": "m2m-print-hook-001",
+  "comparison_mode": "local_only_fake_shop_matching",
+  "matches": [
+    {
+      "shop_id": "shop_profile_001",
+      "shop_name": "Pacific Layer Works",
+      "capability_match_score": 100,
+      "material_match": true,
+      "tolerance_match": true,
+      "lead_time_fit": true,
+      "risk_flags": [],
+      "missing_info": [
+        "load requirement not validated",
+        "mounting substrate unknown",
+        "fastener spec unknown"
+      ],
+      "human_review_required": true,
+      "external_contacted": false,
+      "label": "MOST_COMPLETE_FOR_HUMAN_REVIEW"
+    },
+    {
+      "shop_id": "shop_profile_002",
+      "shop_name": "Northstar Additive Lab",
+      "capability_match_score": 90,
+      "material_match": true,
+      "tolerance_match": true,
+      "lead_time_fit": false,
+      "risk_flags": [
+        "lead_time_longer_than_initial_target"
+      ],
+      "missing_info": [
+        "load requirement not validated",
+        "mounting substrate unknown",
+        "fastener spec unknown"
+      ],
+      "human_review_required": true,
+      "external_contacted": false,
+      "label": "NEEDS_CLARIFICATION"
+    },
+    {
+      "shop_id": "shop_profile_003",
+      "shop_name": "Apex Composite Print",
+      "capability_match_score": 100,
+      "material_match": true,
+      "tolerance_match": true,
+      "lead_time_fit": true,
+      "risk_flags": [
+        "engineering_review_required_for_any_structural_interpretation"
+      ],
+      "missing_info": [
+        "load requirement not validated",
+        "mounting substrate unknown",
+        "fastener spec unknown"
+      ],
+      "human_review_required": true,
+      "external_contacted": false,
+      "label": "NEEDS_CLARIFICATION"
+    }
+  ],
+  "selection_status": "no shop selected",
+  "guardrail_note": "Fake shop matching only. No winner, vendor selection, or order approval is produced."
+}

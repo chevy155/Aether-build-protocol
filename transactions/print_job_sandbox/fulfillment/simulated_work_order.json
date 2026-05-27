@@ -1,0 +1,12 @@
+{
+  "work_order_id": "simulated_work_order_001",
+  "project_id": "m2m-print-hook-001",
+  "status": "simulation_only_not_authorized",
+  "notes": [
+    "Simulation only.",
+    "No real work authorized.",
+    "Human approval remains required for any external execution."
+  ],
+  "sandbox_only": true,
+  "external_action_taken": false
+}

@@ -39,6 +39,8 @@
     "confidence_score": { "type": "number", "minimum": 0, "maximum": 1 },
     "risk_notes": { "type": "array", "items": { "type": "string" } },
     "clarification_questions": { "type": "array", "items": { "type": "string" } },
-    "human_review_required": { "type": "boolean", "const": true }
+    "human_review_required": { "type": "boolean", "const": true },
+    "external_action_taken": { "type": "boolean", "const": false },
+    "sandbox_only": { "type": "boolean" }
   }
 }

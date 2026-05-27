@@ -1,0 +1,72 @@
+{
+  "quote_request_id": "rfq-m2m-print-hook-001",
+  "project_id": "m2m-print-hook-001",
+  "scope_summary": "A designer needs a small functional wall-mounted hook 3D printed for local protocol transaction simulation only.",
+  "requested_quote_categories": [
+    "3d_printing",
+    "prototype_review",
+    "material_option_review"
+  ],
+  "required_capabilities": [
+    "fdm_printing",
+    "sls_printing",
+    "engineering_review"
+  ],
+  "deliverables": [
+    "Budgetary price range",
+    "Lead time range",
+    "Assumptions list",
+    "Exclusions list",
+    "Clarification questions",
+    "Risk notes"
+  ],
+  "location_context": {
+    "transaction_mode": "local_only_sandbox",
+    "part_category": "3d_printed_hook",
+    "intended_environment": "interior_light_duty_review_only",
+    "external_action_authorized": false
+  },
+  "desired_timeline": {
+    "target_start_window": "2026-Q3",
+    "pricing_stage": "budgetary_review"
+  },
+  "required_response_fields": [
+    "price_min",
+    "price_max",
+    "lead_time_min_days",
+    "lead_time_max_days",
+    "assumptions",
+    "exclusions",
+    "substitutions",
+    "confidence_score",
+    "risk_notes",
+    "clarification_questions"
+  ],
+  "assumptions_to_confirm": [
+    "This remains a local-only machine-to-machine sandbox transaction.",
+    "The hook is treated as a non-safety-critical plastic part pending human review.",
+    "No real print order, payment, or delivery is authorized.",
+    "real CAD file not provided",
+    "load requirement not validated",
+    "mounting substrate unknown",
+    "fastener spec unknown",
+    "print orientation not approved",
+    "layer height preference unknown",
+    "real shop not contacted"
+  ],
+  "exclusions_to_state": [
+    "Engineering approval",
+    "Permit issuance",
+    "Construction approval",
+    "Autonomous procurement",
+    "Real shop contact",
+    "Real print authorization",
+    "Payment authorization",
+    "Delivery authorization"
+  ],
+  "risk_questions": [
+    "What site conditions could materially change price or lead time?",
+    "Which assumptions would you need confirmed before firm pricing?"
+  ],
+  "human_approval_required": true
+}

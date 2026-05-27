@@ -1,0 +1,22 @@
+{
+  "name": "aether-build-protocol",
+  "status": "draft",
+  "category": "machine-readable protocol sandbox",
+  "summary": "Local-only machine-readable protocol workspace with deterministic response envelopes, agent-readiness surfaces, and a bounded machine-to-machine print transaction sandbox.",
+  "mcp_status": "skeleton_only",
+  "hosted_server": false,
+  "automatic_submission": false,
+  "entry_points": [
+    "machine/llms.txt",
+    "machine/aether_agent_manifest.json",
+    "openapi/aether.openapi.yaml",
+    "mcp/mcp_manifest.json"
+  ],
+  "featured_sandbox": "transactions/print_job_sandbox/",
+  "guardrails": [
+    "local_only",
+    "human_approval_required",
+    "external_action_taken_false",
+    "fake_shops_only"
+  ]
+}
