@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.7 - Fresh Clone Agent Readiness Test
+
+- added a fresh-clone agent readiness spec, test plan, optional checklist, and deterministic local readiness check script
+- added human-readable and machine-readable readiness reports proving repo discovery, safe-tool discovery, forbidden-action discovery, and local workflow execution
+- preserved local-only boundaries with no hosted API, no real MCP deployment, no real external agent connection, no external actions, and no production readiness claim
+
 ## v0.2.6 - Deterministic Machine Response Envelopes
 
 - added a deterministic machine response envelope schema, response templates, response examples, and a local response generator

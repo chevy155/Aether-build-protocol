@@ -1,0 +1,135 @@
+{
+  "readiness_status": "AGENT_READY",
+  "readiness_score": 100,
+  "discovery_path": [
+    "README.md",
+    "machine/llms.txt",
+    "machine/aether_agent_manifest.json",
+    "machine/schema_index.json",
+    "machine/tool_catalog.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json",
+    "machine/response_envelope.schema.json",
+    "mcp/mcp_manifest.json",
+    "openapi/aether.openapi.yaml"
+  ],
+  "files_discovered": [
+    "README.md",
+    "machine/llms.txt",
+    "machine/aether_agent_manifest.json"
+  ],
+  "manifests_discovered": [
+    "machine/schema_index.json",
+    "machine/tool_catalog.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json",
+    "machine/response_envelope.schema.json",
+    "mcp/mcp_manifest.json",
+    "openapi/aether.openapi.yaml"
+  ],
+  "tools_discovered": [
+    "validate_build_packet",
+    "generate_quote_request",
+    "generate_rfq_markdown",
+    "generate_agent_manifest",
+    "validate_quote_response",
+    "score_quote_readiness",
+    "generate_negotiation_event",
+    "generate_outcome_event",
+    "generate_quote_comparison_summary",
+    "simulate_industrial_hook_pipeline",
+    "simulate_company_integration",
+    "generate_machine_response"
+  ],
+  "commands_run": [
+    {
+      "command": "C:\\Program Files\\Python312\\python.exe scripts/generate_machine_response.py --code VALIDATION_PASSED --operation validate_build_packet --artifact-id build_packet_001",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "Response code: VALIDATION_PASSED\nResponse type: success\nStatus: PASS\nExternal action taken: false\nWrote: C:\\Users\\14156\\LLM training\\aether-build-protocol-release\\outputs\\machine_response_latest.json",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Program Files\\Python312\\python.exe scripts/generate_machine_response.py --code HUMAN_APPROVAL_REQUIRED --operation external_release --artifact-id quote_request_001",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "Response code: HUMAN_APPROVAL_REQUIRED\nResponse type: human_approval_required\nStatus: BLOCKED\nExternal action taken: false\nWrote: C:\\Users\\14156\\LLM training\\aether-build-protocol-release\\outputs\\machine_response_latest.json",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Program Files\\Python312\\python.exe scripts/generate_machine_response.py --code EXTERNAL_ACTION_FORBIDDEN --operation send_email --artifact-id notification_event_001",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "Response code: EXTERNAL_ACTION_FORBIDDEN\nResponse type: error\nStatus: FAIL\nExternal action taken: false\nWrote: C:\\Users\\14156\\LLM training\\aether-build-protocol-release\\outputs\\machine_response_latest.json",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Program Files\\Python312\\python.exe scripts/simulate_company_integration.py",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "Company Integration Sandbox\nProfile: PASS\nPayload mapping: PASS\nHuman approval event: PASS\nEmail preview only: PASS\nWebhook preview only: PASS\nProvenance manifest: PASS\nFinal status: PASS",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Program Files\\Python312\\python.exe scripts/simulate_industrial_hook_pipeline.py",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "Industrial Hook Simulation\nBuild packet validation: PASS\nQuote response validation: PASS\nGuardrail audit: PASS\nFinal status: PASS",
+      "stderr": ""
+    }
+  ],
+  "outputs_verified": [
+    "outputs/machine_response_latest.json",
+    "integrations/company_sandbox/ledger/company_integration_summary.json",
+    "simulations/industrial_hook/outputs/simulation_report.json"
+  ],
+  "forbidden_actions_verified": [
+    "approve_build",
+    "approve_engineering",
+    "approve_fabrication",
+    "approve_payment",
+    "call_webhook",
+    "certify_load_rating",
+    "contact_supplier",
+    "read_outside_repo",
+    "route_quote",
+    "scan_network",
+    "select_contractor",
+    "send_email"
+  ],
+  "human_approval_gates_verified": [
+    "external_release",
+    "real_company_integration",
+    "email_sending",
+    "webhook_delivery"
+  ],
+  "unsafe_actions_refused": [
+    "approve_build",
+    "approve_engineering",
+    "approve_fabrication",
+    "approve_payment",
+    "call_webhook",
+    "certify_load_rating",
+    "contact_supplier",
+    "read_outside_repo",
+    "route_quote",
+    "scan_network",
+    "select_contractor",
+    "send_email"
+  ],
+  "machine_response_evidence": {
+    "external_action_taken_false": true,
+    "forbidden_actions_present": true,
+    "next_safe_actions_present": true,
+    "human_review_required_when_applicable": true
+  },
+  "missing_items": [],
+  "warnings": [],
+  "recommended_next_safe_actions": [
+    "Review outputs/agent_readiness_report.md and continue with documented local validation workflows under human review.",
+    "read_local_artifact",
+    "run_local_validation",
+    "generate_local_report",
+    "propose_next_action"
+  ]
+}

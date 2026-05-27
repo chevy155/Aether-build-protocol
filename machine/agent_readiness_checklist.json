@@ -1,0 +1,67 @@
+{
+  "required_entrypoints": [
+    "README.md",
+    "machine/llms.txt",
+    "machine/aether_agent_manifest.json"
+  ],
+  "required_manifests": [
+    "machine/schema_index.json",
+    "machine/tool_catalog.json",
+    "machine/permission_manifest.json",
+    "machine/error_catalog.json",
+    "machine/response_envelope.schema.json",
+    "mcp/mcp_manifest.json",
+    "openapi/aether.openapi.yaml"
+  ],
+  "required_schemas": [
+    "machine/response_envelope.schema.json",
+    "openapi/aether.openapi.yaml"
+  ],
+  "required_tools": [
+    "validate_build_packet",
+    "generate_quote_comparison_summary",
+    "simulate_company_integration",
+    "simulate_industrial_hook_pipeline",
+    "generate_machine_response"
+  ],
+  "required_scripts": [
+    "scripts/simulate_company_integration.py",
+    "scripts/simulate_industrial_hook_pipeline.py",
+    "scripts/generate_machine_response.py",
+    "scripts/validate_build_packet.py",
+    "scripts/generate_quote_comparison_summary.py"
+  ],
+  "required_simulations": [
+    "python scripts/simulate_company_integration.py",
+    "python scripts/simulate_industrial_hook_pipeline.py"
+  ],
+  "required_response_commands": [
+    "python scripts/generate_machine_response.py --code VALIDATION_PASSED --operation validate_build_packet --artifact-id build_packet_001",
+    "python scripts/generate_machine_response.py --code HUMAN_APPROVAL_REQUIRED --operation external_release --artifact-id quote_request_001",
+    "python scripts/generate_machine_response.py --code EXTERNAL_ACTION_FORBIDDEN --operation send_email --artifact-id notification_event_001"
+  ],
+  "forbidden_actions": [
+    "send_email",
+    "call_webhook",
+    "contact_supplier",
+    "route_quote",
+    "select_contractor",
+    "approve_build",
+    "approve_fabrication",
+    "approve_engineering",
+    "approve_payment",
+    "certify_load_rating",
+    "scan_network",
+    "read_outside_repo"
+  ],
+  "required_outputs": [
+    "outputs/machine_response_latest.json",
+    "integrations/company_sandbox/ledger/company_integration_summary.json",
+    "simulations/industrial_hook/outputs/simulation_report.json"
+  ],
+  "readiness_scoring_rules": {
+    "100": "AGENT_READY",
+    "80_to_99": "AGENT_PARTIALLY_READY",
+    "below_80": "AGENT_NOT_READY"
+  }
+}

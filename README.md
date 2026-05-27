@@ -1,4 +1,4 @@
-# Aether Build Protocol v0.2.6 Deterministic Machine Response Envelopes
+# Aether Build Protocol v0.2.7 Fresh Clone Agent Readiness Test
 
 Aether Build Protocol is the machine-readable coordination layer between digital design intent and downstream fabrication review systems.
 
@@ -228,6 +228,32 @@ python -m pytest tests/ -v
 ```
 
 Every envelope keeps `external_action_taken: false` so machines can prove the sandbox did not cross the external-action boundary.
+
+## Fresh Clone Agent Readiness Test
+
+Run the fresh-clone agent readiness check with:
+
+```powershell
+python scripts/run_agent_readiness_check.py
+```
+
+This local-only readiness check tests whether an agent can discover Aether from repository files and machine-readable surfaces without human explanation.
+
+- uses `machine/llms.txt`
+- uses `machine/aether_agent_manifest.json`
+- uses `machine/schema_index.json`
+- uses `machine/tool_catalog.json`
+- uses `machine/permission_manifest.json`
+- uses `machine/error_catalog.json`
+- uses `machine/response_envelope.schema.json`
+- uses `openapi/aether.openapi.yaml`
+- uses the `mcp/` skeleton
+- simulated agent-readiness check only
+- runs safe local simulations
+- generates an agent readiness report
+- no external action
+- no real external agent connected
+- no production readiness claim
 
 ## Closed Loop
 
