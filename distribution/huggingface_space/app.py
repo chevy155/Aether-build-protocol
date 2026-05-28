@@ -103,6 +103,12 @@ def build_previews(
 with gr.Blocks(title="Aether CAD-to-Agent Sandbox") as demo:
     gr.Markdown(
         "# Aether CAD-to-Agent Sandbox\n\n"
+        "Try the demo here, then inspect the full protocol on GitHub:\n"
+        "https://github.com/chevy155/Aether-build-protocol\n\n"
+        "Dataset:\n"
+        "https://huggingface.co/datasets/lonestar155/aether-build-protocol-examples\n\n"
+        "Feedback / critique:\n"
+        "https://github.com/chevy155/Aether-build-protocol/issues\n\n"
         "Preview only. This demo is local-only and sandbox-only. It makes no network calls, does not contact shops, does not route quotes, does not approve printing, fabrication, engineering, or payment, and does not certify load rating."
     )
 
@@ -144,6 +150,11 @@ with gr.Blocks(title="Aether CAD-to-Agent Sandbox") as demo:
             machine_response_output,
             forbidden_actions_output,
         ],
+    )
+
+    gr.Markdown(
+        "If you know CAD, fabrication, procurement, AI agents, OpenAPI, MCP, or manufacturing workflows, please critique the protocol on GitHub. "
+        "The most useful feedback is missing fields, dangerous assumptions, and what a real shop would reject."
     )
 
 

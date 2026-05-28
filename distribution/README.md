@@ -22,6 +22,18 @@ Public URLs:
 - Space: https://huggingface.co/spaces/lonestar155/aether-cad-to-agent-sandbox
 - Dataset: https://huggingface.co/datasets/lonestar155/aether-build-protocol-examples
 
+## Hugging Face -> GitHub Funnel
+
+Hugging Face is the demo and discovery layer.
+
+GitHub is the source of truth.
+
+The Dataset is the example corpus.
+
+The Space is the interactive trial surface.
+
+All feedback and deeper technical review should route to GitHub Issues.
+
 ## Included Draft Surfaces
 
 - Hugging Face Space preview app

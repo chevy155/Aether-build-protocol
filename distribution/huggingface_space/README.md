@@ -26,64 +26,83 @@ tags:
 
 Aether Build Protocol is an open, local-first protocol for machine-readable physical build intent.
 
+This Space is the interactive demo. GitHub is the source of truth.
+
+⭐ Source code, schemas, tests, OpenAPI contract, MCP skeleton, and full protocol docs:
+https://github.com/chevy155/Aether-build-protocol
+
+Try the dataset:
+https://huggingface.co/datasets/lonestar155/aether-build-protocol-examples
+
 This demo shows how a simple part request can be converted into:
 
 - Build Packet preview
 - Quote Request preview
 - Human Approval Required response
-- Deterministic Machine Response Envelope
+- Machine Response Envelope
 - Forbidden Actions list
 
 ## Why this matters
 
-Designers, AI agents, and future machine-to-machine systems need a clean way to describe physical work before it becomes a quote, print, fabrication job, or delivery workflow.
+Designers and builders often know what they want made, but the request is trapped in CAD screenshots, rough notes, PDFs, email threads, and incomplete RFQs.
 
-Today, physical build requests are often trapped in PDFs, screenshots, loose CAD notes, emails, and ambiguous quote requests. Aether turns the intent into structured artifacts that machines can validate and humans can review.
+AI agents and future machine-to-machine systems cannot safely coordinate physical work from ambiguous intent.
 
-## Who this is for
+Aether explores the structured layer between design intent and fabrication review. It is a design-to-fabrication protocol for machine-readable physical build intent, RFQ validation, and an agent-safe manufacturing workflow with human approval gates. The repository also includes deterministic machine response envelopes, OpenAPI surfaces, an MCP skeleton, provenance signals, and a digital thread that can be inspected locally.
 
-- AI developers building agent-safe workflow tools
-- CAD designers preparing cleaner quote requests
-- fabrication shops tired of incomplete RFQs
-- manufacturing operators studying digital-thread workflows
-- researchers exploring machine-to-machine physical transaction protocols
+## What this demo does
 
-## What this demo is
+The demo converts a simple part request into:
 
-This is a sandbox interface for exploring Aether-style build intent.
+- Build Packet preview
+- Quote Request preview
+- Human Approval Required response
+- Machine Response Envelope
+- Forbidden Actions list
 
-It is useful for understanding the protocol shape, response envelopes, and approval boundaries.
+## What to do next
+
+- Star the GitHub repo if this direction is useful.
+- Fork it if you want to test the protocol locally.
+- Open an issue if a Build Packet field is missing.
+- Open an issue if the protocol makes a dangerous assumption.
+- Open an issue if you know fabrication, CAD, procurement, or agent tooling and want to critique the workflow.
+
+GitHub:
+https://github.com/chevy155/Aether-build-protocol/issues
 
 ## What this demo is not
 
-This demo makes no network calls.
-This demo does not contact shops.
-This demo does not route quotes.
-This demo does not approve printing.
-This demo does not approve fabrication.
-This demo does not approve engineering.
-This demo does not approve payment.
-This demo does not certify load rating.
-This demo does not perform real manufacturing actions.
+- not a marketplace
+- not supplier routing
+- not real quote generation
+- not autonomous ordering
+- not fabrication approval
+- not engineering approval
+- not payment approval
+- not load certification
+- no real shop is contacted
 
-## Core phrase
+This demo makes no network calls, does not route quotes, and does not perform real manufacturing actions.
 
-machine-readable physical build intent
+## For AI agents and developers
 
-## Related project
+Start here:
+1. Read machine/llms.txt in the GitHub repo.
+2. Inspect machine/aether_agent_manifest.json.
+3. Inspect machine/permission_manifest.json.
+4. Inspect openapi/aether.openapi.yaml.
+5. Inspect mcp/mcp_manifest.json.
+6. Run scripts/run_agent_readiness_check.py locally.
 
-GitHub:
-https://github.com/chevy155/Aether-build-protocol
-
-Dataset:
-https://huggingface.co/datasets/lonestar155/aether-build-protocol-examples
+This is designed to be machine-readable and human-gated, not autonomous by default.
 
 ## Feedback requested
 
 If you are a fabricator, CAD designer, project engineer, AI developer, or manufacturing operator, the useful feedback is:
 
-- What information is missing before a real shop could quote?
+- What fields are missing before real shop review?
+- What would a real shop reject?
 - What assumptions are dangerous?
-- What would a fabricator reject?
-- What should be added to a Build Packet?
+- What should an AI agent never be allowed to do?
 - Does this reduce ambiguity before quoting?
